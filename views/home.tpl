@@ -12,7 +12,7 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="static/bootstrap.css" rel="stylesheet">
+    <link href="static/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -20,93 +20,56 @@
     </style>
   </head>
 
-  <body>
+  <body style="background: url(static/project-paper.png) repeat">
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="#">peterdowns.com</a>
           <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="blog">Blog</a></li>
+            <li><a href="projects">Projects</a></li>
+			<li><a href="resume">Resume</a></li>
           </ul>
-          <p class="pull-right">Logged in as <a href="#">username</a></p>
+          <p class="pull-right">Search is forthcoming</p>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="sidebar">
-        <div class="well">
-          <h5>Sidebar</h5>
-          <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-          <h5>Sidebar</h5>
-          <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-          <h5>Sidebar</h5>
-          <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-        </div>
+	<div class="sidebar" style="position: absolute; left: 0; border: 2px solid #000; border-left: none; height: 300px; width: 250px; top: 25%; bottom: 25%">
+	  <div class="sidebar-text" style="position: absolute; left: 0; top: 0; bottom: 0; right: 10px; padding: 10px;">
+		<h5>About</5>
+		<p> Welcome. My name is Peter Downs. This is my website. </p>
+		<h5>Contact</h5>
+		<p> You can email me at
+		  <a href="mailto:peterldowns@gmail.com">peterldowns@gmail</a>.
+		  <br>
+		  I have a
+		  <a href="http://twitter.com/#!/peterldowns">twitter</a>.
+		  <br>
+		  You may not phone me.
+		  <br>
+		  I also have profiles at 
+	        <a href="http://github.com/peterldowns">github</a>,
+			<a href="http://news.ycombinator.com/user?id=peter_l_downs">hacker news</a>, and
+			<a href="http://stackoverflow.com/users/829926/peter-downs">stackoverflow</a>.
+		</p>
       </div>
+	  <div class="sidebar-hider" style="position: absolute; right: 0; top: 0; bottom: 0; background-color: #000; width: 10px;">
+	  </div>
+    </div>
+	<div class="content" style="position: absolute; left: 200px; min-width: 400px; right: 0; margin: 80px; top:40px; bottom: 0">
       <div class="content">
         <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit">
+        <div class="hero-unit" style="height: 80% auto">
           <h1>Hello, world!</h1>
-          <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <p><a class="btn primary large">Learn more &raquo;</a></p>
-        </div>
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="span6">
-            <h2>Heading</h2>
-            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-          <div class="span5">
-            <h2>Heading</h2>
-             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-         </div>
-          <div class="span5">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-        </div>
-        <hr>
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="span6">
-            <h2>Heading</h2>
-            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-          <div class="span5">
-            <h2>Heading</h2>
-             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-         </div>
-          <div class="span5">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
+		  <p>My name is Peter Downs. You're on my website.</p>
+		  <br>
+		  <p>Why are you here?</p>
+          <p><a class="btn primary large">Tell me&raquo;</a></p>
         </div>
         <footer>
-          <p>&copy; Company 2011</p>
+          <p>&copy; Peter Downs 2012</p>
         </footer>
       </div>
     </div>
