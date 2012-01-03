@@ -1,8 +1,8 @@
 import json
-from bottle import route, request, view, static_file, default_app, debug
+from bottle import route, request, view, static_file, default_app, debug, run
 debug(True)
 
-class static_files()
+class static_files():
 	@route('/static/:path#.+#')
 	def serve(path):
 		return static_file(path, root='./static')
@@ -41,3 +41,8 @@ class website():
 	@view('resume')
 	def resume():
 		return {}
+
+if __name__ == "__main__":
+	run(host='localhost', port=8080)
+else:
+	application = default_app()
