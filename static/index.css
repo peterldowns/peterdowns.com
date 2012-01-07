@@ -1,39 +1,36 @@
 body {
-	background: url(/static/project-paper.png) repeat;
 	background: url(/static/background.png) repeat;
-}
-
-#blargh {
-	/*background-color: rgba(0,0,0,.05);*/
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	background: url(/static/project-paper.png) repeat;
+	overflow: hidden;
 }
 
 #content, #sidebar {
 	position: absolute;
+	bottom: 0;
 	top: 40px;
+	padding-top: 10px;
 }
 
 #sidebar {
 	left: 0px;
 	width: 250px;
-	bottom: 0px;
 	border-right: 1px solid rgba(0,0,0,.1);
 	background: rgba(255, 255, 255 ,.5);
 }
 
 
 #content {
-	left: 270px;
+	left: 250px;
 	right: 0px;
-	bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
 	min-width: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .sidebar_box, .content_box{
+	text-align: center;
 	margin: 5px;
 	padding: 5px;
 	border-bottom: 2px solid rgba(0,0,0,.2);
