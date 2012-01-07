@@ -1,38 +1,44 @@
 body {
-	background: url(/static/background.png) repeat;
 	background: url(/static/project-paper.png) repeat;
+	background: url(/static/background.png) repeat;
 }
 
-#topbar {
-	padding: 5px;
+#blargh {
+	/*background-color: rgba(0,0,0,.05);*/
 	position: absolute;
-	left: 0;
-	right: 0;
 	top: 0;
-	height: 40px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#content, #sidebar {
+	position: absolute;
+	top: 40px;
 }
 
 #sidebar {
-	background-color: rgba(0, 0, 0, .2);
-	position: absolute;
-
 	left: 0px;
-	top: 40px;
-	width: 200px;
-	margin: 10px;
-
-	padding: 5px;
+	width: 250px;
+	bottom: 0px;
+	border-right: 1px solid rgba(0,0,0,.1);
+	background: rgba(255, 255, 255 ,.5);
 }
+
 
 #content {
-	background-color: rgba(0, 0, 0, .2);
-	position: absolute;
-	
-	left: 220px;
-	top: 40px;
+	left: 270px;
 	right: 0px;
-	margin: 10px;
-	
-	padding: 5px;
 	bottom: 0px;
+	min-width: 400px;
 }
+
+.sidebar_box, .content_box{
+	margin: 5px;
+	padding: 5px;
+	border-bottom: 2px solid rgba(0,0,0,.2);
+}
+#sidebar > .sidebar_box:last-child {
+	border-bottom: none;
+}
+
