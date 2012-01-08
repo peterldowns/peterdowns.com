@@ -1,10 +1,17 @@
+body {
+	background: url(/static/background.png);
+}
+.row{
+	background: rgba(255, 255, 255, .9);
+	border-radius: 20px;
+	border-bottom: 3px solid rgba(0,0,0,.5);
+}
 #header {
 	padding-top: 20px;
 	font-size: 30px;
 	line-height: 50px;
 	letter-spacing: -1 px;
 	text-align: center;
-	border-bottom: 3px solid rgba(0,0,0,.5);
 }
 #header h1 {
 	font-size: 2em;
