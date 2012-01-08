@@ -1,3 +1,4 @@
+Sunday, January 8, 2012
 # Hi
 Hello. As you can see in the side bar, my name is Peter. I like to read, run, and program, but now I'm starting to write, too. This is my blog. I'm going to try to update it pretty often; for the past year I've been keeping a list of ideas about which I'd like to write.
 
