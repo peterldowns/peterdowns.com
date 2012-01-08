@@ -1,41 +1,41 @@
 body {
-	background: url(/static/background.png) repeat;
 	background: url(/static/project-paper.png) repeat;
+	background: url(/static/background.png) repeat;
+	background: url(http://icanhasnoise.com/ffffff/200x200/11) repeat;
 	overflow: hidden;
-}
-
-#content, #sidebar {
-	position: absolute;
-	bottom: 0;
-	top: 40px;
-	padding-top: 10px;
-}
-
-#sidebar {
-	left: 0px;
-	width: 250px;
-	border-right: 1px solid rgba(0,0,0,.1);
-	background: rgba(255, 255, 255 ,.5);
-}
-
-
-#content {
-	left: 250px;
-	right: 0px;
-	padding-left: 20px;
-	padding-right: 20px;
-	min-width: 400px;
-	overflow-x: hidden;
-	overflow-y: scroll;
-}
-
-.sidebar_box, .content_box{
+	font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+	font-weight: normal;
+	font-size: 20px;
+	letter-spacing: .2em;
+	line-height: 1.1em;
 	text-align: center;
-	margin: 5px;
-	padding: 5px;
-	border-bottom: 2px solid rgba(0,0,0,.2);
 }
-#sidebar > .sidebar_box:last-child {
-	border-bottom: none;
+#header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-transform: uppercase;
+	border-bottom: 5px solid rgba(0,0,0,.1);
+	background: rgba(0, 255, 0, .1);
+	min-width: 500px;
+	display: block;
+	/*height: 60px;*/
 }
+#content {
+	position: relative;
+	display: block;
+	left: 0;
+	right: 0;
+	top: 70px;
+	margin: 20px;
+	border-radius: 10px;
+	padding: 10px;
+	background: rgba(0,0,0,.05);
 
+}
