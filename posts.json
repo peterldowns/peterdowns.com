@@ -1,3 +1,10 @@
 {
-	"test" : "posts/test.html"
+	"test" : {
+		"path" : "posts/test.html",
+		"timestamp" : null
+	},
+	"blargh" : {
+		"path" : "posts/blargh.html",
+		"timestamp" : null
+	}
 }
