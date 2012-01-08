@@ -28,8 +28,13 @@
 			</div>
 			<div id="content" class="sixcol">
 			%for post in posts:
-				{{!post}}
-				<br>
+				<div class="post_info">
+				%if post['timestamp']:
+					<h1>{{post['timestamp']}}</h1>
+				%end
+				</div>
+				{{!post['html']}}
+				<div class="divider"></div>
 			%end
 			</div>
 			<div id="sidebar-right" class="threecol last">

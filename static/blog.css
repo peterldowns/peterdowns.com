@@ -1,15 +1,11 @@
-.row {
-	font-family: times, Times New Roman, times-roman, georgia, serif;
-	font-weight: 100;
-	line-height: 2em;
-	/*background: url(/static/background.png);*/
-}
 #header {
 	background: #fff;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	font-weight: 100;
 	font-size: 30px;
 	line-height: 40px;
 	letter-spacing: -1 px;
@@ -65,4 +61,13 @@
 }
 #content {
 	text-align: center;
+}
+.divider {
+	border-bottom: 2px solid rgba(0,0,0,.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#content > .divider:last-child {
+	border-bottom: none;
+	margin-bottom: none;
 }
