@@ -21,17 +21,6 @@ def getPost(title, postsf="posts.json"):
 		return posts[title]
 	except:
 		return None
-def getPostWithHTML(title, postsf="posts.json"):
-	post = getPost(title, postsf)
-	try:
-		with open(post['path']) as article:
-			post_html = article.read()
-			post['html'] = post_html
-			return post
-	except Exception as e:
-		print e
-		return None
-
 
 class website():
 	@route('/', 'GET')
@@ -39,15 +28,15 @@ class website():
 	def recentPosts():
 		allposts = allPosts()
 		postns = allposts.keys()[0:5]
-		posts = filter(lambda x: x, [getPostWithHTML(p) for p in postns]) # only valid posts
+		posts = filter(lambda x: x, [getPost(p) for p in postns]) # only valid posts
 		return {"posts" : posts}
 
 	@route('/:title#.+#')
 	@view('blog')
 	def viewPost(title):
 		try:
-			post = getPostWithHTML(title)
-			return {"posts" : [postHTML] }
+			post = getPost(title)
+			return {"posts" : [post] }
 		except Exception as e:
 			print e
 			return {"posts" : []}
