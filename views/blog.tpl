@@ -28,7 +28,7 @@
 				<h1> This is my website </h1>
 				<p> It's not really for anyone but me, but you're welcome to enjoy it, too. </p>
 			</div>
-			<div id="content" class="sixcol">
+			<div id="content" class="sixcol last">
 			%for post in posts:
 				<div class="post">
 					<div class="info">
@@ -40,9 +40,6 @@
 				</div>
 				<div class="divider"></div>
 			%end
-			</div>
-			<div id="sidebar-right" class="threecol last">
-				<h1> This is the end </h1>
 			</div>
 		</div>
 	</div>
