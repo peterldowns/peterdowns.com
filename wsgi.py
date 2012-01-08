@@ -31,7 +31,7 @@ class website():
 		posts = filter(lambda x: x, [getPost(p) for p in postns]) # only valid posts
 		return {"posts" : posts}
 
-	@route('/:title#.+#')
+	@route('/posts/:title#.+#')
 	@view('blog')
 	def viewPost(title):
 		try:
