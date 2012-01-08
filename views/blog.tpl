@@ -30,9 +30,11 @@
 			</div>
 			<div id="content" class="sixcol">
 			%for post in posts:
-				<div class="post_info">
+				<div class="post">
+					<div class="info">
+					</div>
+					{{!post['html']}}
 				</div>
-				{{!post['html']}}
 				<div class="divider"></div>
 			%end
 			</div>
