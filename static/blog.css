@@ -1,17 +1,18 @@
 body {
 	background: url(/static/background.png);
+	color: #444;
 }
 .row{
-	background: rgba(255, 255, 255, .9);
-	border-radius: 20px;
-	border-bottom: 3px solid rgba(0,0,0,.5);
+	background: #FFF;
 }
 #header {
 	padding-top: 20px;
+	padding-bottom: 10px;
 	font-size: 30px;
 	line-height: 50px;
 	letter-spacing: -1 px;
 	text-align: center;
+	border-bottom: 3px solid #0088EE;
 }
 #header h1 {
 	font-size: 2em;
@@ -68,18 +69,18 @@ body {
 	border-bottom: none;
 	margin-bottom: none;
 }
-#content > * {
-	padding-bottom: 10px;
+#content * {
+	margin-bottom: 10px;
 }
 #content p {
-	font-size: 1.5em;
-	line-height: 1.5em;
+	font-size: 1.2em;
+	line-height: 1.2em;
 }
 #content p::first-letter {
 	text-transform: uppercase;
 }
 #content li {
-	padding-left: 2em;
+	padding-left: 1em;
 }
 #content ul, #content ol {
 	list-style-position: inside;
