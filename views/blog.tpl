@@ -32,6 +32,9 @@
 			%for post in posts:
 				<div class="post">
 					<div class="info">
+					%if post['timestamp']:
+						<p style="font-weight: 1000000; text-decoration: underline;">{{post['timestamp']}}</p>
+					%end
 					</div>
 					{{!post['html']}}
 				</div>
