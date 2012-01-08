@@ -21,9 +21,11 @@ for filepath in sys.argv[1:]:
 	except Exception as e:
 		print e
 		md_content = ""
+	timestamp, md_content = md_content.split('\n', 1)
 	post = {
 		"path" : filename,
-		"html" : markdown.markdown(md_content)
+		"html" : markdown.markdown(md_content),
+		"timestamp" : timestamp
 	}
 	posts[title] = post
 
