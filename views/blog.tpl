@@ -1,6 +1,8 @@
 <doctype HTML>
 <head>
-	<!-- My stylesheet -->
+	<!-- Mou Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/static/md.css" />
+	<!-- My stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/static/blog.css" />
 	<! -- 1140px Grid -->
 	<link rel="stylesheet" type="text/css" href="/static/1140.css" media="screen" />
@@ -29,9 +31,6 @@
 			<div id="content" class="sixcol">
 			%for post in posts:
 				<div class="post_info">
-				%if post['timestamp']:
-					<h1>{{post['timestamp']}}</h1>
-				%end
 				</div>
 				{{!post['html']}}
 				<div class="divider"></div>
