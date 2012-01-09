@@ -1,32 +1,21 @@
-body {
-	background: url(/static/background.png);
-	background: url(/static/project-paper.png);
-	color: #444;
-}
 .shadow {
-	box-shadow: -6px 6px 6px -8px #000,
-				6px -6px 6px -8px #000,
-				-6px -6px 6px -8px #000,
-				7px 7px 6px -10px #000,
-				-7px 7px 6px -10px #000,
-				7px -7px 6px -10px #000,
-				-7px -7px 6px -10px #000;
+	box-shadow: 5px -5px 0 0px #CCC,
+				4px -4px 0 0px #CCC,
+				3px -3px 0 0px #CCC,
+				2px -2px 0 0px #CCC,
+				1px -1px 0 0px #CCC,
+				
+				6px -7px 6px 0px #CCC;
 }
-.row{
-	background: #FFF;
-}
+
 #header {
-	padding-top: 20px;
-	padding-bottom: 10px;
-	font-size: 30px;
-	line-height: 50px;
+	font-size: 20px;
 	letter-spacing: -1 px;
 	text-align: center;
 	border-bottom: 3px solid #0088EE;
 }
 #header h1 {
 	font-size: 2em;
-	padding-bottom: 10px;
 }
 #header p {
 	font-size: 1em;
@@ -36,84 +25,42 @@ body {
 	text-decoration: inherit;
 }
 #header h1:hover {
-	text-decoration: underline;
 	color: #0088EE;
 }
-#header #nav {
-	padding: 0;
-	margin: 0;
-	font-size: 1em;
-}
 
-#header #nav li {
-	display: inline;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+#content {
+	position: relative;
+	left: -10px;
 }
-#header #nav li a {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	margin-left: 5px;
-	margin-right: 5px;
-
-	color: #0088EE;
-	
-	border-radius: 3px;
-	border: 2px solid rgba(0,0,0,.5);
-
-	text-decoration: none;
+@media handheld, only screen and (max-width: 767px) {
+	#sidebar {
+		position: relative;
+		left: -10px;
+	}
 }
-#header #nav li a:hover {
-	background: #0088EE;
-	color: #FFF;
+#sidebar, #content {
+	margin-top: 20px;
 }
-
-#sidebar-left, #content {
-	padding-top: 10px;
-}
-#sidebar-left {
+#sidebar-inner, #content-inner {
 	background: rgba(0,0,0,.05);
 	padding: 10px;
-	margin: 10px;
 }
 
-#content .divider {
+/* Dividers */
+.divider {
 	border-bottom: 2px solid rgba(0,0,0,.5);
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-#content > .divider:last-child {
+* > .divider:last-child {
 	border-bottom: none;
 	margin-bottom: none;
 }
-#content * {
-	margin-bottom: 10px;
-}
-#content p {
-	font-size: 1.2em;
-	line-height: 1.2em;
-}
-#content p::first-letter {
-	text-transform: uppercase;
-}
-li {
-	padding-left: 1em;
-}
-ul, ol {
-	list-style-position: inside;
-}
-#content > ul, #content > ol {
+
+*:not(ul, ol) > ul, *:not(ul, ol) > ol {
 	list-style-position: outside;
-	/*background: rgba(0,0,0,.05);*/
 	border: 1px solid rgba(0,0,0,.2);
 	padding-bottom: 2px;
 	padding-top: 2px;
 	border-radius: 3px;
-}
-.post {
-	border-left: 1px solid #0088EE;
-	padding-left: 15px;
 }
