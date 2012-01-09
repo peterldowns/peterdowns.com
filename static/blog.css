@@ -1,5 +1,6 @@
 body {
 	background: url(/static/background.png);
+	background: url(/static/project-paper.png);
 	color: #444;
 }
 .row{
@@ -64,8 +65,14 @@ body {
 #sidebar-left, #sidebar-right, #content {
 	padding-top: 10px;
 }
-#sidebar-left, #sidebar-right {
+#sidebar-left h1, #sidebar-right h1 {
 	text-align: center;
+}
+#sidebar-left, #sidebar-right {
+	background: rgba(0,0,0,.05);
+	border-left: 1px solid #0088EE;
+	padding: 10px;
+	margin: 10px;
 }
 
 #content .divider {
@@ -87,10 +94,10 @@ body {
 #content p::first-letter {
 	text-transform: uppercase;
 }
-#content li {
+li {
 	padding-left: 1em;
 }
-#content ul, #content ol {
+ul, ol {
 	list-style-position: inside;
 }
 #content > ul, #content > ol {
@@ -102,6 +109,6 @@ body {
 	border-radius: 3px;
 }
 .post {
-	border-left: 2px solid #0088EE;
+	border-left: 1px solid #0088EE;
 	padding-left: 15px;
 }
