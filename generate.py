@@ -42,7 +42,9 @@ from operator import itemgetter
 # sort posts
 posts = posts.values(); posts.sort(key=itemgetter('timestamp'), reverse=True)
 
+
 # render archive page
+print "Writing homepage -> index.html"
 with open('index.html', 'w') as fout:
 	@view('index.tpl')
 	def renderArchive():
@@ -59,8 +61,10 @@ try:
 except OSError:
 	pass
 
+print "Writing {} posts:".format(num_posts)
 # render each post
 for post in posts:
+	print "\t[{} / {}] {} -> {}".format(num+1, num_posts, title, post['url'])
 	with open(post['url'], 'w') as fout: # url as path. IKR!?!?
 		@view('index.tpl')
 		def renderPost():
