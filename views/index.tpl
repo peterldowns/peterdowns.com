@@ -24,7 +24,7 @@
 		</div>
 		<div class="row">
 			<div class="threecol">
-			<div id="sidebar-left">
+			<div id="sidebar-left" class="shadow">
 				<h3>About</h3>
 				<p>Hi. I'm Peter Downs. I'm a highschool student in the US, but I'll soon
 				be heading off to university. I like reading, running, and programming; this
@@ -68,7 +68,7 @@
 			</div>
 			
 			<div class="threecol last">
-			<div id="sidebar-right">
+			<div id="sidebar-right" class="shadow">
 				<h3> Contact </h3>
 				<ul>
 					<li> peter.l.downs@gmail.com </li>
