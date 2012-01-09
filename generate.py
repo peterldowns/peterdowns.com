@@ -5,6 +5,9 @@ import os
 import sys
 import json
 import markdown
+from bottle import template, view
+
+POSTS_FOLDER = 'posts'
 
 # Build the JSON dict of posts and HTML
 posts = {}
@@ -22,7 +25,7 @@ for num, filepath in enumerate(sys.argv[1:]):
 		md_content = ""
 	timestamp, md_content = md_content.split('\n', 1)
 	post = {
-		"url" : "/posts/{}".format(title),
+		"url" : "{}/{}.html".format(POSTS_FOLDER, title),
 		"path" : filename,
 		"html" : markdown.markdown(md_content),
 		"title" : " ".join(map(str.capitalize, title.split('-'))),
@@ -35,3 +38,40 @@ with open('posts.json', 'w') as fout:
 	fout.write(json.dumps(posts, sort_keys=True, indent=4))
 
 print "Done."
+
+from operator import itemgetter
+
+# sort posts
+posts = posts.values(); posts.sort(key=itemgetter('timestamp'), reverse=True)
+
+# render archive page
+with open('index.html', 'w') as fout:
+	@view('index.tpl')
+	def renderArchive():
+		return {
+			"posts" : posts,
+			"view" : "archive"
+		}
+	t = renderArchive()
+	print t
+	fout.write(t)
+
+# make posts folder
+try:
+	os.mkdir(POSTS_FOLDER)
+except OSError:
+	pass
+
+# render each post
+for post in posts:
+	with open(post['url'], 'w') as fout: # url as path. IKR!?!?
+		@view('index.tpl')
+		def renderPost():
+			return {
+				"post" : post,
+				"view" : "post"
+			}
+		t = renderPost()
+		print t
+		fout.write(t)
+
