@@ -16,8 +16,8 @@
 				<p> Student, Hacker, Human </p>
 				<div id="nav">
 				<ul>
-					<li><a href="#"> Projects </a></li>
 					<li><a href="#"> Blog </a></li>
+					<li><a href="#"> Bio </a></li>
 					<li><a href="#"> Contact </a></li>
 				</ul>
 				</div>
@@ -25,18 +25,18 @@
 		</div>
 		<div class="row">
 			<div id="sidebar-left" class="threecol">
-				<h1> This is my website </h1>
-				<p> It's not really for anyone but me, but you're welcome to enjoy it, too. </p>
-				<img src="/static/headshot.jpg" />
 			</div>
-			<div id="content" class="sixcol last">
+
+			<div id="content" class="sixcol">
+			
 			%if view == "archive":
 				<div class="archives" style="text-align: center;">
+				<h1> All Posts </h1>
 				%for post in posts:
-					<a href="/post/{{post['title']}}"> {{post['title']}} </a>
+					<a href="{{post['url']}}"> {{post['title']}} </a>
 				%end
+		
 			%elif view == "post":
-				%for post in posts:
 				<div class="post">
 					<div class="info">
 					%if post['timestamp']:
@@ -46,8 +46,9 @@
 					{{!post['html']}}
 				</div>
 				<div class="divider"></div>
-				%end
 			%end
+			</div>
+			<div id="sidebar-right" class="threecol last">
 			</div>
 		</div>
 	</div>

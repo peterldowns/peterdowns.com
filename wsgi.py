@@ -37,8 +37,10 @@ class website():
 	def viewPost(title):
 		try:
 			post = getPost(title)
+			print title
+			print post
 			return {
-				"posts" : [post],
+				"post" : post,
 				"view" : "post"
 			}
 		except Exception as e:
