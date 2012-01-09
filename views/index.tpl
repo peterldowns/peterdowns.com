@@ -11,39 +11,34 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div id="header" class="twelvecol last">
+			<div class="onecol">
+			</div>
+			<div id="header" class="tencol">
 				<a href="/"><h1> Peter Downs </h1></a>
-				<p> Student, Hacker, Human </p>
-				<!--
-				<div id="nav">
-					<li><a href="/"> Blog </a></li>
-				</ul>
-				</div>
-				-->
+				<p> Student / Hacker / Human </p>
+			</div>
+			<div class="onecol last">
 			</div>
 		</div>
 		<div class="row">
-			<div class="threecol">
-			<div id="sidebar-left" class="shadow">
-				<h3>About</h3>
-				<p>Hi. I'm Peter Downs. I'm a highschool student in the US, but I'll soon
-				be heading off to university. I like reading, running, and programming; this
-				blog is my experiment with writing.</p>
-				<br />
-				<h3>Things I like:</h3>
-				<ul>
-					<li>Python</li>
-					<li>Winning 5k races</li>
-					<li>"The Laughing Sutra"</li>
-					<li>Intelligent discussion</li>
-					<li>Fine suits</li>
-					<li>Markdown</li>
-					<li>Learning new things</li>
-				</ul>
+			<div class="onecol">
 			</div>
+			<div class="threecol">
+				<div id="sidebar-left" class="shadow">
+					<h3 style="text-align: center; text-decoration: underline;"> About </h3>
+					<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.
+					I like to read, run, and program. This blog is my experiment with writing. </p>
+				
+					<h3 style="text-align: center; text-decoration: underline;"> Contact </h3>
+					<p>&mdash; peter.l.downs@gmail.com</p>
+					<p>&mdash; <a href="https://twitter.com/peterldowns">@peterldowns</a></p>
+					<p>&mdash; <a href="https://github.com/peterldowns">@ Github</a></p>
+					<p>&mdash; <a href="http://stackoverflow.com/users/829926/peter-downs">@ Stack Overflow</a></p>
+					<p>&mdash; <a href="https://facebook.com/peter.downs">@ Facebook</a></p>
+				</div>
 			</div>
 
-			<div id="content" class="sixcol">
+			<div id="content" class="sevencol">
 			%if view == "archive":
 				<div class="archives" style="text-align: center;">
 				<h1> All Posts </h1>
@@ -67,21 +62,7 @@
 			%end
 			</div>
 			
-			<div class="threecol last">
-			<div id="sidebar-right" class="shadow">
-				<h3> Contact </h3>
-				<ul>
-					<li> peter.l.downs@gmail.com </li>
-					<li> <a href="https://twitter.com/peterldowns">@peterldowns</a> </li>
-				</ul>
-				<br />
-				<h3> Profiles </h3>
-				<ul>
-					<li> <a href="https://github.com/peterldowns">github</a> </li>
-					<li> <a href="http://stackoverflow.com/users/829926/peter-downs">stack overflow</a> </li>
-					<li> <a href="https://facebook.com/peter.downs">facebook</a> </li>
-				</ul>
-			</div>
+			<div class="onecol last">
 			</div>
 		</div>
 	</div>
