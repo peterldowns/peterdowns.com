@@ -37,8 +37,6 @@ for num, filepath in enumerate(sys.argv[1:]):
 with open('posts.json', 'w') as fout:
 	fout.write(json.dumps(posts, sort_keys=True, indent=4))
 
-print "Done."
-
 from operator import itemgetter
 
 # sort posts
@@ -53,7 +51,6 @@ with open('index.html', 'w') as fout:
 			"view" : "archive"
 		}
 	t = renderArchive()
-	print t
 	fout.write(t)
 
 # make posts folder
@@ -72,6 +69,5 @@ for post in posts:
 				"view" : "post"
 			}
 		t = renderPost()
-		print t
 		fout.write(t)
 
