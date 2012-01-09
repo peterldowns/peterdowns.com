@@ -26,7 +26,7 @@ for filepath in sys.argv[1:]:
 		"path" : filename,
 		"html" : markdown.markdown(md_content),
 		"timestamp" : timestamp,
-		"title" : title
+		"title" : " ".join(map(str.capitalize, title.split('-')))
 	}
 	posts[title] = post
 
