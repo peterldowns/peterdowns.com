@@ -25,7 +25,8 @@ for filepath in sys.argv[1:]:
 	post = {
 		"path" : filename,
 		"html" : markdown.markdown(md_content),
-		"timestamp" : timestamp
+		"timestamp" : timestamp,
+		"title" : title
 	}
 	posts[title] = post
 
