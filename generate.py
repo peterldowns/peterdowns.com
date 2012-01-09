@@ -8,13 +8,12 @@ import markdown
 
 # Build the JSON dict of posts and HTML
 posts = {}
-for filepath in sys.argv[1:]:
-	print filepath
+num_posts = len(sys.argv)-1
+print "Building {} posts:".format(num_posts)
+for num, filepath in enumerate(sys.argv[1:]):
 	filename = filepath.split(os.sep)[-1]
-	print filename
 	title = filename.split('.md')[0]
-	print title
-	print ""
+	print "\t[{} / {}] {} -> {}".format(num+1, num_posts, filepath, title)
 	try:
 		with open(filepath) as fin:
 			md_content = fin.read()
@@ -23,10 +22,11 @@ for filepath in sys.argv[1:]:
 		md_content = ""
 	timestamp, md_content = md_content.split('\n', 1)
 	post = {
+		"url" : "/posts/{}".format(title),
 		"path" : filename,
 		"html" : markdown.markdown(md_content),
-		"timestamp" : timestamp,
-		"title" : " ".join(map(str.capitalize, title.split('-')))
+		"title" : " ".join(map(str.capitalize, title.split('-'))),
+		"timestamp" : timestamp
 	}
 	posts[title] = post
 
@@ -34,3 +34,4 @@ for filepath in sys.argv[1:]:
 with open('posts.json', 'w') as fout:
 	fout.write(json.dumps(posts, sort_keys=True, indent=4))
 
+print "Done."
