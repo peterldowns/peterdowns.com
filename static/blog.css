@@ -71,15 +71,11 @@ body {
 	color: #FFF;
 }
 
-#sidebar-left, #sidebar-right, #content {
+#sidebar-left, #content {
 	padding-top: 10px;
 }
-#sidebar-left h1, #sidebar-right h1 {
-	text-align: center;
-}
-#sidebar-left, #sidebar-right {
+#sidebar-left {
 	background: rgba(0,0,0,.05);
-	/*border-left: 1px solid #0088EE;*/
 	padding: 10px;
 	margin: 10px;
 }
