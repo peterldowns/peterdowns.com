@@ -27,9 +27,16 @@
 			<div id="sidebar-left" class="threecol">
 				<h1> This is my website </h1>
 				<p> It's not really for anyone but me, but you're welcome to enjoy it, too. </p>
+				<img src="/static/headshot.jpg" />
 			</div>
 			<div id="content" class="sixcol last">
-			%for post in posts:
+			%if view == "archive":
+				<div class="archives" style="text-align: center;">
+				%for post in posts:
+					<a href="/post/{{post['title']}}"> {{post['title']}} </a>
+				%end
+			%elif view == "post":
+				%for post in posts:
 				<div class="post">
 					<div class="info">
 					%if post['timestamp']:
@@ -39,6 +46,7 @@
 					{{!post['html']}}
 				</div>
 				<div class="divider"></div>
+				%end
 			%end
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-from bottle import route, request, view, static_file, default_app, debug, run
+from bottle import route, request, view, static_file, default_app, debug, run, redirect
 debug(True)
 import json
 
@@ -24,33 +24,27 @@ def getPost(title, postsf="posts.json"):
 
 class website():
 	@route('/', 'GET')
-	@view('blog')
-	def recentPosts():
+	@view('index')
+	def allPosts():
 		allposts = allPosts()
-		postns = allposts.keys()[0:5]
-		posts = filter(lambda x: x, [getPost(p) for p in postns]) # only valid posts
-		return {"posts" : posts}
+		return {
+			"posts" : [allposts[p] for p in allposts],
+			"view" : "archive",
+		}
 
 	@route('/posts/:title#.+#')
-	@view('blog')
+	@view('index')
 	def viewPost(title):
 		try:
 			post = getPost(title)
-			return {"posts" : [post] }
+			return {
+				"posts" : [post],
+				"view" : "post"
+			}
 		except Exception as e:
 			print e
-			return {"posts" : []}
+			redirect("/")
 
-	@route('/projects')
-	@view('projects')
-	def projects():
-		return {}
-
-	@route('contact')
-	@view('contact')
-	def contact():
-		return {}
-	
 if __name__ == "__main__":
 	run(host='localhost', port=8080)
 else:
