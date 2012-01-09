@@ -21,6 +21,14 @@ body {
 #header p {
 	font-size: 1em;
 }
+#header a {
+	color: inherit;
+	text-decoration: inherit;
+}
+#header h1:hover {
+	text-decoration: underline;
+	color: #0088EE;
+}
 #header #nav {
 	padding: 0;
 	margin: 0;

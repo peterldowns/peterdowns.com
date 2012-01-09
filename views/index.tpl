@@ -12,15 +12,14 @@
 	<div class="container">
 		<div class="row">
 			<div id="header" class="twelvecol last">
-				<h1> Peter Downs </h1>
+				<a href="/"><h1> Peter Downs </h1></a>
 				<p> Student, Hacker, Human </p>
+				<!--
 				<div id="nav">
-				<ul>
-					<li><a href="#"> Blog </a></li>
-					<li><a href="#"> Bio </a></li>
-					<li><a href="#"> Contact </a></li>
+					<li><a href="/"> Blog </a></li>
 				</ul>
 				</div>
+				-->
 			</div>
 		</div>
 		<div class="row">
