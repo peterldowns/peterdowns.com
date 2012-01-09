@@ -27,7 +27,7 @@
 					<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.
 					I like to read, run, and program. This blog is my experiment with writing. </p>
 				
-					<h3 style="text-align: center; text-decoration: underline;"> Contact </h3>
+					<h3> Contact </h3>
 					<p>&mdash; peter.l.downs@gmail.com</p>
 					<p>&mdash; <a href="https://twitter.com/peterldowns">@peterldowns </a></p>
 					<p>&mdash; <a href="https://github.com/peterldowns"> Github </a></p>
