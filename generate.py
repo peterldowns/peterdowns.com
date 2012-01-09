@@ -34,8 +34,8 @@ for num, filepath in enumerate(sys.argv[1:]):
 	posts[title] = post
 
 # Write it to file
-with open('posts.json', 'w') as fout:
-	fout.write(json.dumps(posts, sort_keys=True, indent=4))
+#with open('posts.json', 'w') as fout:
+	#fout.write(json.dumps(posts, sort_keys=True, indent=4))
 
 from operator import itemgetter
 
