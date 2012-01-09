@@ -23,7 +23,7 @@
 		<div class="row">
 			<div id="sidebar" class="fourcol">
 				<div id="sidebar-inner" class="shadow">
-					<h3 style="text-align: center; text-decoration: underline;"> About </h3>
+					<h3> About </h3>
 					<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.
 					I like to read, run, and program. This blog is my experiment with writing. </p>
 				
