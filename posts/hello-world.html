@@ -4,12 +4,13 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/1140/1140.css" media="screen" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="/static/css/1140/ie.css" type="text/css" media="screen" /><![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />
+	<!--<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />-->
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
 	
 	<!-- My stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+	<title> Peter Downs - Student / Hacker / Human </title>
 </head>
 <body>
 	<div class="container">
