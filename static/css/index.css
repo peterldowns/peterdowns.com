@@ -9,9 +9,6 @@
 	text-align: left;
 	padding: 10px;
 }
-a {
-	text-decoration: none;
-}
 #header h1 {
 	font-size: 40px;
 }
@@ -42,4 +39,7 @@ hr {
 	padding-bottom: 2px;
 	padding-top: 2px;
 	border-radius: 3px;
+}
+a {
+	text-decoration: none;
 }
