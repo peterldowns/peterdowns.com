@@ -19,7 +19,8 @@ body {
     margin: 10px 13px 10px 13px;
 }
 a {
-    color: #0069d6;
+	color: #0088EE;
+    text-decoration: none;
 }
 a:hover {
     color: #0050a3;
