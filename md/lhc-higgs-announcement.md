@@ -4,7 +4,7 @@ Thursday, January 12, 2012
 ### *An article for [The Harriton Banner](http://www.hhsbanner.com/)*
 ##### note: this as written as a general overview that assumes no background knowledge.
 
-Just around a month before this was written some, smart people held a talk about something called the Higgs Boson. If you read science news you may have even heard something about it, because it was surrounded by a lot of media hype (ok, a relatively large amount for the world of particle physics.)
+Just around a month before this was written some smart people held a talk about something called the Higgs Boson. If you read science news you may have even heard something about it, because it was surrounded by a lot of media hype (ok, a relatively large amount for the world of particle physics.)
 
 These smart people are researchers at CERN, the European Organization for Nuclear Research, and they had been (and still are) trying to figure out if a certain particle (the Higgs Boson) exists. Just like any scientists, they use tools to do their work; unlike most other scientists, their tool has a fancy name (the Large Hadron Collider, or LHC) and is 27 kilometers long. 
 
