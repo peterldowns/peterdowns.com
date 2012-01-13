@@ -9,7 +9,7 @@
 	text-align: left;
 	padding: 10px;
 }
-#header a {
+a {
 	text-decoration: none;
 }
 #header h1 {
@@ -26,7 +26,6 @@
 	margin-bottom: 10px;
 }
 hr {
-	/*height: 2px;*/
 	background-color: #CCC;
 	border: none;
 }

@@ -43,7 +43,7 @@
 					<div class="archives" style="text-align: center;">
 						<h1> All Posts </h1>
 					%for post in posts:
-						<a href="{{post['url']}}"><h2>{{post['title']}}</h2></a>
+						<a href="{{post['url']}}"><h4>{{post['title']}}</h4></a>
 						<br />
 					%end
 					</div>
