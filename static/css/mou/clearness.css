@@ -10,10 +10,12 @@ blockquote {
     padding: 0;
 }
 body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
+    /*font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;*/
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	line-height: 145%;
+	letter-spacing:0.1em;
+	color: #222;
     margin: 10px 13px 10px 13px;
 }
 a {

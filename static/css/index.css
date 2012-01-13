@@ -1,62 +1,42 @@
-.shadow {
-	box-shadow: 5px -5px 0 0px #CCC,
-				4px -4px 0 0px #CCC,
-				3px -3px 0 0px #CCC,
-				2px -2px 0 0px #CCC,
-				1px -1px 0 0px #CCC,
-				
-				6px -7px 6px 0px #CCC;
+#sidebar-inner, #content-inner {
+	border: 2px solid #CCC;
+	padding: 10px;
 }
-
+#sidebar, #content {
+	margin-bottom: 10px;
+}
 #header {
-	font-size: 20px;
-	letter-spacing: -1 px;
-	text-align: center;
-	border-bottom: 3px solid #0088EE;
-}
-#header h1 {
-	font-size: 2em;
-}
-#header p {
-	font-size: 1em;
+	text-align: left;
+	padding: 10px;
 }
 #header a {
-	color: inherit;
-	text-decoration: inherit;
+	text-decoration: none;
+}
+#header h1 {
+	font-size: 40px;
+}
+#header p {
+	font-size: 15px;
 }
 #header h1:hover {
 	color: #0088EE;
 }
-
-#content {
-	position: relative;
-	left: -10px;
-}
-@media handheld, only screen and (max-width: 767px) {
-	#sidebar {
-		position: relative;
-		left: -10px;
-	}
-}
-#sidebar, #content {
-	margin-top: 20px;
-}
-#sidebar-inner, #content-inner {
-	background: rgba(0,0,0,.05);
-	padding: 10px;
-}
-
-/* Dividers */
-.divider {
-	border-bottom: 2px solid rgba(0,0,0,.5);
-	margin-top: 10px;
+.post * {
+	padding-bottom: 10px;
 	margin-bottom: 10px;
 }
-* > .divider:last-child {
-	border-bottom: none;
-	margin-bottom: none;
+hr {
+	/*height: 2px;*/
+	background-color: #CCC;
+	border: none;
 }
+@media handheld, only screen and (max-width: 767px) {
+	#sidebar, #content {
+		position: relative;
+		left: -12px;
 
+	}
+}
 *:not(ul, ol) > ul, *:not(ul, ol) > ol {
 	list-style-position: outside;
 	border: 1px solid rgba(0,0,0,.2);
