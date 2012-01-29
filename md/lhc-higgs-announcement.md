@@ -1,14 +1,16 @@
 Thursday, January 12, 2012
 
 # On the Higgs
-### *An article for [The Harriton Banner](http://www.hhsbanner.com/)*
-##### note: this as written as a general overview that assumes no background knowledge.
+
+### An article for [The Harriton Banner](http://www.hhsbanner.com/)
+
+#### *note: this was written as a general overview of the 12/06/2011 CERN presentation. I've attempted to write it in [Simplified English](http://en.wikipedia.org/wiki/Simplified_English), for no reason in particular.*
 
 Just around a month before this was written some smart people held a talk about something called the Higgs Boson. If you read science news you may have even heard something about it, because it was surrounded by a lot of media hype (ok, a relatively large amount for the world of particle physics.)
 
 These smart people are researchers at CERN, the European Organization for Nuclear Research, and they had been (and still are) trying to figure out if a certain particle (the Higgs Boson) exists. Just like any scientists, they use tools to do their work; unlike most other scientists, their tool has a fancy name (the Large Hadron Collider, or LHC) and is 27 kilometers long. 
 
-The LHC is the world's largest particle collider. Using superconducting magnets, along with a _lot_ of physics knowledge, scientists are able to smash clouds of, tiny particles together. The LHC is able to smash things together with much more energy than any other collider in the world. 
+The LHC is the world's largest particle collider. Using superconducting magnets, along with a _lot_ of physics knowledge, scientists are able to smash clouds of tiny particles together. The LHC is able to smash things together with much more energy than any other collider in the world. 
 
 The reason the LHC exists is to tell us more about the way the world works, particularly at a subatomic level. Currently, the way scientists generally agree that things are is described by the _Standard Model_. In a way it represents the pinnacle of human achievement: it contains all of our knowledge of the universe, from big to small.
 		
@@ -18,7 +20,7 @@ Maybe if you've studied some more physics you've learned that mass is relative w
 
 But no matter how much you learned about mass in the previous paragraph, I'm certain that you don't know _why_ things have mass. That's because no one knows why things have mass, including scientists. The experiments they've performed don't show any one reason that things should have mass.
 
-This hasn't stopped scientists from coming up with theories, though. One of these scientists, Peter Higgs, suggests that mass is dependent on the existence of a subatomic particle which is commonly referred to as the Higgs Boson. This theory is popular enough (and the science behind it sound enough) that it is included in the Standard Model.
+This hasn't stopped scientists from coming up with theories, though. One scientist, Peter Higgs, suggests that mass is dependent on the existence of a subatomic particle which is commonly referred to as the Higgs Boson. This theory is popular enough (and the science behind it sound enough) that it is included in the Standard Model.
 
 The LHC exists for many reasons, but one of its principal goals is to determine whether or not the Higgs Boson exists. The least surprising discovery would be that the Higgs Boson exists and the Standard Model is still true. 
 
