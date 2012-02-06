@@ -13,7 +13,7 @@ It's astonishing how much people will give you if you ask for it. Even if you do
 
 I got my first real job by asking for it. I emailed Rick Van Berg, a staff scientist at UPenn's High Energy Physics Lab, asking if he had any positions available for a summer intern. He did; I set up an interview and got the job. It was as simple as asking for it. Had I not asked, though, he would never have hired me ()I doubt he would have ever met me!).
 
-Recently, I've been thinking about the future. MIT accepted my application, and I'll probably start going to school there starting next fall. I'm pretty excited about going off to university, but I'm not sure what I want to study in or what I want to do with my life. So I asked David Albert, one of the founders of Hackruiter, to Skype with me.
+Recently, I've been thinking about the future. MIT accepted my application, and I'll probably start going to school there starting next fall. I'm pretty excited about going off to university, but I'm not sure what I want to study in or what I want to do with my life. So I asked [David Albert](http://dave.is/), one of the founders of [Hackruiter](http://www.hackruiter.com/about), to Skype with me.
 
 We ended up talking for about 20 minutes. We talked about a lot of things, but two pieces of advice he gave me really stuck out. Paraphrased here:
 
