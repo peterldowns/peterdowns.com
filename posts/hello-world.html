@@ -1,5 +1,8 @@
 <doctype HTML>
 <head>
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
+
 	<! -- 1140px Grid -->
 	<link rel="stylesheet" type="text/css" href="/static/css/1140/1140.css" media="screen" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="/static/css/1140/ie.css" type="text/css" media="screen" /><![endif]-->
