@@ -1,7 +1,4 @@
-Summary: background information on an Applescript to open iTerm in a given directory.  
-Authors: Peter Downs  
-Date: March 14, 2012  
-
+Wednesday, March 14, 2012  
 # Opening iTerm From a Finder Directory
 
 If, like me, you work mostly from OS X, you've probably already discovered [iTerm2][1]. If you haven't: it's an incredibly good replacement for the default Terminal application. Combined with the [solarized][2] color scheme, it does what all software should: it fades away and lets me get my work done without an issue.
