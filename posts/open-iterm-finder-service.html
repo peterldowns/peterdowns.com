@@ -1,0 +1,91 @@
+<doctype HTML>
+<head>
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
+
+	<! -- 1140px Grid -->
+	<link rel="stylesheet" type="text/css" href="/static/css/1140/1140.css" media="screen" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/static/css/1140/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!--<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />-->
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
+	
+	<!-- My stylesheets -->
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+	<title> Peter Downs - Student / Hacker / Human </title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div id="header" class="twelvecol last">
+				<a href="/"><h1> Peter Downs </h1></a>
+				<p> Student / Hacker / Human </p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="sidebar" class="fourcol">
+				<div id="sidebar-inner" class="shadow">
+					<h3> About </h3>
+					<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.
+					I like to read, run, and program. This blog is my experiment with writing. </p>
+				
+					<h3> Contact </h3>
+					<p>&mdash; peter.l.downs@gmail.com</p>
+					<p>&mdash; <a href="https://twitter.com/peterldowns">@peterldowns </a></p>
+					<p>&mdash; <a href="https://github.com/peterldowns"> Github </a></p>
+					<p>&mdash; <a href="http://stackoverflow.com/users/829926/peter-downs"> Stack Overflow </a></p>
+					<p>&mdash; <a href="https://facebook.com/peter.downs"> Facebook </a></p>
+				</div>
+			</div>
+
+			<div id="content" class="eightcol last">
+				<div id="content-inner" class="shadow">
+					<div class="post"><!--
+						<div class="info">
+							<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">Wednesday, March 14, 2012  </p>
+						</div>-->
+						<h1>Opening iTerm From a Finder Directory</h1>
+<p>If, like me, you work mostly from OS X, you've probably already discovered <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=iterm&amp;source=web&amp;cd=8&amp;ved=0CGIQFjAH&amp;url=http%3A%2F%2Fwww.iterm2.com%2F&amp;ei=7qlgT6G3Ao2IrAfhtISaBg&amp;usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA">iTerm2</a>. If you haven't: it's an incredibly good replacement for the default Terminal application. Combined with the <a href="http://www.google.com/url?sa=t&amp;rct=j&amp;q=iterm&amp;source=web&amp;cd=8&amp;ved=0CGIQFjAH&amp;url=http%3A%2F%2Fwww.iterm2.com%2F&amp;ei=7qlgT6G3Ao2IrAfhtISaBg&amp;usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA">solarized</a> color scheme, it does what all software should: it fades away and lets me get my work done without an issue.</p>
+<p>If you're like me in another way, you will occasionally use the Finder to browse through your files. The problem is that it's difficult to open an iTerm window set to the current Finder directory.</p>
+<p>A couple of different people have come up with solutions. <a href="http://snippets.dzone.com/user/SimonDorfman">Simon Dorfman</a> came up with <a href="http://snippets.dzone.com/posts/show/961">an Applescript</a> to keep in the Finder sidebar or your dock; it opens iTerm tabs in any directory dropped on it. <a href="http://benalman.com/">Ben Alman</a> wrote <a href="https://gist.github.com/905546">a similar script</a> that does the same thing. But both of these require you to drag and drop an item onto a script that takes up space in your sidebar or dock.</p>
+<p>I didn't want to clutter up my dock or Finder sidebar with a droppable script, so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder service.  Here's the script:</p>
+<pre><code>on run {input, parameters}
+    tell application "Finder"
+        set dir_path to "\"" &amp; (POSIX path of (input as string)) &amp; "\""
+            -- display dialog dir_path
+    end tell
+    CD_to(dir_path)
+end run
+
+on CD_to(theDir)
+    tell application "iTerm"
+        activate
+        try
+            set t to the last terminal
+        on error
+            set t to (make new terminal)
+        end try
+        tell t
+            launch session "Default Session"
+            tell the last session
+                write text "cd " &amp; theDir &amp; ";clear;ls"
+            end tell
+        end tell
+    end tell
+end CD_to
+</code></pre>
+<p>Using Automator, create a new "Service" that accepts folders in Finder.</p>
+<p><img alt="setting up the service" src="/static/img/applescript_service.tiff" title="Setting up the service" /></p>
+<p>Add a "Run Applescript" action and paste in the above code.
+Save it as whatever you'd like - I saved mine as "open_iterm". Now, you can just right-click any folder from within Finder to 
+open an iTerm tab there. Cool.</p>
+<p><img alt="the service in action" src="/static/img/applescript_service_in_action.tiff" title="Using the new service" /></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</doctype>

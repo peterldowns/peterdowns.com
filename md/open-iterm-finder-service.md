@@ -53,5 +53,5 @@ open an iTerm tab there. Cool.
 [6]: https://gist.github.com/905546
 [7]: https://github.com/lsloan
 [8]: https://gist.github.com/1265327
-[9]: /static/img/applescript_service.tff "Setting up the service"
+[9]: /static/img/applescript_service.tiff "Setting up the service"
 [10]: /static/img/applescript_service_in_action.tiff "Using the new service"
