@@ -9,14 +9,15 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 200px;
+	width: 250px;
 	margin: none;
 	margin: 10px;
+	border-right: 1px red;
 }
 #content {
 	position: absolute;
 	top: 0;
-	left: 200;
+	left: 250;
 	bottom: 0;
 	right: 0;
 	margin: none;
