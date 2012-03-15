@@ -33,7 +33,7 @@
 	<div id="content" class="content">
 		<div id="content-inner" class="shadow">
 		%if view == "archive":
-			<div class="archives" style="text-align: center;">
+			<div class="archives">
 				<h1> All Posts </h1>
 			%for post in posts:
 				<h4><a href="{{post['HTMLpath']}}">{{post['title']}}</a></h4>
