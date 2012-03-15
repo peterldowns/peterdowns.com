@@ -44,11 +44,9 @@
 
 		%elif view == "post":
 			<div class="post">
-				<div class="info">
 				%if post['date']:
-					<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">{{post['date']}}</p>
+					<p style="font-weight: 1000000; text-decoration: underline;">{{post['date']}}</p>
 				%end
-				</div>
 				{{!post['html']}}
 			</div>
 		%end
