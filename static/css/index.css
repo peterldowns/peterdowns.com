@@ -5,8 +5,27 @@ body {
 	letter-spacing:0.1em;
 }
 
+#sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	margin: none;
+	margin: 10px;
+}
+#content {
+	position: absolute;
+	top: 0;
+	left: 200;
+	bottom: 0;
+	right: 0;
+	margin: none;
+	padding: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
 #sidebar-inner, #content-inner {
-	border: 2px solid #CCC;
 	padding: 10px;
 }
 #sidebar, #content {
@@ -28,7 +47,6 @@ body {
 }
 hr {
 	background-color: #CCC;
-	border: none;
 }
 @media handheld, only screen and (max-width: 767px) {
 	#sidebar, #content {

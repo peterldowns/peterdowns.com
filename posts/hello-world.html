@@ -2,51 +2,41 @@
 <head>
 	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
-
 	<! -- 1140px Grid -->
 	<link rel="stylesheet" type="text/css" href="/static/css/1140/1140.css" media="screen" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="/static/css/1140/ie.css" type="text/css" media="screen" /><![endif]-->
-
 	<!--<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />-->
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
-	
 	<!-- My stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
 	<title> Peter Downs - Student / Hacker / Human </title>
 </head>
+
 <body>
-	<div class="container">
-		<div class="row">
-			<div id="header" class="twelvecol last">
-				<a href="/"><h1> Peter Downs </h1></a>
-				<p> Student / Hacker / Human </p>
-			</div>
+	<div id="sidebar" class="sidebar">
+		<div id="header">
+			<a href="/"><h1> Peter Downs </h1></a>
+			<p> Student / Hacker / Human </p>
 		</div>
-
-		<div class="row">
-			<div id="sidebar" class="fourcol">
-				<div id="sidebar-inner" class="shadow">
-					<h3> About </h3>
-					<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.
-					I like to read, run, and program. This blog is my experiment with writing. </p>
-				
-					<h3> Contact </h3>
-					<p>&mdash; peter.l.downs@gmail.com</p>
-					<p>&mdash; <a href="https://twitter.com/peterldowns">@peterldowns </a></p>
-					<p>&mdash; <a href="https://github.com/peterldowns"> Github </a></p>
-					<p>&mdash; <a href="http://stackoverflow.com/users/829926/peter-downs"> Stack Overflow </a></p>
-					<p>&mdash; <a href="https://facebook.com/peter.downs"> Facebook </a></p>
+		<div id="sidebar-inner" class="shadow">
+			<h3> About </h3>
+			<p> I'm <b>Peter Downs</b>. I'm a highschool (going on university) student in the US.  I like to read, run, and program. This blog is my experiment with writing. </p>
+			<h3> Contact </h3>
+			<p>&mdash; peter.l.downs@gmail.com</p>
+			<p>&mdash; <a href="https://twitter.com/peterldowns">@peterldowns </a></p>
+			<p>&mdash; <a href="https://github.com/peterldowns"> Github </a></p>
+			<p>&mdash; <a href="http://stackoverflow.com/users/829926/peter-downs"> Stack Overflow </a></p>
+			<p>&mdash; <a href="https://facebook.com/peter.downs"> Facebook </a></p>
+		</div>
+	</div>
+	<div id="content" class="content">
+		<div id="content-inner" class="shadow">
+			<div class="post">
+				<div class="info">
+					<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">Sunday, January 8, 2012</p>
 				</div>
-			</div>
-
-			<div id="content" class="eightcol last">
-				<div id="content-inner" class="shadow">
-					<div class="post"><!--
-						<div class="info">
-							<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">Sunday, January 8, 2012</p>
-						</div>-->
-						<h1>Hello, World!</h1>
+				<h1>Hello, World!</h1>
 <p>Hello. As you can see in the side bar, my name is Peter. I like to read, run, and program, but now I'm starting to write, too. This is my blog. I'm going to try to update it pretty often; for the past year I've been keeping a list of ideas about which I'd like to write.</p>
 <h3>Why?</h3>
 <p>I've been meaning to start a blog for a while. I haven't gone through with it -- I never really liked tumblr, or blogger, or any other blogging system. I think that writing is important, and that I should start contributing something online instead of just reading posts on <a href="http://news.ycombinator.com">hacker news</a> and <a href="http://boingboing.net">boingboing</a>. Plus, writing is fun, and I want to become better at it.</p>
@@ -55,8 +45,6 @@
 <p>I'm using <a href="http://bottlepy.org">bottle.py</a> to deal with <code>HTTP</code> requests. CSS3 and the <a href="cssgrid.net">1140px grid</a> make the layout pretty simple. </p>
 <p>The posts are all written in Markdown and converted using the python <a href="http://www.freewisdom.org/projects/python-markdown/">markdown module</a> on pypi. The HTML for each post is stored in one large JSON dictionary which is queried when you come to the site. I thought about using a database but really there's no reason to do so.</p>
 <p>If you'd like to look at it (or even contribute a post!), <a href="https://github.com/peterldowns/website">all of the code is available on my github</a>.</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
