@@ -1,6 +1,6 @@
 Title: Ask For Help
 Author: Peter Downs
-Date: Monday, February 6th, 2012
+Date: Monday, February 6, 2012
 
 # Ask For Help
 
