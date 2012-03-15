@@ -46,7 +46,7 @@
 					<div class="archives" style="text-align: center;">
 						<h1> All Posts </h1>
 					%for post in posts:
-						<h4><a href="{{post['url']}}">{{post['title']}}</a></h4>
+						<h4><a href="{{post['HTMLpath']}}">{{post['title']}}</a></h4>
 						<br />
 					%end
 					</div>
@@ -55,8 +55,8 @@
 				%elif view == "post":
 					<div class="post"><!--
 						<div class="info">
-						%if post['timestamp']:
-							<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">{{post['timestamp']}}</p>
+						%if post['date']:
+							<p style="font-weight: 1000000; text-decoration: underline; text-align: center;">{{post['date']}}</p>
 						%end
 						</div>-->
 						{{!post['html']}}
