@@ -48,8 +48,8 @@ open an iTerm tab there. Cool.
 ![the service in action][10]
 
 
-[1]: http://www.google.com/url?sa=t&rct=j&q=iterm&source=web&cd=8&ved=0CGIQFjAH&url=http%3A%2F%2Fwww.iterm2.com%2F&ei=7qlgT6G3Ao2IrAfhtISaBg&usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA
-[2]: http://www.google.com/url?sa=t&rct=j&q=iterm&source=web&cd=8&ved=0CGIQFjAH&url=http%3A%2F%2Fwww.iterm2.com%2F&ei=7qlgT6G3Ao2IrAfhtISaBg&usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA
+[1]: http://www.iterm2.com/#/section/home
+[2]: http://ethanschoonover.com/solarized
 [3]: http://snippets.dzone.com/user/SimonDorfman
 [4]: http://snippets.dzone.com/posts/show/961
 [5]: http://benalman.com/
