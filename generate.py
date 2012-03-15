@@ -1,77 +1,92 @@
-""" Given a list of .md files, creates html output
-	in ./posts with the same titles and a 'posts.json'
-	information file """
 import os
-import sys
 import json
 import markdown
+from operator import itemgetter
 from bottle import template, view
 
-POSTS_FOLDER = 'posts'
+_MDFolder = "./md"
+_HTMLFolder = "./posts"
+_Parser = markdown.Markdown(extensions=['meta'])
 
-# Build the JSON dict of posts and HTML
-posts = {}
-num_posts = len(sys.argv)-1
-print "Building {} posts:".format(num_posts)
-for num, filepath in enumerate(sys.argv[1:]):
-	filename = filepath.split(os.sep)[-1]
-	title = filename.split('.md')[0]
-	print "\t[{} / {}] {} -> {}".format(num+1, num_posts, filepath, title)
-	try:
-		with open(filepath) as fin:
-			md_content = fin.read()
-	except Exception as e:
-		print e
-		md_content = ""
-	timestamp, md_content = md_content.split('\n', 1)
-	post = {
-		"url" : "{}/{}.html".format(POSTS_FOLDER, title),
-		"path" : filename,
-		"html" : markdown.markdown(md_content),
-		"title" : " ".join(map(str.capitalize, title.split('-'))),
-		"timestamp" : timestamp
+@view('index.tpl')
+def renderHomepage(posts):
+	templateData = {
+		"posts" : posts,
+		"view" : "archive",
 	}
-	posts[title] = post
+	return templateData
 
-# Write it to file
-#with open('posts.json', 'w') as fout:
-	#fout.write(json.dumps(posts, sort_keys=True, indent=4))
+@view('index.tpl')
+def renderPost(post):
+	tempateData = {
+		"post" : post,
+		"view" : "post"
+	}
+	return templateData
 
-from operator import itemgetter
+def readMD(fpath):
+	poststr = ""
+	with open(fpath, 'r') as post:
+		poststr = post.read()
+	return poststr
 
-# sort posts
-posts = posts.values(); posts.sort(key=itemgetter('timestamp'), reverse=True)
+def parseMD(fstr):
+	""" Parse a raw markdown string with optional metadata
+		included. """
+	html = _Parser.convert(fstr)
+	meta = _Parser.Meta
+	meta['html'] = html
+	return meta
 
+def makePost(path):
+	""" Given a path, return a post dictionary. """
+	path = os.path.abspath(path)
+	raw_md = readMDFile(path)
+	post = parseMD(raw_md)
+	
+	post['MDpath'] = path
+	post['MDfile'] = filename = path.rsplit(os.sep, 1)[1]
+	post['MDtitle'] = filename.rsplit['.', 1)[0]
 
-# render archive page
-print "Writing homepage -> index.html"
-with open('index.html', 'w') as fout:
-	@view('index.tpl')
-	def renderArchive():
-		return {
-			"posts" : posts,
-			"view" : "archive"
-		}
-	t = renderArchive()
-	fout.write(t)
+	time_format = "%A, %B %d, %Y"
+	timestamp = mktime(strptime(post['date']))
+	post.update({
+		"HTMLpath" : "{}/{}.html".format(_HTMLFolder, post['filetitle'])
+		"timestamp" : timestamp,
+	})
+	return post
 
-# make posts folder
-try:
-	os.mkdir(POSTS_FOLDER)
-except OSError:
-	pass
+def buildPosts(in_folder):
+	folder_path = os.path.abspath(folder_path)
+	filepaths = map(lambda f: os.sep.join((folder_path, f)), os.listdir(folder_path))
 
-print "Writing {} posts:".format(num_posts)
-# render each post
-for post in posts:
-	print "\t[{} / {}] {} -> {}".format(num+1, num_posts, title, post['url'])
-	with open(post['url'], 'w') as fout: # url as path. IKR!?!?
-		@view('index.tpl')
-		def renderPost():
-			return {
-				"post" : post,
-				"view" : "post"
-			}
-		t = renderPost()
-		fout.write(t)
+	posts_out = []
+	for post_path in filepaths:
+		post = makePost(post_path)
+		post = preparePost(post)
+		posts_out.append(post)
+	return posts_out
 
+if __name__=="__main__":
+	posts = buildPosts(_MDFolder)
+	posts.sort(key=itemgetter('timestamp'), reverse=True)
+	
+	try: os.mkdir(_HTMLFolder) # make HTML folder
+	except OSError: pass #already existed
+
+	print "Writing homepage -> ./index.html"
+	with open('./index.html', 'w') as fout:
+		homepageHTML = renderHompeage(posts)
+		fout.write(homepageHTML)
+	
+	cur_ind = 0
+	num_posts = len(posts)
+	print "Writing {} posts:".format(num_posts)
+	for post in posts:
+		print "\t[{} / {}] {} -> {}".format(cur_ind+1, num_posts, post['title'], post['HTMLpath'])
+		cur_ind += 1
+		with open(post['HTMLpath'], 'w') as fout:
+			postHTML = renderPost(post)
+			fout.write(postHTML)
+	
+	print "Done."
