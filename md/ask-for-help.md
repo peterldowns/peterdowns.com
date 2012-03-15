@@ -1,5 +1,8 @@
-Monday, February 6th, 2012
-# If you need some help, ask for it.
+Title: Ask For Help
+Author: Peter Downs
+Date: Monday, February 6th, 2012
+
+# Ask For Help
 
 If it hasn't happened to you already, there will come a point in your life where you could use some help. I'm certain of this -- but if you have never needed help in your life, and expect not to in the future, then do not continue reading this post. Clearly you are more than human.
 

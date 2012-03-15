@@ -1,4 +1,6 @@
-Thursday, January 12, 2012
+Title: On The Higgs
+Author: Peter Downs
+Date: Thursday, January 12, 2012
 
 # On the Higgs
 
