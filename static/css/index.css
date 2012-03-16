@@ -24,17 +24,17 @@ body {
 	padding: 10px;
 	margin-right: 20px;
 	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
+/*
 #sidebar-inner, #content-inner {
 	padding: 10px;
 }
-#sidebar, #content {
-	margin-bottom: 10px;
-}
+*/
 #header {
 	text-align: left;
-	padding: 10px;
+	padding-bottom: 10px;
 }
 #header h1 {
 	font-size: 40px;
@@ -46,15 +46,11 @@ body {
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 }
+img {
+	max-width: 100%;
+}
 hr {
 	background-color: #CCC;
-}
-@media handheld, only screen and (max-width: 767px) {
-	#sidebar, #content {
-		position: relative;
-		left: -12px;
-
-	}
 }
 *:not(ul, ol) > ul, *:not(ul, ol) > ol {
 	list-style-position: outside;
@@ -63,6 +59,25 @@ hr {
 	padding-top: 2px;
 	border-radius: 3px;
 }
-h1, h2, h3, h4, h5, h6 {
-	/*text-transform: uppercase;*/
+@media only screen and (max-width: 1023px) {
+	body {
+		font-size: 0.8em;
+		line-height: 1.5em;
+	}
+}
+@media handheld, only screen and (max-width: 600px) {
+	body {
+		-webkit-text-size-adjust: none;
+	}
+	#sidebar, #content {
+		position: static;
+		margin: none;
+		padding: none;
+		border: none;
+		margin: 10px;
+		padding: 10px;
+	}
+	#sidebar {
+		border-bottom: 6px solid #CCC;
+	}
 }
