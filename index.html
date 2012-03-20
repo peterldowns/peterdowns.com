@@ -1,14 +1,16 @@
 <doctype HTML>
 <head>
-	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
 
-	<!--<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />-->
+	<!--
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
-
-	<!-- My stylesheets -->
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/solarized_dark.css" />
+	-->
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/solarized_light.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+	
 	<title> Peter Downs - Student / Hacker / Human </title>
 	<meta name="viewport" content="width=device-width">
 </head>
