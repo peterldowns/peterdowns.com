@@ -5,10 +5,10 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness_dark.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/github.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/solarized_dark.css" />
-	-->
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/solarized_light.css" />
+	-->
+	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
 	
 	<title> Peter Downs - Student / Hacker / Human </title>
