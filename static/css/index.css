@@ -1,8 +1,9 @@
 body {
-	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-	font-family: 'Lato', sans-serif;
+	/*font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	font-family: 'Lato', sans-serif;*/
+	font-family "palatino", "times new roman", serif;
 	line-height: 145%;
-	letter-spacing:0.1em;
+	/*letter-spacing:0.1em;*/
 }
 
 #sidebar {
