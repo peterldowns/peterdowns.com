@@ -10,8 +10,10 @@
 	-->
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
-	
-	<title> Peter Downs - Student / Hacker / Human </title>
+	%if view == "archive":
+	  <title> Peter Downs - Student / Hacker / Human </title>
+  %elif view == "post":
+	  <title> Peter Downs - Student / Hacker / Human - {{post['title']}}</title>
 	<meta name="viewport" content="width=device-width">
 </head>
 

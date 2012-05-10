@@ -10,7 +10,6 @@ Last Wednesday I sat down and wrote the following:
 
 The result is a web-app I call [**Who Will I Know There?**][0]. I think it's pretty neat -- it's a tool for finding friends to connect with when you're moving somewhere new -- and I hope you do, too.
 
-
 ### Why?
 
 I often feel as though I'm stuck in a rut with programming. I'll work feverishly on a project for weeks (or months), and then sit back and build nothing for a while. 
@@ -31,14 +30,6 @@ Probably the best thing about Node is that it lets me use javascript for both cl
 
 Other than that, the biggest compliment I have is that Node was very easy to learn and use (with the [Express][4] MVC framework and [Dotcloud][5] for hosting) to get a website up and running very quickly. Prototyping and making changes has been painless, especially because I decided to use Twitter's [Bootstrap][6] framework-y thing.
 
-[0]: http://wwikt-peterldowns.dotcloud.com
-[1]: http://bookshrink.com
-[2]: http://headliner-peterldowns.dotcloud.com
-[3]: http://nodejs.org/
-[4]: http://expressjs.com/
-[5]: http://dotcloud.com
-[6]: http://twitter.github.com/bootstrap/
-
 ### The result -- Who Will I Know There?
 
 It's pretty hard for me to hack on something I'm not interested in. So I wanted to build something that would mostly help *me* out, although it being useful to other people would be a nice bonus.
@@ -48,3 +39,11 @@ I recently decided to defer my admission to university for an entire year and sp
 The problem is that the job is in the Bay Area. I'm from Philadelphia, and although I have some family in California, I have no friends in California for me to hang out with. I wondered if I could come up with some sort of application to search my Facebook friends find those who might be able to introduce me to cool people.
 
 I linked to it at the beginning of this post, but [Who Will I Know There][0] is that application. I learned a lot while making it, and I think it's pretty slick, but I'd love to hear any feedback you may have! Please do go give it a try and let me know what you think!
+
+[0]: http://wwikt-peterldowns.dotcloud.com
+[1]: http://bookshrink.com
+[2]: http://headliner-peterldowns.dotcloud.com
+[3]: http://nodejs.org/
+[4]: http://expressjs.com/
+[5]: http://dotcloud.com
+[6]: http://twitter.github.com/bootstrap/
