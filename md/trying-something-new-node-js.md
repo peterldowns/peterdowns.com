@@ -8,7 +8,7 @@ Last Wednesday I sat down and wrote the following:
 
 > I want to try something new. Even though I was accepted to university way back in November, I've been pretty busy all year keeping up with my schoolwork. Now, as classes wind down, I find myself with a little free time. Tomorrow [Thursday, May 3] I don't need to go in to school at all. I could spend the day studying for the final exam I must take on Friday -- that would probably be the safest decision -- or I could try something new.
 
-The result is a web-app I call [**Who Will I Know There?**][0]. I think it's pretty neat -- it's a tool for finding friends to connect with when you're moving somewhere new -- and I hope you do, too.
+The result is a web-app I call [**Who Will I Know There?**][0] I think it's pretty neat (it's a tool for finding friends to connect with when you're moving somewhere new) and I hope you do, too.
 
 ### Why?
 
