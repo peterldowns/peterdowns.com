@@ -3,7 +3,6 @@
 
 import os
 import json
-import codecs
 import markdown
 from operator import itemgetter
 from bottle import template, view
@@ -31,7 +30,7 @@ def renderPost(post):
 
 def readMD(fpath):
 	poststr = ""
-	with codecs.open(fpath, 'r', 'utf-8') as post:
+	with open(fpath, 'r') as post:
 		poststr = post.read()
 	return poststr
 
@@ -84,7 +83,7 @@ if __name__=="__main__":
 	except OSError: pass #already existed
 
 	print "Writing homepage -> ./index.html"
-	with codecs.open('./index.html', 'w', 'utf-8') as fout:
+	with open('./index.html', 'w') as fout:
 		homepageHTML = renderHomepage(posts)
 		fout.write(homepageHTML)
 	
@@ -94,7 +93,7 @@ if __name__=="__main__":
 	for post in posts:
 		print "\t[{} / {}] {} -> {}".format(cur_ind+1, num_posts, post['MDpath'], post['HTMLpath'])
 		cur_ind += 1
-		with codecs.open(post['HTMLpath'], 'w', 'utf-8') as fout:
+		with open(post['HTMLpath'], 'w') as fout:
 			postHTML = renderPost(post)
 			fout.write(postHTML)
 	

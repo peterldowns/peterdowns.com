@@ -11,9 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/mou/clearness.css" />
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
 	%if view == "archive":
-	  <title> Peter Downs - Student / Hacker / Human </title>
+	<title> Peter Downs - Student / Hacker / Human </title>
   %elif view == "post":
-	  <title> Peter Downs - Student / Hacker / Human - {{post['title']}}</title>
+	<title> Peter Downs - Student / Hacker / Human - {{post['title']}}</title>
+  %end
 	<meta name="viewport" content="width=device-width">
 </head>
 
