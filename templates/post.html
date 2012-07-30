@@ -1,0 +1,17 @@
+<doctype HTML>
+
+{{>head}}
+
+<body>
+    {{>sidebar}}
+    <div id='content'>
+        <div id='content-inner'>
+            <div class='post'>
+                <p style='text-decoration: underline;'> {{date}} </p>
+                {{&html}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</doctype>

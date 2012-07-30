@@ -1,0 +1,21 @@
+<doctype HTML>
+
+{{>head}}
+
+<body>
+    {{>sidebar}}
+    <div id='content'>
+        <div id='content-inner'>
+            <div class='archives'>
+                <h1> All Posts </h1>
+                {{#posts}}
+                <h4>
+                    <a href='{{html_path}}'>{{title}}</a>
+                </h4>
+                {{/posts}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</doctype>

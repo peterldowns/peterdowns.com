@@ -1,100 +1,87 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
-
+# coding: utf-8
 import os
 import json
 import markdown
 from operator import itemgetter
-from bottle import template, view
+from pystache import template_globals, template
 from time import mktime, strptime
 
-_MDFolder = "./md"
-_HTMLFolder = "./posts"
-_Parser = markdown.Markdown(extensions=['meta'])
+_parser = markdown.Markdown(extensions=['meta'])
 
-@view('index.tpl')
-def renderHomepage(posts):
-	templateData = {
-		"posts" : posts,
-		"view" : "archive",
-	}
-	return templateData
+_ext = '.md'            # all markdown posts must have this extension
+_md_in = './md'    # source directory for markdown posts (*.md)
+_md_out = './posts'     # output directory for HTML posts
+_index = './index.html'     # file at which to store the homepage / archive
+_time_fmt = "%A, %B %d, %Y"     # format string for parsing time metadata
+_enc_errors = 'xmlcharrefreplace'   # how to treat unicode characters when writing HTML
 
-@view('index.tpl')
-def renderPost(post):
-	templateData = {
-		"post" : post,
-		"view" : "post"
-	}
-	return templateData
 
-def readMD(fpath):
-	poststr = ""
-	with open(fpath, 'r') as post:
-		poststr = post.read()
-	return poststr
+@template('templates/index.html')
+def render_homepage(posts):
+    return {'posts' : posts}, {}
 
-def parseMD(fstr):
-	""" Parse a raw markdown string with optional metadata
-		included. """
-	html = _Parser.convert(fstr)
-	meta = _Parser.Meta
-	meta['html'] = html
-	
-	meta['date'] = meta['date'][0]
-	meta['title'] = meta['title'][0]
-	meta['author'] = meta['author'][0]
+@template('templates/post.html')
+def render_post(post):
+    return {'post' : post}, {}
 
-	return meta
+def load_post(path):
+    """ Given a path to a Markdown file, load its contents,
+    parse them, add additional metadata, and then return a
+    dict containing all of the necessary information. """
+    # Read the Markdown file
+    md = u''
+    with open(path, 'rb') as fin:
+        md = unicode(fin.read())
+    
+    # Convert the Markdown to HTML
+    html = _parser.convert(md)
 
-def makePost(path):
-	""" Given a path, return a post dictionary. """
-	path = os.path.abspath(path)
-	raw_md = readMD(path)
-	post = parseMD(raw_md)
-	
-	post['MDpath'] = path
-	post['MDfile'] = filename = path.rsplit(os.sep, 1)[1]
-	post['MDtitle'] = filename.rsplit('.', 1)[0]
+    # Process metadata
+    post = _parser.Meta # metadata from the last parse
+    post['html'] = html
+    post['date'] = post['date'][0]
+    post['title'] = post['title'][0]
+    post['md_path'] = path
+    post['md_filename'] = filename = os.path.split(path)[1]
+    post['slug'] = slug = os.path.splitext(filename)[0]
+    post['timestamp'] = mktime(strptime(post['date'], _time_fmt))
+    post['html_path'] = os.path.relpath(os.sep.join((_md_out, slug))+os.path.extsep+'html')
 
-	time_format = "%A, %B %d, %Y"
-	timestamp = mktime(strptime(post['date'], time_format))
-	post.update({
-		"HTMLpath" : "{}/{}.html".format(_HTMLFolder, post['MDtitle']),
-		"timestamp" : timestamp,
-	})
-	return post
+    return post
 
-def buildPosts(in_folder):
-	in_folder = os.path.abspath(in_folder)
-	filepaths = map(lambda f: os.sep.join((in_folder, f)), os.listdir(in_folder))
+def load_posts(folder):
+    """ Given an input folder, load all of the Markdown posts within it
+    and return them. """
+    files = filter(lambda p: _ext in p, os.listdir(folder))
+    rel_paths = map(lambda a: os.path.join(folder, a), files)
 
-	posts_out = []
-	for post_path in filepaths:
-		post = makePost(post_path)
-		posts_out.append(post)
-	return posts_out
+    for path in rel_paths:
+        yield load_post(path)
 
-if __name__=="__main__":
-	posts = buildPosts(_MDFolder)
-	posts.sort(key=itemgetter('timestamp'), reverse=True)
-	
-	try: os.mkdir(_HTMLFolder) # make HTML folder
-	except OSError: pass #already existed
+if __name__=='__main__':
+    all_posts = load_posts(_md_in)
+    sorted_posts = sorted(all_posts, key=itemgetter('timestamp'), reverse=True)
 
-	print "Writing homepage -> ./index.html"
-	with open('./index.html', 'w') as fout:
-		homepageHTML = renderHomepage(posts)
-		fout.write(homepageHTML)
-	
-	cur_ind = 0
-	num_posts = len(posts)
-	print "Writing {} posts:".format(num_posts)
-	for post in posts:
-		print "\t[{} / {}] {} -> {}".format(cur_ind+1, num_posts, post['MDpath'], post['HTMLpath'])
-		cur_ind += 1
-		with open(post['HTMLpath'], 'w') as fout:
-			postHTML = renderPost(post)
-			fout.write(postHTML)
-	
-	print "Done."
+    try: os.mkdir(_md_out) # make the output folder
+    except OSError: pass # already exists
+
+    print 'Writing homepage -> {}'.format(_index)
+    
+    with open(_index, 'w') as fout:
+        html = render_homepage(sorted_posts)
+        fout.write(unicode(html).encode(errors=_enc_errors))
+
+    num_posts = len(sorted_posts)
+    print 'Writing {} posts:'.format(num_posts)
+
+    for i, post in enumerate(sorted_posts):
+        md_path = post.get('md_path')
+        html_path = post.get('html_path')
+        
+        print '\t[{} / {}] {} -> {}'.format(i+1, num_posts, md_path, html_path)
+        
+        with open(html_path, 'w') as fout:
+            html = render_post(post)
+            fout.write(unicode(html).encode(errors=_enc_errors))
+    
+    print 'Done.'
