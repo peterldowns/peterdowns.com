@@ -1,57 +1,42 @@
 body {
-	/*font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-	font-family: 'Lato', sans-serif;*/
-	font-family "palatino", "times new roman", serif;
-	line-height: 145%;
-	/*letter-spacing:0.1em;*/
+    font-family: 'Inconsolata', sans-serif;
+	/*line-height: 145%;*/
 }
-
-#sidebar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 250px;
-	margin: none;
-	margin: 10px;
-	border-right: 1px red;
+header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
 }
+header #logo, header #nav {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+header #nav * {
+    display: inline;
+    text-align: center;
+    padding: 5px;
+}
+    
 #content {
-	position: absolute;
-	top: 0;
-	left: 250;
-	bottom: 0;
-	right: 0;
-	margin: none;
-	padding: 10px;
-	margin-right: 20px;
-	margin-left: 20px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 	margin-bottom: 20px;
 }
 
-/*
-#sidebar-inner, #content-inner {
-	padding: 10px;
-}
-*/
-#header {
-	text-align: left;
-	padding-bottom: 10px;
-}
-#header h1 {
-	font-size: 40px;
-}
-#header p {
-	font-size: 15px;
-}
 .post * {
-	padding-bottom: 10px;
-	margin-bottom: 10px;
+	/*padding-bottom: 10px;*/
+	/*margin-bottom: 10px;*/
+    font-family: 'Times New Roman', serif;
+    line-height: 145%;
 }
 img {
 	max-width: 100%;
 }
 hr {
-	background-color: #CCC;
+	background-color: #999;
 }
 *:not(ul, ol) > ul, *:not(ul, ol) > ol {
 	list-style-position: outside;
@@ -61,24 +46,12 @@ hr {
 	border-radius: 3px;
 }
 @media only screen and (max-width: 1023px) {
-	body {
-		font-size: 0.8em;
-		line-height: 1.5em;
-	}
+/* iPad? */
 }
-@media handheld, only screen and (max-width: 600px) {
-	body {
-		-webkit-text-size-adjust: none;
-	}
-	#sidebar, #content {
-		position: static;
-		margin: none;
-		padding: none;
-		border: none;
-		margin: 10px;
-		padding: 10px;
-	}
-	#sidebar {
-		border-bottom: 6px solid #CCC;
-	}
+@media handheld, only screen and (max-width: 740px) {
+/* small things */
+    #content {
+        width: auto;
+        min-width: 300px;
+    }
 }

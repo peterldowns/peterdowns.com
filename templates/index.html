@@ -3,15 +3,18 @@
 {{>head}}
 
 <body>
-    {{>sidebar}}
+    {{>header}}
     <div id='content'>
         <div id='content-inner'>
             <div class='archives'>
-                <h1> All Posts </h1>
+                <h1 style='text-decoration: underline;'> All Posts </h1>
                 {{#posts}}
-                <h4>
-                    <a href='{{html_path}}'>{{title}}</a>
-                </h4>
+                <p>
+                    <h4 style='display: inline;'>
+                        <a href='{{html_path}}'>{{title}}</a>
+                    </h4>
+                    &mdash; {{date}}
+                </p>
                 {{/posts}}
             </div>
         </div>
