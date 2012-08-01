@@ -10,18 +10,15 @@ blockquote {
     padding: 0;
 }
 body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #fff;
-    background-color: #282a36;
+	color: #333;
     margin: 10px 13px 10px 13px;
 }
 a {
-    color: #59acf3;
+	color: #0088EE;
+    text-decoration: none;
 }
 a:hover {
-    color: #a7d8ff;
+    color: #0050a3;
     text-decoration: none;
 }
 a img {
@@ -36,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: #000;
     line-height: 36px;
 }
 h1 {
@@ -66,30 +63,27 @@ hr {
 blockquote {
     padding: 13px 13px 21px 15px;
     margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
 }
 blockquote:before {
     content:"\201C";
     font-size:40px;
     margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
+    color:#999;
 }
 blockquote p {
-    font-size: 14px;
     font-weight: 300;
     line-height: 18px;
     margin-bottom: 0;
     font-style: italic;
 }
 code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
+    font-family: 'Inconsolata', Monaco, Andale Mono, monospace !important;
+    text-align: left;
 }
 code {
-	color: #ff4a14;
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
     padding: 1px 3px;
-    font-size: 12px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -99,15 +93,12 @@ pre {
     padding: 14px;
     margin: 0 0 18px;
     line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #bf370f;
-    white-space: pre;
+    border: 1px solid #999;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 pre code {
-    background-color: #282a36;
-    color: #ff4a14;
-    font-size: 11px;
+    background-color: #fff;
+    color:#737373;
     padding: 0;
 }
