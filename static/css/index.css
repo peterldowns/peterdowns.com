@@ -2,33 +2,50 @@ body {
     font-family: 'Inconsolata', sans-serif;
 	/*line-height: 145%;*/
 }
-header {
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
+#page-wrap {
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
-header #logo, header #nav {
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
+#sidebar {
+    width: 260px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-header #nav * {
-    display: inline;
+#sidebar * {
+    width: 260px;
+    padding: 0;
+    margin: 0;
+}
+#sidebar #logo {
+    position: fixed;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #999;
+}
+#sidebar #nav {
+    position: fixed;
+    top: 146px;
+    padding-top: 20px;
     text-align: center;
     padding: 5px;
-}
-    
-#content {
-    width: 700px;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-	margin-bottom: 20px;
+}
+#sidebar #sidebar-inner {
+    width: 260px;
+}    
+#content {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    left: 300px;
 }
 
 .post * {
-	/*padding-bottom: 10px;*/
-	/*margin-bottom: 10px;*/
     font-family: 'Times New Roman', serif;
     line-height: 145%;
 }
@@ -48,10 +65,31 @@ hr {
 @media only screen and (max-width: 1023px) {
 /* iPad? */
 }
-@media handheld, only screen and (max-width: 740px) {
+@media handheld, only screen and (max-width: 600px) {
 /* small things */
+    #sidebar, #content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #sidebar, #sidebar #nav, #sidebar #logo, #content {
+        position: static;
+        display: block;
+        text-align: center;
+    }
+    #sidebar, #sidebar #logo {
+        width: 300px;
+    }
     #content {
         width: auto;
         min-width: 300px;
     }
+    #sidebar #nav {
+        border-bottom: 2px solid #999;
+        width: 290px;
+    }
+    #sidebar #nav > * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+        
 }

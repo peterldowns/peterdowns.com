@@ -11,14 +11,24 @@ _parser = markdown.Markdown(extensions=['meta'])
 _ext = '.md'            # all markdown posts must have this extension
 _md_in = './md'    # source directory for markdown posts (*.md)
 _md_out = './posts'     # output directory for HTML posts
-_index = './index.html'     # file at which to store the homepage / archive
 _time_fmt = "%A, %B %d, %Y"     # format string for parsing time metadata
 _enc_errors = 'xmlcharrefreplace'   # how to treat unicode characters when writing HTML
 
+_index = './index.html'     # file at which to store the homepage / archive
+_about = './about.html'
+_projects = './projects.html'
 
 @template('templates/index.html')
 def render_homepage(posts):
     return {'posts' : posts}, {}
+
+@template('templates/about.html')
+def render_about():
+    return {}, {}
+
+@template('templates/projects.html')
+def render_projects():
+    return {}, {}
 
 @template('templates/post.html')
 def render_post(post):
@@ -66,9 +76,18 @@ if __name__=='__main__':
     except OSError: pass # already exists
 
     print 'Writing homepage -> {}'.format(_index)
-    
     with open(_index, 'w') as fout:
         html = render_homepage(sorted_posts)
+        fout.write(unicode(html).encode(errors=_enc_errors))
+    
+    print 'Writing about -> {}'.format(_about)
+    with open(_about, 'w') as fout:
+        html = render_about()
+        fout.write(unicode(html).encode(errors=_enc_errors))
+    
+    print 'Writing projects -> {}'.format(_projects)
+    with open(_projects, 'w') as fout:
+        html = render_projects()
         fout.write(unicode(html).encode(errors=_enc_errors))
 
     num_posts = len(sorted_posts)
