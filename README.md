@@ -1,9 +1,8 @@
 ## What is this? ##
-The website of Peter Downs.
+My website.
 
-## When will it be finished? ##
-I do not know. Hopefully soon.
+## Why aren't there more posts? ##
+There aren't many posts because I'm too busy doing other cool things.
 
-## Todo:
-* Sort the posts by date. That's actually pretty important
-* Better templating with %include (aka partials)
+## Really? ##
+Stop asking so many questions.
