@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+
 body {
     font-family: 'Inconsolata', sans-serif;
 	/*line-height: 145%;*/
@@ -43,7 +45,7 @@ body {
 }
 
 .post * {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Bitter', serif;
     line-height: 145%;
 }
 img {
