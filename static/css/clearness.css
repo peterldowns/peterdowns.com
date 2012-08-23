@@ -61,17 +61,17 @@ hr {
     border-bottom: 1px solid #ccc;
 }
 blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
+    padding-left: 60px;
 }
 blockquote:before {
     content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
+    font-size:60px;
+    margin-left:-60px;
     color:#999;
 }
 blockquote p {
     font-weight: 300;
+    margin-top: -20px;
     line-height: 18px;
     margin-bottom: 0;
     font-style: italic;

@@ -44,9 +44,12 @@ body {
     left: 300px;
 }
 
-.post * {
+.post {
     font-family: 'Bitter', serif;
-    line-height: 145%;
+    line-height: 180%;
+}
+.post p {
+    margin-bottom: 1.5em;
 }
 img {
 	max-width: 100%;
