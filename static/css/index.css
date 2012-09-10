@@ -1,8 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 
 body {
-    font-family: 'Inconsolata', sans-serif;
-	/*line-height: 145%;*/
+    font-family: Helvetica, Arial, sans-serif;
 }
 #page-wrap {
     position: relative;
@@ -42,6 +41,7 @@ body {
     top: 0;
     right: 0;
     left: 300px;
+    max-width: 600px;
 }
 
 .post {
