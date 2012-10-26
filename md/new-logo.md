@@ -1,6 +1,6 @@
 Title: My New Logo
 Author: Peter Downs
-Date: Sunday, August 12, 2012
+Date: Thursday, October 25, 2012
 
 # My New Logo
 
