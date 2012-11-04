@@ -51,6 +51,10 @@ body {
 .post p {
     margin-bottom: 1.5em;
 }
+.post blockquote p {
+    margin: 0;
+}
+
 img {
 	max-width: 100%;
 }

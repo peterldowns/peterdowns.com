@@ -37,23 +37,28 @@ h6 {
     line-height: 36px;
 }
 h1 {
-    margin-bottom: 18px;
+    margin: 18px 0;
     font-size: 30px;
 }
 h2 {
     font-size: 24px;
+    margin: 14px 0;
 }
 h3 {
     font-size: 18px;
+    margin: 10px 0;
 }
 h4 {
     font-size: 16px;
+    margin: 9px 0;
 }
 h5 {
     font-size: 14px;
+    margin: 8px 0;
 }
 h6 {
     font-size: 13px;
+    margin: 7px 0;
 }
 hr {
     margin: 0 0 19px;
@@ -61,19 +66,13 @@ hr {
     border-bottom: 1px solid #ccc;
 }
 blockquote {
-    padding-left: 60px;
-}
-blockquote:before {
-    content:"\201C";
-    font-size:60px;
-    margin-left:-60px;
-    color:#999;
+    margin: 1em 0;
+    padding: 1em 0;
+    padding-left: 30px;
+    border-left: 10px solid #ccc;
 }
 blockquote p {
     font-weight: 300;
-    margin-top: -20px;
-    line-height: 18px;
-    margin-bottom: 0;
     font-style: italic;
 }
 code, pre {
