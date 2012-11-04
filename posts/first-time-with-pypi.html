@@ -1,0 +1,121 @@
+<!doctype HTML>
+<html>
+<head>
+	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <title> How to submit a package to PyPI &#8212; Peter Downs &#8212;&#160;Student / Hacker/ Human </title>
+    <meta name='viewport' content='width=device-width'>
+</head>
+
+<body>
+    <div id='page-wrap'>
+        <div id='sidebar'>
+            <img id='logo' src='/static/img/logo2x.png' />
+            <div id='nav'>
+                <h3><a href='/'> Writing </a></h3>
+                <!--<h3><a href='/projects.html'> Projects </a></h3>-->
+                <h3><a href='https://github.com/peterldowns'> Projects </a></h3>
+                <h3><a href='/about.html'> About </a></h3>
+                <div id='sidebar-content'>
+                </div>
+            </div>
+        </div>
+        <div id='content'>
+            <div id='content-inner'>
+                <div class='post'>
+                    <h1>How to submit a package to PyPI</h1>
+<hr />
+<p>The other month a coworker of mine wanted to distribute
+<a href="http://pypi.python.org/pypi/locu/0.1">a small wrapper</a>
+he'd written for the <a href="http://dev.locu.com/">Locu API</a>.
+Instead of forcing developers to clone his repository, he
+wanted them to be able install with a single command:
+<code>pip install locu</code>. He wasn't sure how to go about this so
+I wrote up a quick guide, which I'm publishing below
+because I haven't found any other guides for this particular
+use case (python library hosted on github).</p>
+<h2>What is PyPi?</h2>
+<blockquote>
+<p><strong>PyPI</strong> -- the Python Package Index</p>
+<p>The Python Package Index is a repository of software for the
+Python programming language.</p>
+</blockquote>
+<p>Written something cool? Want others to be able to install it with
+<code>easy_install</code> or <code>pip</code>? Put your code on PyPi.</p>
+<h2>How to pyPi?</h2>
+<p>(pst: <a href="http://wiki.python.org/moin/CheeseShopTutorial#Submitting_Packages_to_the_Package_Index">good docs</a>)</p>
+<ol>
+<li>
+<p><strong>Create accounts</strong> On <a href="http://pypi.python.org/pypi?%3Aaction=register_form">PyPi Live</a> and also on <a href="http://testpypi.python.org/pypi?%3Aaction=register_form">PyPi Test</a>. You must create an account in order to be able to upload your code. I recommend using the same email/password for both accounts, just to make your life easier when it comes time to push.</p>
+</li>
+<li>
+<p><strong>Setup your .pypirc</strong> This config file holds your information for authenticating with PyPi.</p>
+<pre><code>[distutils] # this tells distutils what package indexes you can push to
+index-servers =
+    pypi # the live PyPi
+    pypi-test # test PyPi
+
+[pypi] # authentication details for live PyPi
+repository: https://pypi.python.org/pypi
+username: {{your_username}}
+password: {{your_password}}
+
+[pypi-test] # authentication details for test PyPi
+repository: https://testpypi.python.org/pypi
+username: {{your_username}}
+</code></pre>
+<p>this is just to make your life easier, so that when it comes time to upload you don't have to type/remember your username and password</p>
+</li>
+<li>
+<p><strong>Create a configuration files</strong> Every package on PyPi needs to have a file called <code>setup.py</code> at the root of the directory. If your'e using a markdown-formatted read me file you'll also need a <code>setup.cfg</code> file. Also, you'll want a <code>LICENSE.txt</code> file describing what can be done with your code. So if I've been working on a library called <code>my-lib</code>,  my directory structure would look like this:</p>
+<pre><code>locu-python/    # arbitrary working directory name
+    setup.py
+    setup.cfg
+    LICENSE.txt
+    README.md
+    locu-python/        # this is your module_name: see below
+        __init__.py
+        foo.py
+        bar.py
+        baz.py
+</code></pre>
+<p>Here's a breakdown of what goes in which file:<br />
+* <strong>setup.py</strong> This is metadata about your library. Here's an example for a logging library I wrote:</p>
+<pre><code>    from distutils.core import setup
+    setup(
+        name = 'lggr',
+        packages = ['lggr'], # this must be the same as your module_name from above
+        version = '0.1',
+        description = 'Python Logging For Humans',
+        author = 'Peter Downs',
+        author_email = 'peterldowns@gmail.com',
+        url = 'https://github.com/peterldowns/lggr',    # use the URL to the github repo
+        download_url = 'https://github.com/peterldowns/lggr/tarball/0.1', # I'll explain this in a second
+        keywords = ['logging', 'log', 'coroutine'], # arbitrary keywords
+        classifiers = [],  
+    )
+</code></pre>
+<p>The <code>download_url</code> is a link to a hosted file where people actually get the code from your library. Github will host this for you, but only if you create a "tag" in git. In your git repo, type: <code>git tag 0.1 -m "Adds a tag so that we can put this on pypi"</code>. Then, type <code>git tag</code> to show a list of tags -- you should see <code>0.1</code> in the list. Then, type <code>git push --tags origin master</code>. Github sees your tag and automatically packages your code, available for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.
+* <strong>setup.cfg</strong> tells PyPi where your README file is.</p>
+<pre><code>[metadata]
+description-file = README.md
+</code></pre>
+<ul>
+<li><strong>LICENSE.txt</strong> whatever license you want your code to have. It doesn't really matter, anything can be in here. I use the MIT license myself.</li>
+</ul>
+</li>
+<li>
+<p><strong>Register your package</strong> in your directory, run the command <code>python setup.py register -r pypi-test</code></p>
+</li>
+<li><strong>Upload your package</strong> in your directory, run the command <code>python setup.py sdist upload -r pypi-test</code></li>
+<li>Do it for real: repeat steps 4 and 5, using <code>pypi</code> instead of <code>pypi-test</code>.</li>
+</ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
