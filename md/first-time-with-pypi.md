@@ -44,8 +44,6 @@ I've written this guide with the following assumptions:
 * The module/library/package that you're submitting is called `mypackage`.
 * `mypackage` is hosted on [github](http://github.com).
 
-Cool? Cool.
-
 ### Create your accounts
 
 On [PyPI Live](http://PyPI.python.org/PyPI?%3Aaction=register_form) and also
@@ -53,7 +51,7 @@ on [PyPI Test](http://testPyPI.python.org/PyPI?%3Aaction=register_form). You mus
 account in order to be able to upload your code. I recommend using the same email/password for
 both accounts, just to make your life easier when it comes time to push.
 
-### Create a `.PyPIrc` configuration file
+### Create a `.pypirc` configuration file
 
 This config file holds your information for authenticating with PyPI.
 
@@ -71,8 +69,8 @@ This config file holds your information for authenticating with PyPI.
 		repository: https://testPyPI.python.org/PyPI
 		username: {{your_username}}
 
-this is just to make your life easier, so that when it comes time to
-upload you don't have to type/remember your username and password
+this is just to make your life easier, so that when it comes time to upload you
+don't have to type/remember your username and password
 
 ### Prepare your package
 
@@ -87,7 +85,7 @@ library called `my-lib`,  my directory structure would look like this:
 			setup.cfg
 			LICENSE.txt
 			README.md
-			my-lib/ 		# this is your module_name: see below
+			mypackage/
 				__init__.py
 				foo.py
 				bar.py
@@ -110,25 +108,26 @@ Here's a breakdown of what goes in which file:
 				keywords = ['testing', 'logging', 'example'], # arbitrary keywords
 				classifiers = [],
 			)
-	The `download_url` is a link to a hosted file where people actually get the
-  code from your library. Github will host this for you, but only if you
-  create a "tag" in git. In your git repo, type: `git tag 0.1 -m "Adds a
+
+	The `download_url` is a link to a hosted file with your repository's code.
+  Github will host this for you, but only if you
+  create a [`git tag`](http://git-scm.com/book/en/Git-Basics-Tagging). In your
+  repository, type: `git tag 0.1 -m "Adds a
   tag so that we can put this on PyPI"`. Then, type `git tag` to show a
-  list of tags -- you should see `0.1` in the list. Then, type `git push --tags origin master`.
-  Github sees your tag and automatically packages your code, available for download at
-  `https://github.com/{username}/{module_name}/tarball/{tag}`. Run `git
-  tag --help` for more information.
+  list of tags -- you should see `0.1` in the list. Type `git push --tags origin
+  master` to update your code on Github with the latest tag information. Github
+  creates tarballs for download at `https://github.com/{username}/{module_name}/tarball/{tag}`.
 
 * **setup.cfg** tells PyPI where your README file is.
 		
 		[metadata]
 		description-file = README.md
 
-This is necessary if you're using a markdown readme file. At upload time, you
-may still get some errors about the lack of a readme -- don't worry about it.
+  This is necessary if you're using a markdown readme file. At upload time, you
+  may still get some errors about the lack of a readme -- don't worry about it.
 	
-* **LICENSE.txt** whatever license you want your code to have. It doesn't really
-  matter, anything can be in here. I use the MIT license myself.
+* **LICENSE.txt** whatever license you want your code to have. I tend to use the
+  MIT license.
 	
 ### Register your package
 
@@ -150,17 +149,4 @@ Run
     python setup.py sdist upload -r PyPI
 
 and you're done.
-
-	
-	
-			
-
-				
-				
-				
-				
-				
-				
-
-
 

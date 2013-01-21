@@ -59,13 +59,12 @@ if you're stuck, you can always refer to
 <li>The module/library/package that you're submitting is called <code>mypackage</code>.</li>
 <li><code>mypackage</code> is hosted on <a href="http://github.com">github</a>.</li>
 </ul>
-<p>Cool? Cool.</p>
 <h3>Create your accounts</h3>
 <p>On <a href="http://PyPI.python.org/PyPI?%3Aaction=register_form">PyPI Live</a> and also
 on <a href="http://testPyPI.python.org/PyPI?%3Aaction=register_form">PyPI Test</a>. You must create an
 account in order to be able to upload your code. I recommend using the same email/password for
 both accounts, just to make your life easier when it comes time to push.</p>
-<h3>Create a <code>.PyPIrc</code> configuration file</h3>
+<h3>Create a <code>.pypirc</code> configuration file</h3>
 <p>This config file holds your information for authenticating with PyPI.</p>
 <pre><code>    [distutils] # this tells distutils what package indexes you can push to
     index-servers =
@@ -81,8 +80,8 @@ both accounts, just to make your life easier when it comes time to push.</p>
     repository: https://testPyPI.python.org/PyPI
     username: {{your_username}}
 </code></pre>
-<p>this is just to make your life easier, so that when it comes time to
-upload you don't have to type/remember your username and password</p>
+<p>this is just to make your life easier, so that when it comes time to upload you
+don't have to type/remember your username and password</p>
 <h3>Prepare your package</h3>
 <p>Every package on PyPI needs to have a file called <code>setup.py</code> at
 the root of the directory. If your'e using a markdown-formatted read me file
@@ -94,7 +93,7 @@ library called <code>my-lib</code>,  my directory structure would look like this
         setup.cfg
         LICENSE.txt
         README.md
-        my-lib/         # this is your module_name: see below
+        mypackage/
             __init__.py
             foo.py
             bar.py
@@ -118,14 +117,14 @@ library called <code>my-lib</code>,  my directory structure would look like this
         classifiers = [],
     )
 </code></pre>
-<p>The <code>download_url</code> is a link to a hosted file where people actually get the
-  code from your library. Github will host this for you, but only if you
-  create a "tag" in git. In your git repo, type: <code>git tag 0.1 -m "Adds a
+<p>The <code>download_url</code> is a link to a hosted file with your repository's code.
+  Github will host this for you, but only if you
+  create a <a href="http://git-scm.com/book/en/Git-Basics-Tagging"><code>git tag</code></a>. In your
+  repository, type: <code>git tag 0.1 -m "Adds a
   tag so that we can put this on PyPI"</code>. Then, type <code>git tag</code> to show a
-  list of tags -- you should see <code>0.1</code> in the list. Then, type <code>git push --tags origin master</code>.
-  Github sees your tag and automatically packages your code, available for download at
-  <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>. Run <code>git
-  tag --help</code> for more information.</p>
+  list of tags -- you should see <code>0.1</code> in the list. Type <code>git push --tags origin
+  master</code> to update your code on Github with the latest tag information. Github
+  creates tarballs for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.</p>
 </li>
 <li>
 <p><strong>setup.cfg</strong> tells PyPI where your README file is.</p>
@@ -135,10 +134,10 @@ description-file = README.md
 </li>
 </ul>
 <p>This is necessary if you're using a markdown readme file. At upload time, you
-may still get some errors about the lack of a readme -- don't worry about it.</p>
+  may still get some errors about the lack of a readme -- don't worry about it.</p>
 <ul>
-<li><strong>LICENSE.txt</strong> whatever license you want your code to have. It doesn't really
-  matter, anything can be in here. I use the MIT license myself.</li>
+<li><strong>LICENSE.txt</strong> whatever license you want your code to have. I tend to use the
+  MIT license.</li>
 </ul>
 <h3>Register your package</h3>
 <p>In your directory, run the command <code>python setup.py register -r PyPI-test</code></p>
