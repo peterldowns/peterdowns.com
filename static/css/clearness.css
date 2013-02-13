@@ -13,12 +13,12 @@ body {
     margin: 10px 13px 10px 13px;
 }
 a {
-	color: #0088EE;
-    text-decoration: none;
+	color: #6B70FF;
+  text-decoration: none;
 }
 a:hover {
-    color: #0050a3;
-    text-decoration: none;
+  color: #383FFF;
+  text-decoration: none;
 }
 a img {
     border: none;
