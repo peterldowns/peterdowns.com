@@ -10,7 +10,7 @@ I'm no designer (although I'm trying to learn) but I think it turned out nicely.
 Discounting the minor font and color changes, the biggest difference between
 the old version and this new redesign is the logo. 
 
-![The new logo](/static/img/logo2x.png)
+![The new logo](/static/img/oldlogo2x.png)
 
 I was playing around with Photoshop late one night last week when I hit upon the 
 idea. My old tagline was `Student / Hacker / Human`; the new logo incorporates these

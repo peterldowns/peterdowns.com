@@ -10,7 +10,6 @@ blockquote {
     padding: 0;
 }
 body {
-	color: #333;
     margin: 10px 13px 10px 13px;
 }
 a {
@@ -33,7 +32,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: #000;
     line-height: 36px;
 }
 h1 {
@@ -76,13 +74,15 @@ blockquote p {
     font-style: italic;
 }
 code, pre {
+    background: white;
     font-family: 'Inconsolata', Monaco, Andale Mono, monospace !important;
     text-align: left;
 }
 code {
     background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
+    background: white;
     padding: 1px 3px;
+    padding: 5px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -99,5 +99,6 @@ pre {
 pre code {
     background-color: #fff;
     color:#737373;
+    color: black;
     padding: 0;
 }

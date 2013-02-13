@@ -1,7 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 
+.tan     { color: rgb(255, 254, 231); }
+.cyan    { color: rgb(184, 242, 213); }
+.magenta { color: rgb(224, 103, 182); }
+.yellow  { color: rgb(255, 248, 146); }
+.red     { color: rgb(212, 81, 20); }
+.green   { color: rgb(177, 235, 115); }
+.blue    { color: rgb(85, 47, 178); }
+
 body {
     font-family: Helvetica, Arial, sans-serif;
+    background: rgb(255, 254, 231);
+    color: rgb(30, 0, 0);
 }
 #page-wrap {
     position: relative;
@@ -14,25 +24,42 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    text-align: center;
 }
 #sidebar * {
-    width: 260px;
     padding: 0;
     margin: 0;
-}
-#sidebar #logo {
-    position: fixed;
-    padding-bottom: 18px;
-    border-bottom: 2px solid #999;
-}
-#sidebar #nav {
-    position: fixed;
-    top: 146px;
-    padding-top: 20px;
-    text-align: center;
-    padding: 5px;
     margin-left: auto;
     margin-right: auto;
+}
+#sidebar #logo {
+    padding-bottom: 18px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sidebar #nav {
+    text-align: center;
+    padding: 5px 0;
+    margin: auto;
+    /*padding-left: 0;
+    padding-right: 0;*/
+}
+#sidebar #tagline {
+  margin-top: 10px;
+}
+#sidebar #tagline span {
+  padding-top: 5px;
+  color: rgb(30, 0, 0);
+}
+#sidebar #tagline span.cyan {
+  border-top: 5px solid rgb(184, 242, 213);
+}
+#sidebar #tagline span.magenta {
+  border-top: 5px solid rgb(224, 103, 182);
+}
+#sidebar #tagline span.yellow {
+  border-top: 5px solid rgb(255, 248, 146);
 }
 #content {
     position: absolute;
@@ -90,8 +117,8 @@ hr {
         min-width: 300px;
     }
     #sidebar #nav {
-        border-bottom: 2px solid #999;
-        width: 290px;
+        /*border-bottom: 2px solid #999;
+        width: 290px;*/
     }
     #sidebar #nav > * {
         margin-left: auto;
