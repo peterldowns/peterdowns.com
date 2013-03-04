@@ -4,7 +4,7 @@ import os
 import json
 import markdown
 from operator import itemgetter
-from pystache import template_globals, template
+from mustache import template
 from time import mktime, strptime
 
 _parser = markdown.Markdown(extensions=['meta'])
