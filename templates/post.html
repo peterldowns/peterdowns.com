@@ -1,18 +1,25 @@
 <!doctype HTML>
 <html>
+    
 {{>head}}
 
 <body>
     <div id='page-wrap'>
-        {{>sidebar}}
+        {{>header}}
         <div id='content'>
-            <div id='content-inner'>
-                <div class='post'>
-                    {{&html}}
-                </div>
+            <div class='post'>
+                {{&html}}
             </div>
         </div>
     </div>
 </body>
 
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+    var codeBlocks = document.getElementsByTagName("pre");
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var block = codeBlocks[i];
+        hljs.highlightBlock(block);
+    };
+</script>
 </html>

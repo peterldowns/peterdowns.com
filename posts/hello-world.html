@@ -1,39 +1,36 @@
 <!doctype HTML>
 <html>
+    
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
     <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <link rel="stylesheet" href="/static/css/highlightjs.css">
     <title> Hello, World! &#8212; Peter Downs &#8212;&#160;Student / Hacker/ Human </title>
     <meta name='viewport' content='width=device-width'>
 </head>
 
 <body>
     <div id='page-wrap'>
-        <div id='sidebar'>
-            <a href='/'>
-              <img id='logo' src='/static/logo/logo@2x.png' />
-            </a>
+        <div id="header">
             <h1 id='title'> Peter Downs </h1>
-            <p id='tagline'>
-              <span class="cyan">Student</span> / 
-              <span class="magenta">Hacker</span> / 
-              <span class="yellow">Human</span>
-            </p>
-            <div id='nav'>
-                <h3><a href='/'> Writing </a></h3>
-                <!--<h3><a href='/projects.html'> Projects </a></h3>-->
-                <h3><a href='https://github.com/peterldowns'> Projects </a></h3>
-                <h3><a href='/about.html'> About </a></h3>
-                <div id='sidebar-content'>
-                </div>
-            </div>
+            <!--<h4 id='tagline'> Student / Hacker / Human </h4>-->
+            <ul id='nav'>
+                <a href='/'>
+                    <li> Writing </li>
+                </a>
+                <a href='/about.html'>
+                    <li> About </li>
+                </a>
+                <a href='https://github.com/peterldowns'>
+                    <li> Projects </li>
+                </a>
+            </ul>
         </div>
         <div id='content'>
-            <div id='content-inner'>
-                <div class='post'>
-                    <h1>Hello, World!</h1>
+            <div class='post'>
+                <h1>Hello, World!</h1>
 <p>Hello. As you can see in the side bar, my name is Peter. I like to read, run, and program, but now I'm starting to write, too. This is my blog. I'm going to try to update it pretty often; for the past year I've been keeping a list of ideas about which I'd like to write.</p>
 <h3>Why?</h3>
 <p>I've been meaning to start a blog for a while. I haven't gone through with it -- I never really liked tumblr, or blogger, or any other blogging system. I think that writing is important, and that I should start contributing something online instead of just reading posts on <a href="http://news.ycombinator.com">hacker news</a> and <a href="http://boingboing.net">boingboing</a>. Plus, writing is fun, and I want to become better at it.</p>
@@ -42,10 +39,17 @@
 <p>I'm using <a href="http://bottlepy.org">bottle.py</a> to deal with <code>HTTP</code> requests. CSS3 and the <a href="cssgrid.net">1140px grid</a> make the layout pretty simple. </p>
 <p>The posts are all written in Markdown and converted using the python <a href="http://www.freewisdom.org/projects/python-markdown/">markdown module</a> on pypi. The HTML for each post is stored in one large JSON dictionary which is queried when you come to the site. I thought about using a database but really there's no reason to do so.</p>
 <p>If you'd like to look at it (or even contribute a post!), <a href="https://github.com/peterldowns/website">all of the code is available on my github</a>.</p>
-                </div>
             </div>
         </div>
     </div>
 </body>
 
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+    var codeBlocks = document.getElementsByTagName("pre");
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var block = codeBlocks[i];
+        hljs.highlightBlock(block);
+    };
+</script>
 </html>

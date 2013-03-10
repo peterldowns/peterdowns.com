@@ -1,39 +1,36 @@
 <!doctype HTML>
 <html>
+    
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
     <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <link rel="stylesheet" href="/static/css/highlightjs.css">
     <title> On Blogging &#8212; Peter Downs &#8212;&#160;Student / Hacker/ Human </title>
     <meta name='viewport' content='width=device-width'>
 </head>
 
 <body>
     <div id='page-wrap'>
-        <div id='sidebar'>
-            <a href='/'>
-              <img id='logo' src='/static/logo/logo@2x.png' />
-            </a>
+        <div id="header">
             <h1 id='title'> Peter Downs </h1>
-            <p id='tagline'>
-              <span class="cyan">Student</span> / 
-              <span class="magenta">Hacker</span> / 
-              <span class="yellow">Human</span>
-            </p>
-            <div id='nav'>
-                <h3><a href='/'> Writing </a></h3>
-                <!--<h3><a href='/projects.html'> Projects </a></h3>-->
-                <h3><a href='https://github.com/peterldowns'> Projects </a></h3>
-                <h3><a href='/about.html'> About </a></h3>
-                <div id='sidebar-content'>
-                </div>
-            </div>
+            <!--<h4 id='tagline'> Student / Hacker / Human </h4>-->
+            <ul id='nav'>
+                <a href='/'>
+                    <li> Writing </li>
+                </a>
+                <a href='/about.html'>
+                    <li> About </li>
+                </a>
+                <a href='https://github.com/peterldowns'>
+                    <li> Projects </li>
+                </a>
+            </ul>
         </div>
         <div id='content'>
-            <div id='content-inner'>
-                <div class='post'>
-                    <h1>On Blogging</h1>
+            <div class='post'>
+                <h1>On Blogging</h1>
 <p>In the past few days, there's been a lot of discussion on <a href="http://news.ycombinator.com">HN</a> about different methods of blogging. It all started when <a href="http://dcurt.is/">Dustin Curtis</a> <a href="http://dcurt.is/codename-svbtle">wrote about</a> his blogging framework, which he calls "Svbtle".</p>
 <p>If you didn't click over to his website, you should, because it's absolutely beautiful. It has some subtle animations and a clean color scheme, but the most important thing is that it presents his ideas with very little cruft. His blog does what every blog should aspire to do: let readers read what he writes, painlessly.</p>
 <h4>More than the readers</h4>
@@ -51,10 +48,17 @@ One of my main goals for this new writing interface was to encourage myself to s
 <p>That's not to say that Svbtle, Obtvse, or Adrian's alternative are bad, because they aren't. They're really good, and they get blogging <em>right</em>. But I don't understand why anyone would blog with a workflow that isn't already that simple. Maybe Tumblr and Blogger offer free hosting and an easy setup, but the people who read Hacker News are more than capable of rolling their own methods of blogging (or using something like <a href="http://jekyllrb.com/">Jekyll</a> or <a href="http://ringce.com/hyde">Hyde</a> and a setup like mine). If you're not blogging simply, you're missing the point.</p>
 <hr />
 <p><em>Comments? <a href="http://news.ycombinator.com/item?id=3748093">Hacker News thread</a></em> </p>
-                </div>
             </div>
         </div>
     </div>
 </body>
 
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+    var codeBlocks = document.getElementsByTagName("pre");
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var block = codeBlocks[i];
+        hljs.highlightBlock(block);
+    };
+</script>
 </html>

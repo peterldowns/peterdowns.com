@@ -1,39 +1,36 @@
 <!doctype HTML>
 <html>
+    
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
     <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <link rel="stylesheet" href="/static/css/highlightjs.css">
     <title> Opening iTerm From a Finder Directory &#8212; Peter Downs &#8212;&#160;Student / Hacker/ Human </title>
     <meta name='viewport' content='width=device-width'>
 </head>
 
 <body>
     <div id='page-wrap'>
-        <div id='sidebar'>
-            <a href='/'>
-              <img id='logo' src='/static/logo/logo@2x.png' />
-            </a>
+        <div id="header">
             <h1 id='title'> Peter Downs </h1>
-            <p id='tagline'>
-              <span class="cyan">Student</span> / 
-              <span class="magenta">Hacker</span> / 
-              <span class="yellow">Human</span>
-            </p>
-            <div id='nav'>
-                <h3><a href='/'> Writing </a></h3>
-                <!--<h3><a href='/projects.html'> Projects </a></h3>-->
-                <h3><a href='https://github.com/peterldowns'> Projects </a></h3>
-                <h3><a href='/about.html'> About </a></h3>
-                <div id='sidebar-content'>
-                </div>
-            </div>
+            <!--<h4 id='tagline'> Student / Hacker / Human </h4>-->
+            <ul id='nav'>
+                <a href='/'>
+                    <li> Writing </li>
+                </a>
+                <a href='/about.html'>
+                    <li> About </li>
+                </a>
+                <a href='https://github.com/peterldowns'>
+                    <li> Projects </li>
+                </a>
+            </ul>
         </div>
         <div id='content'>
-            <div id='content-inner'>
-                <div class='post'>
-                    <h1>Opening iTerm From a Finder Directory</h1>
+            <div class='post'>
+                <h1>Opening iTerm From a Finder Directory</h1>
 <p>If, like me, you work mostly from OS X, you've probably already discovered <a href="http://www.iterm2.com/#/section/home">iTerm2</a>. If you haven't: it's an incredibly good replacement for the default Terminal application. Combined with the <a href="http://ethanschoonover.com/solarized">solarized</a> color scheme, it does what all software should: it fades away and lets me get my work done without an issue.</p>
 <p>If you're like me in another way, you will occasionally use the Finder to browse through your files. The problem is that it's difficult to open an iTerm window set to the current Finder directory.</p>
 <p>A couple of different people have come up with solutions. <a href="http://snippets.dzone.com/user/SimonDorfman">Simon Dorfman</a> came up with <a href="http://snippets.dzone.com/posts/show/961">an Applescript</a> to keep in the Finder sidebar or your dock; it opens iTerm tabs in any directory dropped on it. <a href="http://benalman.com/">Ben Alman</a> wrote <a href="https://gist.github.com/905546">a similar script</a> that does the same thing. But both of these require you to drag and drop an item onto a script that takes up space in your sidebar or dock.</p>
@@ -69,10 +66,17 @@ end CD_to
 Save it as whatever you'd like - I saved mine as "open_iterm". Now, you can just right-click any folder from within Finder to 
 open an iTerm tab there. Cool.</p>
 <p><img alt="the service in action" src="/static/img/applescript_service_in_action.jpeg" title="Using the new service" /></p>
-                </div>
             </div>
         </div>
     </div>
 </body>
 
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+    var codeBlocks = document.getElementsByTagName("pre");
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var block = codeBlocks[i];
+        hljs.highlightBlock(block);
+    };
+</script>
 </html>

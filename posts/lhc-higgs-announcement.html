@@ -1,39 +1,36 @@
 <!doctype HTML>
 <html>
+    
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
     <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <link rel="stylesheet" href="/static/css/highlightjs.css">
     <title> On The Higgs &#8212; Peter Downs &#8212;&#160;Student / Hacker/ Human </title>
     <meta name='viewport' content='width=device-width'>
 </head>
 
 <body>
     <div id='page-wrap'>
-        <div id='sidebar'>
-            <a href='/'>
-              <img id='logo' src='/static/logo/logo@2x.png' />
-            </a>
+        <div id="header">
             <h1 id='title'> Peter Downs </h1>
-            <p id='tagline'>
-              <span class="cyan">Student</span> / 
-              <span class="magenta">Hacker</span> / 
-              <span class="yellow">Human</span>
-            </p>
-            <div id='nav'>
-                <h3><a href='/'> Writing </a></h3>
-                <!--<h3><a href='/projects.html'> Projects </a></h3>-->
-                <h3><a href='https://github.com/peterldowns'> Projects </a></h3>
-                <h3><a href='/about.html'> About </a></h3>
-                <div id='sidebar-content'>
-                </div>
-            </div>
+            <!--<h4 id='tagline'> Student / Hacker / Human </h4>-->
+            <ul id='nav'>
+                <a href='/'>
+                    <li> Writing </li>
+                </a>
+                <a href='/about.html'>
+                    <li> About </li>
+                </a>
+                <a href='https://github.com/peterldowns'>
+                    <li> Projects </li>
+                </a>
+            </ul>
         </div>
         <div id='content'>
-            <div id='content-inner'>
-                <div class='post'>
-                    <h1>On the Higgs</h1>
+            <div class='post'>
+                <h1>On the Higgs</h1>
 <h3>An article for <a href="http://www.hhsbanner.com/">The Harriton Banner</a></h3>
 <h4><em>note: this was written as a general overview of the 12/06/2011 CERN presentation. I've attempted to write it in <a href="http://en.wikipedia.org/wiki/Simplified_English">Simplified English</a>, for no reason in particular.</em></h4>
 <p>Just around a month before this was written some smart people held a talk about something called the Higgs Boson. If you read science news you may have even heard something about it, because it was surrounded by a lot of media hype (ok, a relatively large amount for the world of particle physics.)</p>
@@ -50,10 +47,17 @@
 <p>It is important to realize that they are not sure that the Higgs exists. According to the data they've analyzed, there's around a 1 in 1000 chance that what the data shows is merely a coincidence. This is actually, important. Although you and I would say "Wow, that is phenomenally unlikely, I bet that the Higgs Boson exists," a .1% chance of error in a particle physics finding is not strong enough to imply a conclusive result. So there's a chance that no, they're wrong, the Higgs hasn't been proven to exist yet. But many scientists feel that more experimentation will only agree with the results the CERN researchers presented. </p>
 <hr />
 <p><em>Disclaimer: I am not a particle physics expert. In fact, I know little about particle physics, let alone the Higgs Boson. I'd appreciate it if a better-informed reader were to send me an email (or tweet) if I've gotten something wrong.</em></p>
-                </div>
             </div>
         </div>
     </div>
 </body>
 
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+    var codeBlocks = document.getElementsByTagName("pre");
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var block = codeBlocks[i];
+        hljs.highlightBlock(block);
+    };
+</script>
 </html>

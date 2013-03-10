@@ -9,15 +9,13 @@ blockquote {
     margin: 0;
     padding: 0;
 }
-body {
-    margin: 10px 13px 10px 13px;
-}
 a {
-	color: #6B70FF;
-  text-decoration: none;
+	color: #006EFF;
+    text-decoration: none;
 }
-a:hover {
-  color: #383FFF;
+a:hover,
+a:active {
+  color: #FF0100;
   text-decoration: none;
 }
 a img {
@@ -32,73 +30,73 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 36px;
+    line-height: 1.4;
+    font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h1 {
-    margin: 18px 0;
-    font-size: 30px;
+    font-size: 2.6rem;
+    line-height: 1.4;
+    margin: 1.4rem 0;
 }
 h2 {
-    font-size: 24px;
-    margin: 14px 0;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin: 1.3rem 0;
 }
 h3 {
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin: 1.2rem 0;
 }
 h4 {
-    font-size: 16px;
-    margin: 9px 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 1.1rem 0;
 }
 h5 {
-    font-size: 14px;
-    margin: 8px 0;
+    font-size: 1.0rem;
+    line-height: 1.4;
+    margin: 1.0rem 0;
 }
 h6 {
-    font-size: 13px;
-    margin: 7px 0;
+    font-size: 1.0rem;
+    line-height: 1.4;
+    margin: 1.0rem 0;
 }
 hr {
-    margin: 0 0 19px;
+    margin: 0 0 1rem;
     border: 0;
     border-bottom: 1px solid #ccc;
 }
 blockquote {
-    margin: 1em 0;
-    padding: 1em 0;
-    padding-left: 30px;
-    border-left: 10px solid #ccc;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #ccc;
 }
 blockquote p {
     font-weight: 300;
     font-style: italic;
 }
 code, pre {
-    background: white;
+    background: #f0f0f0;
+    color: black;
     font-family: 'Inconsolata', Monaco, Andale Mono, monospace !important;
     text-align: left;
 }
 code {
-    background-color: #fee9cc;
-    background: white;
-    padding: 1px 3px;
-    padding: 5px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    padding: 2px 1px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 pre {
     display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    border: 1px solid #999;
+    padding: 1rem;
+    margin: 0 0 1rem;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 pre code {
-    background-color: #fff;
-    color:#737373;
-    color: black;
     padding: 0;
 }
