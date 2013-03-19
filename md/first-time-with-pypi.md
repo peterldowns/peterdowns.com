@@ -15,7 +15,7 @@ I wrote up a quick guide, which I'm publishing below
 because I haven't found any other guides for this particular
 use case (python library hosted on github).
 
-## What is [PyPI](PyPI.python.org)?
+## What is [PyPI](http://pypi.python.org)?
 
 From the official website:
 
@@ -46,8 +46,8 @@ I've written this guide with the following assumptions:
 
 ### Create your accounts
 
-On [PyPI Live](http://PyPI.python.org/PyPI?%3Aaction=register_form) and also
-on [PyPI Test](http://testPyPI.python.org/PyPI?%3Aaction=register_form). You must create an
+On [PyPI Live](http://pypi.python.org/pypi?%3Aaction=register_form) and also
+on [PyPI Test](http://testpypi.python.org/pypi?%3Aaction=register_form). You must create an
 account in order to be able to upload your code. I recommend using the same email/password for
 both accounts, just to make your life easier when it comes time to push.
 
