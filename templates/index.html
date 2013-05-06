@@ -1,20 +1,22 @@
 <!doctype HTML>
 <html>
-    
+  
 {{>head}}
 
 <body>
-    <div id='page-wrap'>
-        {{>header}}
-        <div id='content'>
-            <div class='archives'>
-                <h3> Writing </h3>
-                {{# posts}}
-                    <p><a href='{{html_path}}'>{{title}}</a></p>
-                {{/posts}}
-            </div>
-        </div>
+  <div id='page-wrap'>
+    {{>header}}
+    <div id='content'>
+      <div class='archives'>
+        <h3> Writing </h3>
+        {{# posts}}
+          <p><a href='{{html_path}}'>{{title}}</a></p>
+        {{/posts}}
+      </div>
     </div>
+  </div>
 </body>
 
+
+{{>footer}}
 </html>

@@ -1,6 +1,6 @@
 <!doctype HTML>
 <html>
-    
+  
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <div id='page-wrap'>
-        <div id="header">
-            <h1 id='title'> Peter Downs </h1>
-            <ul id='nav'>
-                <li><a href='/'>Writing</a></li>
-                <li><a href='/about.html'>About</a></li>
-                <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
-            </ul>
-        </div>
-        <div id='content'>
-            <div class='post'>
-                <h1>My New Logo</h1>
+  <div id='page-wrap'>
+    <div id="header">
+        <h1 id='title'> Peter Downs </h1>
+        <ul id='nav'>
+            <li><a href='/'>Writing</a></li>
+            <li><a href='/about.html'>About</a></li>
+            <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
+        </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+        <h1>My New Logo</h1>
 <p>I recently redesigned my website to look a little nicer than it did.
 I'm no designer (although I'm trying to learn) but I think it turned out nicely.</p>
 <p>Discounting the minor font and color changes, the biggest difference between
@@ -57,17 +57,26 @@ listening to music. I have fairly decent social skills and I like to meet new pe
 to me as making cool things or learning. No one wants to teach assholes, nor listen to them brag
 about their accomplishments. The best way to learn a lot and find an audience for the things you make is
 to play well with others.</p>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </body>
 
 <script src="/static/js/highlight.js"></script>
 <script type="text/javascript">
-    var codeBlocks = document.getElementsByTagName("pre");
-    for (var i = 0; i < codeBlocks.length; i++) {
-        var block = codeBlocks[i];
-        hljs.highlightBlock(block);
-    };
+  var codeBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var block = codeBlocks[i];
+    hljs.highlightBlock(block);
+  };
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-40701023-1', 'peterdowns.com');
+  ga('send', 'pageview');
 </script>
 </html>

@@ -1,6 +1,6 @@
 <!doctype HTML>
 <html>
-    
+  
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <div id='page-wrap'>
-        <div id="header">
-            <h1 id='title'> Peter Downs </h1>
-            <ul id='nav'>
-                <li><a href='/'>Writing</a></li>
-                <li><a href='/about.html'>About</a></li>
-                <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
-            </ul>
-        </div>
-        <div id='content'>
-            <div class='post'>
-                <h1>On Blogging</h1>
+  <div id='page-wrap'>
+    <div id="header">
+        <h1 id='title'> Peter Downs </h1>
+        <ul id='nav'>
+            <li><a href='/'>Writing</a></li>
+            <li><a href='/about.html'>About</a></li>
+            <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
+        </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+        <h1>On Blogging</h1>
 <p>In the past few days, there's been a lot of discussion on <a href="http://news.ycombinator.com">HN</a> about different methods of blogging. It all started when <a href="http://dcurt.is/">Dustin Curtis</a> <a href="http://dcurt.is/codename-svbtle">wrote about</a> his blogging framework, which he calls "Svbtle".</p>
 <p>If you didn't click over to his website, you should, because it's absolutely beautiful. It has some subtle animations and a clean color scheme, but the most important thing is that it presents his ideas with very little cruft. His blog does what every blog should aspire to do: let readers read what he writes, painlessly.</p>
 <h4>More than the readers</h4>
@@ -41,17 +41,26 @@ One of my main goals for this new writing interface was to encourage myself to s
 <p>That's not to say that Svbtle, Obtvse, or Adrian's alternative are bad, because they aren't. They're really good, and they get blogging <em>right</em>. But I don't understand why anyone would blog with a workflow that isn't already that simple. Maybe Tumblr and Blogger offer free hosting and an easy setup, but the people who read Hacker News are more than capable of rolling their own methods of blogging (or using something like <a href="http://jekyllrb.com/">Jekyll</a> or <a href="http://ringce.com/hyde">Hyde</a> and a setup like mine). If you're not blogging simply, you're missing the point.</p>
 <hr />
 <p><em>Comments? <a href="http://news.ycombinator.com/item?id=3748093">Hacker News thread</a></em> </p>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </body>
 
 <script src="/static/js/highlight.js"></script>
 <script type="text/javascript">
-    var codeBlocks = document.getElementsByTagName("pre");
-    for (var i = 0; i < codeBlocks.length; i++) {
-        var block = codeBlocks[i];
-        hljs.highlightBlock(block);
-    };
+  var codeBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var block = codeBlocks[i];
+    hljs.highlightBlock(block);
+  };
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-40701023-1', 'peterdowns.com');
+  ga('send', 'pageview');
 </script>
 </html>

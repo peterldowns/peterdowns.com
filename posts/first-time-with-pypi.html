@@ -1,6 +1,6 @@
 <!doctype HTML>
 <html>
-    
+  
 <head>
 	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <div id='page-wrap'>
-        <div id="header">
-            <h1 id='title'> Peter Downs </h1>
-            <ul id='nav'>
-                <li><a href='/'>Writing</a></li>
-                <li><a href='/about.html'>About</a></li>
-                <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
-            </ul>
-        </div>
-        <div id='content'>
-            <div class='post'>
-                <h1>How to submit a package to PyPI</h1>
+  <div id='page-wrap'>
+    <div id="header">
+        <h1 id='title'> Peter Downs </h1>
+        <ul id='nav'>
+            <li><a href='/'>Writing</a></li>
+            <li><a href='/about.html'>About</a></li>
+            <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
+        </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+        <h1>How to submit a package to PyPI</h1>
 <hr />
 <p>The other month a coworker of mine wanted to distribute
 <a href="http://PyPI.python.org/PyPI/locu/0.1">a small wrapper</a>
@@ -150,17 +150,26 @@ You should get no errors, and should also now be able to see your library in the
 python setup.py sdist upload -r PyPI
 </code></pre>
 <p>and you're done.</p>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </body>
 
 <script src="/static/js/highlight.js"></script>
 <script type="text/javascript">
-    var codeBlocks = document.getElementsByTagName("pre");
-    for (var i = 0; i < codeBlocks.length; i++) {
-        var block = codeBlocks[i];
-        hljs.highlightBlock(block);
-    };
+  var codeBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var block = codeBlocks[i];
+    hljs.highlightBlock(block);
+  };
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-40701023-1', 'peterdowns.com');
+  ga('send', 'pageview');
 </script>
 </html>
