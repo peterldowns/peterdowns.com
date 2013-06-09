@@ -1,0 +1,44 @@
+<!doctype HTML>
+<html>
+
+{{>head}}
+<style>
+  #content {
+    text-align: left;
+  }
+  td {
+    vertical-align: top;
+    min-width: 80;
+    padding: 10px;
+  }
+</style>
+  
+<body>
+  <div id='page-wrap'>
+    {{>header}}
+    <div id='content'>
+      <table>
+        {{#data}}
+          <tr>
+            <td>
+              <b>{{date}}</b>
+              <br/>
+              {{day}}
+            </td>
+            <td> {{duration}} </td>
+            <td> {{distance}} </td>
+            <td style="width: 100%"> {{note}} </td>
+          </tr>
+        {{/data}}
+      </table>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  // Raw running data, feel free to go nuts!
+  var data = {{& data_json}};
+</script>
+
+{{>footer}}
+</html>

@@ -1,0 +1,314 @@
+# Schema:
+#
+#- date:
+#  day:
+#  duration:
+#  distance:
+#  weather:
+#  terrain:
+#  feel:
+#  time-of-day:
+#  note:
+#  sleep:
+#  resting-heart-rate-bpm:
+#  tags:
+
+- date: 2013/05/04
+  day: Saturday
+  duration: '21:00'
+  distance: '3.0 miles'
+  weather: sunny
+  terrain:
+  feel: 8
+  time-of-day: 1:30 PM
+  note:
+  sleep:
+  resting-heart-rate-bpm:
+  tags:
+
+- date: 2013/05/07
+  day: Tuesday
+  duration: '22:30'
+  distance: '3.1 miles'
+  weather: bright but cool
+  terrain:
+  feel: 8
+  time-of-day: 8:00 AM
+  note: I was still a little sore from yesterday.
+  sleep:
+  resting-heart-rate-bpm:
+  tags:
+
+- date: 2013/05/08
+  day: Wednesday
+  duration: '19:43'
+  distance: '2.8 miles'
+  weather: overcast, comfortable
+  terrain:
+  feel: 6
+  time-of-day: 8:40 AM
+  note: My left arm is sore, I think I slept on it funny.
+  sleep: '07:30'
+  resting-heart-rate-bpm:
+  tags:
+
+- date: 2013/05/11
+  day: Saturday
+  duration: '23:50'
+  distance: '3.1 miles'
+  weather: overcast, comfortable
+  terrain:
+  feel: 6
+  time-of-day: 5:00 PM
+  note: Super hilly, which made me feel crappy. I also ate two bowls of count
+        chocula cereal at around 4:00 PM, so I really didn't feel all that
+        great.
+  sleep: '09:00'
+  resting-heart-rate-bpm:
+  tags:
+
+- date: 2013/05/12
+  day: Sunday
+  duration: '21:54'
+  distance: '3.1 miles'
+  weather: bright, warm, comfortable
+  terrain: flat, track
+  feel: 8
+  time-of-day: 5:30 PM
+  note: Ran to the City College track, where I ran a mile. Felt comfortable.
+        Took the pace on the track a little quick (6:10ish).
+  sleep: '10:30'
+  resting-heart-rate-bpm:
+  tags: comfortable, fast
+
+- date: 2013/05/25
+  day: Saturday
+  duration: '33:54'
+  distance: '4.8 miles'
+  weather: sunny, windy
+  terrain: hills, track
+  feel: 5
+  time-of-day: 5:20 PM
+  note: Ran to City College and did 2 miles on the track at exactly 6:40 pace.
+        Took the long way there and back because I wanted to hit over 30
+        minutes. My groin was hurting a little bit on the right side.
+  sleep: '11:30'
+  resting-heart-rate-bpm:
+  tags: windy, groin, injury, discomfort
+
+- date: 2013/05/26
+  day: Sunday
+  duration: '28:43'
+  distance: '4.0 miles'
+  weather: hot, sunny
+  terrain: hills
+  feel: 7
+  time-of-day: 11:45 AM
+  note: Ran up to the road at the Bernal Heights. Very steep and hilly. I
+        stretched out my groin a little ahead of time, and although it hurt a
+        little on the uphill it was fine for the most part.
+  sleep: '08:00'
+  resting-heart-rate-bpm:
+  tags: groin, discomfort
+
+- date: 2013/05/27
+  day: Monday
+  duration: '32:40'
+  distance: '4.6 miles'
+  weather: humid, warm, gray, misty, fog
+  terrain: hills
+  feel: 8
+  time-of-day: 5:00 PM
+  note: Ran over past the water tower, but continued running until I came upon
+        a highschool track with a beautiful view. I hopped two fences and ran a
+        quarter mile on the track. Coming off of the track I ran past two
+        teachers who seemed to be leaving; their backs were turned and they
+        didn't notice me. The whole day was super gray, misty, and humid; it
+        was silent, and as if we were inside a fogbank.
+  sleep: '09:00'
+  resting-heart-rate-bpm:
+  tags: fun, explore, advenutre, highschool, view, loop, water, tower
+
+- date: 2013/05/28
+  day: Tuesday
+  duration: '30:37'
+  distance: '4.3 miles'
+  weather: humid, fog, gray, misty
+  terrain: hills, track
+  feel: 6
+  time-of-day: 8:45 AM
+  note: Ran to City College track, did 1.5 miles there, then ran back. Felt
+        very sore but I'm glad I ran this morning.
+  sleep: '06:00'
+  resting-heart-rate-bpm:
+  tags: tired, track, slow, sore
+
+# 2013/05/29 Wednesday -- Day Off
+
+- date: 2013/05/30
+  day: Thursday
+  duration: '32:41'
+  distance: '4.7 miles'
+  weather: perfect, sunny, cool
+  terrain: hilly
+  feel: 8
+  time-of-day: 8:55 AM
+  note: Ran up Mission and to the top of the Bernal Heights. I took the
+        escarpment approach and ran up the dirt path instead of running the
+        road the whole way up. It was absolutely gorgeous at the top. I felt
+        extremely good the whole time, even though the hills were pretty rough.
+  sleep: '07:00'
+  resting-heart-rate-bpm:
+  tags: sunny, beautiful, bernal, heights, trail
+
+- date: 2013/05/31
+  day: Friday
+  duration: '31:12'
+  distance: '4.3 miles'
+  weather: hot, sunny
+  terrain: hilly, track
+  feel: 7
+  time-of-day: 9:00 AM
+  note: Ran to the city college track, where I did 1.5 miles in 10:30ish (right
+        around a 7:00 mile pace.) It was a nice day, but I slept in a little so
+        now I'm going to be late for work. I could feel myself getting happier
+        the moment I decided to go for the run.
+  sleep: '08:00'
+  resting-heart-rate-bpm:
+  tags: hungry, tired, bright, good
+
+- date: 2013/06/01
+  day: Saturday
+  duration: '36:37'
+  distance: '4.9 miles'
+  weather: hot, sunny
+  terrain: hilly, track
+  feel: 7
+  time-of-day: 11:15 AM
+  note: Did the run past the water tower to the highschool track, where I ran a
+        half mile. Jumping the fence definitely twinged my groin, which hasn't
+        been feeling fully healthy. It's a beautiful, warm, day, and I took my
+        shirt off about a mile and a half into the run. I forgot how great that
+        feels!
+  sleep: '08:15'
+  resting-heart-rate-bpm:
+  tags: groin, hurt, good, fun, water, tower
+
+- date: 2013/06/02
+  day: Sunday
+  duration: '38:13'
+  distance: '5.4 miles'
+  weather: cool, sunny
+  terrain: hilly, flat
+  feel: 7
+  time-of-day: 09:40 AM
+  note: Longer run today with Jack Curtis! He saw me at the XX concert last
+        night and we caught up and decided to run this morning. I met him at
+        his hotel (Hotel Monaco) on Taylor and Geary right near Union Square.
+        We ran down Taylor until we hit the embarcadero, then looped around and
+        picked up Market -> Sutter -> the hotel. It was a beautiful day and I
+        had a great time running with him and talking -- so much better than
+        running alone.  He's doing really well, and is about 3 weeks into his
+        own training, so the pace was a little fast for me and I had to slow
+        down coming uphill at the end of the run.
+  sleep: '06:30'
+  resting-heart-rate-bpm:
+  tags: Jack, Curtis, downtown, embarcadero, fun, talk
+
+- date: 2013/06/03
+  day: Monday
+  duration: '31:58'
+  distance: '4.8 miles'
+  weather: sunny, hot
+  terrain: hilly, flat
+  feel: 5
+  time-of-day: 8:50 AM
+  note: First run out of the new apartment! Ran down Gough to the Marina, then
+        ran along until I hit 16 minutes and turned around. My groin was
+        hurting again on the way back so I stopped and stretched at around 24
+        minutes. I didn't make it all the way back to the apartment -- Gough
+        gets crazy steep coming up from the marina, and my groin started
+        hurting on the climb even after I stretched. I feel bad about not
+        making it back up, but I'd already done 32ish minutes, and I had been
+        aiming for 30 after yesterday's longer run with Jack.
+  sleep: '08:00'
+  resting-heart-rate-bpm:
+  tags: hot, marina, first, groin, hurt, stretch
+
+- date: 2013/06/04
+  day: Tuesday
+  duration: '36:40'
+  distance: '5.3 miles'
+  weather: foggy, warm, humid
+  terrain: hilly, flat
+  feel: 6
+  time-of-day: 8:50 AM
+  note: Exact same run as yesterday, but a little further and a little faster.
+        My groin felt good pretty much until the uphill at the end. Coming back
+        it twinged a little, and now (2 hours later) it doesn't hurt but it
+        does feel a little discomfortable. I'm going to try and get it seen by
+        someone soon, and I think I'll call Mr. Klick and ask him about it.
+  sleep: '07:30'
+  resting-heart-rate-bpm: 56
+  tags: foggy, marina, groin, twinge, discomfort
+
+# 2013/06/05 Wednesday -- Day Off
+
+- date: 2013/06/06
+  day: Thursday
+  duration: '36:49'
+  distance: '5.3 miles'
+  weather: sunny, hot, windy
+  terrain: hilly, flat
+  feel: 7
+  time-of-day: 1:30 PM
+  note: Did the same marina run that I've been doing. It's nice and flat except
+        for the huge uphill at the end, and I get fantastic views of Alcatraz,
+        the Bay, and the Golden Gate.  Today I saw one of the Oracle boats,
+        huge and far away. Only a very minor irritation of my groin. I talked
+        with Mr. Klick on Tuesday and he said that because it's an old injury
+        (from soccer freshman year) I'll probably feel it for the rest of my
+        life. He remembers that I have always had issues with it at the
+        beginning of training, but that it will most likely work itself out as
+        the microtears heal up. He approves of getting it worked on. He also
+        said that he was pretty excited for seeing what I can do if I train
+        consistently, which is great motivation for me.
+  sleep: '05:30'
+  resting-heart-rate-bpm: 70
+  tags: tired, fast, marina
+
+- date: 2013/06/07
+  day: Friday
+  duration: '36:48'
+  distance: '5.3 miles'
+  weather: hot, sunny
+  terrain: flat, hilly
+  feel: 6
+  time-of-day: 10:50 AM
+  note: Same old Marina run. Feels good, man! Can't wait to explore a little
+        once the weekend comes. I should mention that I've been really
+        congested all week, and that I have a ton of mucus in my system, which
+        makes the runs a little awful at first.
+  sleep: '06:30'
+  resting-heart-rate-bpm: 60
+  tags: marina, tired
+
+- date: 2013/06/08
+  day: Saturday
+  duration: '40:54'
+  distance: '6.3 miles'
+  weather: warm, windy, overcast
+  terrain: flat, hilly
+  feel: 7
+  time-of-day: 5:00 PM
+  note: Did the Marina run, but went a little further this time. I turned
+        around at the dividing point of Crissy field. I think running to the
+        base of the bridge and back will end up being around 8 miles; I'm
+        excited for being able to do that regularly. Today's run was not so
+        much fun on the way out because there was an extremely strong wind that
+        I was running directly into. Turning around was a huge relief. Felt
+        pretty good -- little bit of groin stress on the uphill on the way back
+        (came back on Franklin instead of Gough this time.)
+  sleep: '09:00'
+  resting-heart-rate:
+  tags: groin, healing, headwind, marina, crissy, field, franklin

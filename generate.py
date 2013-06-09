@@ -3,6 +3,7 @@
 import os
 import json
 import markdown
+import yaml
 from operator import itemgetter
 from mustache import template
 from time import mktime, strptime
@@ -18,6 +19,8 @@ _enc_errors = 'xmlcharrefreplace'   # how to treat unicode characters when writi
 _index = './index.html'   # file at which to store the homepage / archive
 _about = './about.html'
 _projects = './projects.html'
+_running_yaml_path = './static/runlog.yaml'
+_running_out = './running.html'
 
 @template('templates/index.html')
 def render_homepage(posts):
@@ -34,6 +37,13 @@ def render_projects():
 @template('templates/post.html')
 def render_post(post):
   return {'post' : post}, {}
+
+@template('templates/running.html')
+def render_running_analytics(yaml_path):
+  with open(yaml_path, 'r') as fin:
+    data = list(reversed(yaml.load(fin)))
+  return {'data' : data,
+          'data_json' : json.dumps(data, indent=2)}
 
 def load_post(path):
   """ Given a path to a Markdown file, load its contents,
@@ -75,6 +85,11 @@ if __name__=='__main__':
 
   try: os.mkdir(_md_out) # make the output folder
   except OSError: pass # already exists
+
+  print 'Writing running -> {}'.format(_running_out)
+  with open(_running_out, 'w') as fout:
+    html = render_running_analytics(_running_yaml_path)
+    fout.write(unicode(html).encode(errors=_enc_errors))
 
   print 'Writing homepage -> {}'.format(_index)
   with open(_index, 'w') as fout:
