@@ -1,3 +1,6 @@
+body {
+  padding: 20px;
+}
 #shell {
   width: 759px;
   padding: 0 12px;
