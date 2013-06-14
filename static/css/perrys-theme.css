@@ -400,12 +400,14 @@ h1#logo a {
   float: none;
   min-width: 254px;
   display: table-cell;
+  vertical-align: top;
   padding: 5px 0 0 5px;
 }
 .general-page .content {
   float: none;
   width: 100%;
   display: table-cell;
+  vertical-align: top;
   padding-right: 4px;
 }
 .general-page .content .head {
