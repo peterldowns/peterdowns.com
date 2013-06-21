@@ -78,7 +78,7 @@ Every package on PyPI needs to have a file called `setup.py` at
 the root of the directory. If your'e using a markdown-formatted read me file
 you'll also need a `setup.cfg` file. Also, you'll want a `LICENSE.txt` file
 describing what can be done with your code. So if I've been working on a
-library called `my-lib`,  my directory structure would look like this:
+library called `mypackage`,  my directory structure would look like this:
 
 		root-dir/ 	# arbitrary working directory name
 			setup.py
