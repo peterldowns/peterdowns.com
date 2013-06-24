@@ -24,10 +24,23 @@
     <div id='content'>
       <div class='post'>
         <h1>Opening iTerm From a Finder Directory</h1>
-<p>If, like me, you work mostly from OS X, you've probably already discovered <a href="http://www.iterm2.com/#/section/home">iTerm2</a>. If you haven't: it's an incredibly good replacement for the default Terminal application. Combined with the <a href="http://ethanschoonover.com/solarized">solarized</a> color scheme, it does what all software should: it fades away and lets me get my work done without an issue.</p>
-<p>If you're like me in another way, you will occasionally use the Finder to browse through your files. The problem is that it's difficult to open an iTerm window set to the current Finder directory.</p>
-<p>A couple of different people have come up with solutions. <a href="http://snippets.dzone.com/user/SimonDorfman">Simon Dorfman</a> came up with <a href="http://snippets.dzone.com/posts/show/961">an Applescript</a> to keep in the Finder sidebar or your dock; it opens iTerm tabs in any directory dropped on it. <a href="http://benalman.com/">Ben Alman</a> wrote <a href="https://gist.github.com/905546">a similar script</a> that does the same thing. But both of these require you to drag and drop an item onto a script that takes up space in your sidebar or dock.</p>
-<p>I didn't want to clutter up my dock or Finder sidebar with a droppable script, so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder service.  Here's the script:</p>
+<p>If, like me, you work mostly from OS X, you've probably already discovered
+<a href="http://www.iterm2.com/#/section/home">iTerm2</a>. If you haven't: it's an incredibly good replacement for the
+default Terminal application. Combined with the <a href="http://ethanschoonover.com/solarized">solarized</a> color scheme, it
+does what all software should: it fades away and lets me get my work done
+without an issue.</p>
+<p>If you're like me in another way, you will occasionally use the Finder to
+browse through your files. The problem is that it's difficult to open an iTerm
+window set to the current Finder directory.</p>
+<p>A couple of different people have come up with solutions. <a href="http://snippets.dzone.com/user/SimonDorfman">Simon Dorfman</a>
+came up with <a href="http://snippets.dzone.com/posts/show/961">an Applescript</a> to keep in the Finder sidebar or your dock; it
+opens iTerm tabs in any directory dropped on it. <a href="http://benalman.com/">Ben Alman</a> wrote <a href="https://gist.github.com/905546">a
+similar script</a> that does the same thing. But both of these require you to
+drag and drop an item onto a script that takes up space in your sidebar or
+dock.</p>
+<p>I didn't want to clutter up my dock or Finder sidebar with a droppable script,
+so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder
+service.  Here's the script:</p>
 <pre><code>on run {input, parameters}
     tell application "Finder"
         set dir_path to "\"" &amp; (POSIX path of (input as string)) &amp; "\""
@@ -55,10 +68,15 @@ end CD_to
 </code></pre>
 <p>Using Automator, create a new "Service" that accepts folders in Finder.</p>
 <p><img alt="setting up the service" src="/static/img/applescript_service.jpeg" title="Setting up the service" /></p>
-<p>Add a "Run Applescript" action and paste in the above code.
-Save it as whatever you'd like - I saved mine as "open_iterm". Now, you can just right-click any folder from within Finder to 
-open an iTerm tab there. Cool.</p>
+<p>Add a "Run Applescript" action and paste in the above code.  Save it as
+whatever you'd like - I saved mine as "open_iterm". Now, you can just
+right-click any folder from within Finder to open an iTerm tab there. Cool.</p>
 <p><img alt="the service in action" src="/static/img/applescript_service_in_action.jpeg" title="Using the new service" /></p>
+<h3>Update &mdash; June 24, 2013</h3>
+<p>I just got a great email from <a href="https://github.com/eric-hu">Eric Hu</a> describing
+a modified version of this script that can be run on files, not just folders.
+<a href="https://gist.github.com/eric-hu/5846890">Check it out here</a> &mdash; thanks,
+Eric!</p>
       </div>
     </div>
   </div>
