@@ -1,0 +1,67 @@
+Title: Playlist Memories
+Author: Peter Downs
+Date: Sunday, July 14, 2013
+
+# Playlist Memories
+
+![iTunes Playlists](/static/img/itunes-playlists.png)
+
+Here's a recommendation: create playlists, keep track of when you do so, and
+never delete them. I started doing this in 2011; 2 years and 45 playlists later
+I've decided to write about how this has affected me. This is more of a
+personal post than usual, but if you're interested in music and emotion then
+please read on.
+
+### Background
+
+I listen to a lot of music. I used to play the violin, but I gave it up when I
+started highschool.  I was briefly attracted to the electric bass, but I never
+got any good. I had more fun repurposing an old radio as an amplifier head than
+badly covering The Beatles.
+
+All of my friends and I actively listen to music. By this I mean that we seek
+out certain artists instead of settling for whatever comes on the radio. I
+started going to concerts my freshman year of highschool, stopped my junior
+year, and have just recently taken it up again. I've always listened to music
+while reading, working, writing, and programming. Especially programming
+&mdash; it's a great way to drown out the distractions of an open office, and
+because I make my living on the computer I spend a lot of time listening to
+different artists.
+
+### Memories
+
+Certain songs mean a lot to me because of the context in which I first heard
+them.  Guster will always remind me of my freshman year of highschool; Crystal
+Fighters reminds me of the summer; Arcade Fire's "The Suburbs" reminds me of my
+first serious relationship. I don't think I'm the only one who associates
+different songs or albums with different memories. I have no idea why it
+happens, but music seems tied to my emotions. When I listen to playlists I've
+made in the past, I feel how I did when they were created. 
+
+### Replay
+
+I've created about 2 playlists each month for the past two years, and each one
+has a specific date and a short description. Because I've done this, I can now
+"replay" my emotions at any time from that period, which I think is
+unbelievably cool. It's also been very cathartic &mdash; I can selectively
+return to a playlist I made while angry, or depressed, or elated, and reason
+about those emotions much more logically now that I'm removed from the
+particular situations by which they were triggered.
+
+It's also fun to revisit the past, and to see how much my tastes and emotions
+have changed since then. I've spent the past year working in San Francisco,
+which has been hard because I don't have many friends my own age here (I moved
+from Philadelphia, and all of my highschool friends are attending college.)
+Listening to music that reminds me of my old friends and the times we've had
+together did a lot to help me adjust to my relatively lonely life here on the
+west coast.
+
+Saving my playlists has been an interesting and overwhelmingly positive
+experience. I've found that I tend to feel the need for a new playlist every 2
+or 3 weeks, but there's no hard rule. If you try this for yourself, be sure to
+write and let me know how it goes!
+
+
+**P.S.** [See what I'm listening to on last.fm](https://last.fm/user/downs_p).
+
+
