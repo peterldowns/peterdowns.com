@@ -44,7 +44,7 @@ service.  Here's the script:</p>
 <pre><code>on run {input, parameters}
     tell application "Finder"
         set dir_path to "\"" &amp; (POSIX path of (input as string)) &amp; "\""
-            -- display dialog dir_path
+            &amp;mdash; display dialog dir_path
     end tell
     CD_to(dir_path)
 end run

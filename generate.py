@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
-import os
+import codecs
 import json
 import markdown
+import os
 import yaml
-from operator import itemgetter
+
 from mustache import template
+from operator import itemgetter
 from time import mktime, strptime
 
 _parser = markdown.Markdown(extensions=['meta'])
@@ -51,8 +53,9 @@ def load_post(path):
   dict containing all of the necessary information. """
   # Read the Markdown file
   md = u''
-  with open(path, 'rb') as fin:
+  with codecs.open(path, 'rb', 'utf-8') as fin:
     md = unicode(fin.read())
+    md = md.replace('--', '&mdash;')
 
   # Convert the Markdown to HTML
   html = _parser.convert(md)
