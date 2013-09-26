@@ -45,7 +45,7 @@ I'm better at talking to people; I'm better at getting my work done on time.
 But I can't point to anything in particular that's made me more "adult" other
 than my age.
 
-Adults of the world -- what do you think? Is there some secret I'm missing out
+Adults of the world — what do you think? Is there some secret I'm missing out
 on? When did you grow up?
 
 

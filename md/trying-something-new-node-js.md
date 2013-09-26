@@ -6,7 +6,7 @@ Date: Thursday, May 10, 2012
 
 Last Wednesday I sat down and wrote the following:
 
-> I want to try something new. Even though I was accepted to university way back in November, I've been pretty busy all year keeping up with my schoolwork. Now, as classes wind down, I find myself with a little free time. Tomorrow [Thursday, May 3] I don't need to go in to school at all. I could spend the day studying for the final exam I must take on Friday -- that would probably be the safest decision -- or I could try something new.
+> I want to try something new. Even though I was accepted to university way back in November, I've been pretty busy all year keeping up with my schoolwork. Now, as classes wind down, I find myself with a little free time. Tomorrow [Thursday, May 3] I don't need to go in to school at all. I could spend the day studying for the final exam I must take on Friday — that would probably be the safest decision — or I could try something new.
 
 The result is a web-app I call [**Who Will I Know There?**][0] I think it's pretty neat (it's a tool for finding friends to connect with when you're moving somewhere new) and I hope you do, too.
 
@@ -26,11 +26,11 @@ I'm still terribly inexperienced when it comes to programming. What little I've 
 
 As far as I can tell it's an awesome language. I'm still getting used to it, and at first I definitely felt as if I were simply writing python with slightly different syntax. It's expressive, it's C-like, and although I don't fully understand the differences in equality testing (`===` and `!==` vs. `==` and `!=`???) it's been easy to pick up.
 
-Probably the best thing about Node is that it lets me use javascript for both client side and server side logic. All those little mistakes I used to make when I'd try to write something in Javascript using Python syntax or vice versa are now gone -- there's no need to switch between two different languages.
+Probably the best thing about Node is that it lets me use javascript for both client side and server side logic. All those little mistakes I used to make when I'd try to write something in Javascript using Python syntax or vice versa are now gone — there's no need to switch between two different languages.
 
 Other than that, the biggest compliment I have is that Node was very easy to learn and use (with the [Express][4] MVC framework and [Dotcloud][5] for hosting) to get a website up and running very quickly. Prototyping and making changes has been painless, especially because I decided to use Twitter's [Bootstrap][6] framework-y thing.
 
-### The result -- Who Will I Know There?
+### The result — Who Will I Know There?
 
 It's pretty hard for me to hack on something I'm not interested in. So I wanted to build something that would mostly help *me* out, although it being useful to other people would be a nice bonus.
 

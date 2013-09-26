@@ -20,7 +20,7 @@ overlap of three different things to create a fourth.
 
 ### Student
 
-I'm not happy unless I'm learning new things. I aim to be a student in all areas of life --
+I'm not happy unless I'm learning new things. I aim to be a student in all areas of life —
 there's always more to learn. Although I may know a little about certain subjects, there's
 always [other](http://www.skeenan.com/) [people](http://web.mit.edu/cepstein/www/) who
 know a lot more than I do. It would simply be foolish to not try to learn as much as I can

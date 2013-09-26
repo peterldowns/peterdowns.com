@@ -19,7 +19,7 @@ use case (python library hosted on github).
 
 From the official website:
 
-> **PyPI** -- the Python Package Index
+> **PyPI** — the Python Package Index
 > 
 > The Python Package Index is a repository of software for the
 > Python programming language.
@@ -114,7 +114,7 @@ Here's a breakdown of what goes in which file:
   create a [`git tag`](http://git-scm.com/book/en/Git-Basics-Tagging). In your
   repository, type: `git tag 0.1 -m "Adds a
   tag so that we can put this on PyPI"`. Then, type `git tag` to show a
-  list of tags -- you should see `0.1` in the list. Type `git push --tags origin
+  list of tags — you should see `0.1` in the list. Type `git push --tags origin
   master` to update your code on Github with the latest tag information. Github
   creates tarballs for download at `https://github.com/{username}/{module_name}/tarball/{tag}`.
 
@@ -124,7 +124,7 @@ Here's a breakdown of what goes in which file:
 		description-file = README.md
 
   This is necessary if you're using a markdown readme file. At upload time, you
-  may still get some errors about the lack of a readme -- don't worry about it.
+  may still get some errors about the lack of a readme — don't worry about it.
 	
 * **LICENSE.txt** whatever license you want your code to have. I tend to use the
   MIT license.

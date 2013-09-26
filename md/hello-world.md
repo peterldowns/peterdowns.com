@@ -6,7 +6,7 @@ Date: Sunday, January 8, 2012
 Hello. As you can see in the side bar, my name is Peter. I like to read, run, and program, but now I'm starting to write, too. This is my blog. I'm going to try to update it pretty often; for the past year I've been keeping a list of ideas about which I'd like to write.
 
 ### Why?
-I've been meaning to start a blog for a while. I haven't gone through with it -- I never really liked tumblr, or blogger, or any other blogging system. I think that writing is important, and that I should start contributing something online instead of just reading posts on [hacker news](http://news.ycombinator.com) and [boingboing](http://boingboing.net). Plus, writing is fun, and I want to become better at it.
+I've been meaning to start a blog for a while. I haven't gone through with it — I never really liked tumblr, or blogger, or any other blogging system. I think that writing is important, and that I should start contributing something online instead of just reading posts on [hacker news](http://news.ycombinator.com) and [boingboing](http://boingboing.net). Plus, writing is fun, and I want to become better at it.
 
 So, here's the blog.
 

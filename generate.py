@@ -55,7 +55,6 @@ def load_post(path):
   md = u''
   with codecs.open(path, 'rb', 'utf-8') as fin:
     md = unicode(fin.read())
-    md = md.replace('--', '&mdash;')
 
   # Convert the Markdown to HTML
   html = _parser.convert(md)

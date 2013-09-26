@@ -7,7 +7,7 @@ Last month I decided to buy some bitcoin. Why? The price was going up! I was
 guaranteed to make some money! What could go wrong?
 
 ### What is this stuff?
-Well, not quite like that. Bitcoin has interested me for a while -- what
+Well, not quite like that. Bitcoin has interested me for a while — what
 currency has been the subject of such speculation? How often do new currencies
 become popular enough to actually use? Or has such a [mysterious
 creator](https://bitslog.wordpress.com/2013/04/17/the-well-deserved-fortune-of-satoshi-nakamoto/)

@@ -24,7 +24,7 @@
     <div id='content'>
       <div class='post'>
         <h1>How to submit a package to PyPI</h1>
-<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
+<hr />
 <p>The other month a coworker of mine wanted to distribute
 <a href="http://PyPI.python.org/PyPI/locu/0.1">a small wrapper</a>
 he'd written for the <a href="http://dev.locu.com/">Locu API</a>.
@@ -37,7 +37,7 @@ use case (python library hosted on github).</p>
 <h2>What is <a href="http://pypi.python.org">PyPI</a>?</h2>
 <p>From the official website:</p>
 <blockquote>
-<p><strong>PyPI</strong> &mdash; the Python Package Index</p>
+<p><strong>PyPI</strong> &#8212; the Python Package Index</p>
 <p>The Python Package Index is a repository of software for the
 Python programming language.</p>
 </blockquote>
@@ -120,7 +120,7 @@ library called <code>mypackage</code>,  my directory structure would look like t
   create a <a href="http://git-scm.com/book/en/Git-Basics-Tagging"><code>git tag</code></a>. In your
   repository, type: <code>git tag 0.1 -m "Adds a
   tag so that we can put this on PyPI"</code>. Then, type <code>git tag</code> to show a
-  list of tags &mdash; you should see <code>0.1</code> in the list. Type <code>git push &amp;mdash;tags origin
+  list of tags &#8212; you should see <code>0.1</code> in the list. Type <code>git push --tags origin
   master</code> to update your code on Github with the latest tag information. Github
   creates tarballs for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.</p>
 </li>
@@ -132,7 +132,7 @@ description-file = README.md
 </li>
 </ul>
 <p>This is necessary if you're using a markdown readme file. At upload time, you
-  may still get some errors about the lack of a readme &mdash; don't worry about it.</p>
+  may still get some errors about the lack of a readme &#8212; don't worry about it.</p>
 <ul>
 <li><strong>LICENSE.txt</strong> whatever license you want your code to have. I tend to use the
   MIT license.</li>

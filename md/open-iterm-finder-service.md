@@ -1,6 +1,6 @@
 Title: Opening iTerm From a Finder Directory
 Author: Peter Downs
-Date: Wednesday, March 14, 2012  
+Date: Wednesday, March 14, 2012
 
 # Opening iTerm From a Finder Directory
 
