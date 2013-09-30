@@ -20,8 +20,6 @@ Does growing up mean...
 * Feeling content with a night in watching Netflix?
 * Realizing that some things are outside of your control?
 
-I ask because I meet all of the above criteria, but damn, I don't feel like
-an adult.
 
 **Do adults know what they're doing?**
 
