@@ -88,10 +88,10 @@ if __name__=='__main__':
   try: os.mkdir(_md_out) # make the output folder
   except OSError: pass # already exists
 
-  print 'Writing running -> {}'.format(_running_out)
-  with open(_running_out, 'w') as fout:
-    html = render_running_analytics(_running_yaml_path)
-    fout.write(unicode(html).encode(errors=_enc_errors))
+  #print 'Writing running -> {}'.format(_running_out)
+  #with open(_running_out, 'w') as fout:
+  #  html = render_running_analytics(_running_yaml_path)
+  #  fout.write(unicode(html).encode(errors=_enc_errors))
 
   print 'Writing homepage -> {}'.format(_index)
   with open(_index, 'w') as fout:
