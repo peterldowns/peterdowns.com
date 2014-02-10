@@ -5,7 +5,7 @@ Date: Sunday, February 9, 2014
 # Mid-Year Update
 
 I recently wrote about [the beginning of my gap years
-experience](/gap-years-part-1.html), which described the events that took place
+experience](/posts/gap-years-part-1.html), which described the events that took place
 from April to September 2012. I'm still not done writing about the next part of
 my adventure, but in the meantime I wanted to share what I've been working on
 recently. Last week, MIT sent me an email asking me to "detail" my time away
@@ -49,11 +49,18 @@ have continued to improve my communication and interpersonal skills in
 general. Oh, and I [open-sourced some of the code I've
 created](https://github.com/locu/djoauth2).
 
-In a large part thanks to my work, we managed to have a successful re-launch
-(two weeks ago!) [The commercial we ran in the Super
-Bowl](http://www.youtube.com/watch?v=WycoJMKzXZ4) was well-received and we
-were able to handle the traffic. "Get Found" (Locu's new name within GoDaddy)
-is selling extremely well and management is happy.
+In part thanks to my work, we managed to have a successful re-launch (two weeks
+ago!) [The commercial we ran in the Super
+Bowl](http://www.youtube.com/watch?v=WycoJMKzXZ4) was well-received and [the
+product](http://www.godaddy.com/products/business-marketing.aspx) is selling
+well.
+
+I'm excited to continue my work until coming to MIT in the fall! Please let me
+know if you have any other questions about what I've been doing.
+
+Thanks,
+
+Peter
 
 
 ### Post Script
@@ -63,3 +70,10 @@ that I've received a tremendous amount of help from my coworkers. I am unable
 to point to a project I worked on entirely by myself. There are too many to
 thank but each of my coworkers has helped me grow as a programmer and as a
 person. If you're reading this: thank you!
+
+I'd also like to mention that the most interesting part of this experience by
+far has been seeing what it's like for a startup to get acquired. My intuition
+tells me that no two acquisitions are the same, but this one has been exciting.
+Sure, it's been frustrating in some ways, but on the whole I consider it a
+success. The topic deserves its own post; maybe I'll publish one soon?
+
