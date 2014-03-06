@@ -39,15 +39,14 @@ authentication teams to ensure that they could support our needs; wrote and
 tested all of the code necessary for the integration; completed the project
 on schedule and to specification.
 
-Outside of that project, I've written code for a bunch of other aspects of
-the business, but I think some of the most interesting experiences I've had
-have been related to general skills. I've learned a lot about managing
-projects and how to structure the work ahead of time in order to make sure
-everything is completed in-time and correctly. I've learned more about
-working with other teams that have competing political goals I think that I
-have continued to improve my communication and interpersonal skills in
-general. Oh, and I [open-sourced some of the code I've
-created](https://github.com/locu/djoauth2).
+Outside of that project, I've written code for a bunch of other aspects of the
+business, but I think some of the most interesting experiences I've had have
+been related to general skills. I've learned a lot about managing projects and
+how to structure the work ahead of time in order to make sure everything is
+completed in-time and correctly. I've learned more about working with other
+teams that have competing political goals. I think that I have continued to
+improve my communication and interpersonal skills in general. Oh, and I
+[open-sourced some of the code I've created](https://github.com/locu/djoauth2).
 
 In part thanks to my work, we managed to have a successful re-launch (two weeks
 ago!) [The commercial we ran in the Super
