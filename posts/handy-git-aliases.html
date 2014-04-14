@@ -1,0 +1,75 @@
+<!doctype HTML>
+<html>
+  
+<head>
+	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+    <link rel="stylesheet" href="/static/css/highlightjs.css">
+    <title> Handy Git Aliases &#8212; Peter Downs &#8212;&#160;Student / Hacker / Human </title>
+    <meta name='viewport' content='width=device-width'>
+</head>
+
+<body>
+  <div id='page-wrap'>
+    <div id="header">
+        <h1 id='title'> Peter Downs </h1>
+        <ul id='nav'>
+            <li><a href='/'>Writing</a></li>
+            <li><a href='/about.html'>About</a></li>
+            <li><a href='https://github.com/peterldowns' target='_blank'>Projects</a></li>
+            <li><a href='http://tumblr.peterdowns.com' target='_blank'>Tumblr</a></li>
+        </ul>
+    </div>
+    <div id='content'>
+      <div class='post'>
+        <h1>Handy Git Aliases</h1>
+<p>Git is an integral part of my daily workflow, for my dayjob and for my own
+hacking. I've noticed that quite a few people have defined their own set of
+custom aliases and I figured I'd share mine. The system is quite simple: except
+for a few exceptions, my most common commands get shorted as much as possible
+while still remaining unique. For instance,</p>
+<pre><code>git show --color
+</code></pre>
+<p>becomes</p>
+<pre><code>gsh
+</code></pre>
+<p>Building off of that, a command I use often to show just the message of a given
+commit</p>
+<pre><code>git show --color -s
+</code></pre>
+<p>becomes</p>
+<pre><code>gshs
+</code></pre>
+<p>The thing I like about this system is that it's very intuitive, and more often
+than not I'm able to guess at the shortcuts that I use less often and haven't
+memorized. Before I got used to my aliases I felt like git "slowed me down"
+when I just wanted to get my damn changes commited and pushed. Now, I feel a
+thousand times faster.</p>
+<p>Without further ado, here are the rest of the aliases from my <code>.profile</code>:</p>
+<script src="https://gist.github.com/peterldowns/10621099.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="/static/js/highlight.js"></script>
+<script type="text/javascript">
+  var codeBlocks = document.getElementsByTagName("pre");
+  for (var i = 0; i < codeBlocks.length; i++) {
+    var block = codeBlocks[i];
+    hljs.highlightBlock(block);
+  };
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-40701023-1', 'peterdowns.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+</html>
