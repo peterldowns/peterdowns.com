@@ -1,14 +1,20 @@
 <head>
-	<link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
-    <link rel="stylesheet" href="/static/css/highlightjs.css">
-    {{^post}}
-    <title> Peter Downs — Student / Hacker / Human </title>
-    {{/post}}
-    {{#post}}
-    <title> {{title}} — Peter Downs — Student / Hacker / Human </title>
-    {{/post}}
-    <meta name='viewport' content='width=device-width'>
+  <link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css' />
+  <link href='//fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' type='text/css' href='/static/css/clearness.css'/>
+  <link rel='stylesheet' type='text/css' href='/static/css/index.css' />
+  <link rel="stylesheet" href="/static/css/highlightjs.css" />
+  
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width'>
+  
+  {{^post}}
+  <title> Peter Downs </title>
+  <meta name="Description" content="Hi, I'm Peter. This is my blog. Click this link.">
+  {{/post}}
+  
+  {{#post}}
+  <title> {{title}} — Peter Downs </title>
+  {{/post}}
+
 </head>
