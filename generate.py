@@ -12,15 +12,15 @@ from time import mktime, strptime
 
 _parser = markdown.Markdown(extensions=['meta'])
 
-_ext = '.md'      # all markdown posts must have this extension
-_md_in = './md'  # source directory for markdown posts (*.md)
-_md_out = './posts'   # output directory for HTML posts
-_time_fmt = "%A, %B %d, %Y"   # format string for parsing time metadata
-_enc_errors = 'xmlcharrefreplace'   # how to treat unicode characters when writing HTML
+_ext = '.md' # The extension of posts to be treated as markdown content.
+_md_in = './md' # The source directory for markdown posts (*.md).
+_md_out = './posts' # The output directory for HTML posts.
+_time_fmt = '%A, %B %d, %Y' # The format string for parsing time metadata.
+_enc_errors = 'xmlcharrefreplace' # How to treat unicode characters when writing
+                                  # HTML content.
 
 _index = './index.html'   # file at which to store the homepage / archive
 _about = './about.html'
-_projects = './projects.html'
 _running_yaml_path = './static/runlog.yaml'
 _running_out = './running.html'
 
@@ -30,10 +30,6 @@ def render_homepage(posts):
 
 @template('templates/about.html')
 def render_about():
-  return {}, {}
-
-@template('templates/projects.html')
-def render_projects():
   return {}, {}
 
 @template('templates/post.html')
@@ -48,9 +44,10 @@ def render_running_analytics(yaml_path):
           'data_json' : json.dumps(data, indent=2)}
 
 def load_post(path):
-  """ Given a path to a Markdown file, load its contents,
-  parse them, add additional metadata, and then return a
-  dict containing all of the necessary information. """
+  """ Given a path to a Markdown file, load its contents, parse them, add
+  additional metadata, and then return a dict containing all of the necessary
+  information.
+  """
   # Read the Markdown file
   md = u''
   with codecs.open(path, 'rb', 'utf-8') as fin:
@@ -68,15 +65,18 @@ def load_post(path):
   post['md_filename'] = filename = os.path.split(path)[1]
   post['slug'] = slug = os.path.splitext(filename)[0]
   post['timestamp'] = mktime(strptime(post['date'], _time_fmt))
-  post['html_path'] = os.path.relpath(os.sep.join((_md_out, slug))+os.path.extsep+'html')
+  post['html_path'] = os.path.relpath(os.sep.join((_md_out, slug)) +
+                                      os.path.extsep +
+                                      'html')
 
   return post
 
 def load_posts(folder):
-  """ Given an input folder, load all of the Markdown posts within it
-  and return them. """
-  files = filter(lambda p: _ext in p, os.listdir(folder))
-  rel_paths = map(lambda a: os.path.join(folder, a), files)
+  """ Given an input folder, load all of the Markdown posts within it and
+  return them.
+  """
+  files = filter(lambda path: _ext in path, os.listdir(folder))
+  rel_paths = map(lambda filename: os.path.join(folder, filename), files)
 
   for path in rel_paths:
     yield load_post(path)
@@ -88,11 +88,6 @@ if __name__=='__main__':
   try: os.mkdir(_md_out) # make the output folder
   except OSError: pass # already exists
 
-  #print 'Writing running -> {}'.format(_running_out)
-  #with open(_running_out, 'w') as fout:
-  #  html = render_running_analytics(_running_yaml_path)
-  #  fout.write(unicode(html).encode(errors=_enc_errors))
-
   print 'Writing homepage -> {}'.format(_index)
   with open(_index, 'w') as fout:
     html = render_homepage(sorted_posts)
@@ -101,11 +96,6 @@ if __name__=='__main__':
   print 'Writing about -> {}'.format(_about)
   with open(_about, 'w') as fout:
     html = render_about()
-    fout.write(unicode(html).encode(errors=_enc_errors))
-
-  print 'Writing projects -> {}'.format(_projects)
-  with open(_projects, 'w') as fout:
-    html = render_projects()
     fout.write(unicode(html).encode(errors=_enc_errors))
 
   num_posts = len(sorted_posts)
