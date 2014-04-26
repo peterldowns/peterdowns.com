@@ -21,8 +21,6 @@ _enc_errors = 'xmlcharrefreplace' # How to treat unicode characters when writing
 
 _index = './index.html'   # file at which to store the homepage / archive
 _about = './about.html'
-_running_yaml_path = './static/runlog.yaml'
-_running_out = './running.html'
 
 @template('templates/index.html')
 def render_homepage(posts):
@@ -35,13 +33,6 @@ def render_about():
 @template('templates/post.html')
 def render_post(post):
   return {'post' : post}, {}
-
-@template('templates/running.html')
-def render_running_analytics(yaml_path):
-  with open(yaml_path, 'r') as fin:
-    data = list(reversed(yaml.load(fin)))
-  return {'data' : data,
-          'data_json' : json.dumps(data, indent=2)}
 
 def load_post(path):
   """ Given a path to a Markdown file, load its contents, parse them, add
