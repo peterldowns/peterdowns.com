@@ -1,32 +1,43 @@
 <!doctype HTML>
 <html>
 {{>head}}
-
 <body>
   <div id='page-wrap'>
     {{>header}}
+    <style type='text/css'>
+      .inline-block {
+        display: inline-block;
+        vertical-align: top;
+      }
+      #headshot {
+        padding-right: 20px;
+        padding-bottom: 20px;
+        width: 300px;
+      }
+    </style>
     <div id='content'>
       <div class='about'>
         <h3> About </h3>
-        
-        <p> I'm 20 years old. </p>
-        <p> I want to do great things with smart people. </p>
-        <p> I live in San Francisco. </p>
-        <p> I work for <strike><a href='https://hyperink.com'>Hyperink</a></strike>
-                       <strike><a href='https://locu.com'>Locu</a></strike>
-                       <strike><a href='https://godaddy.com'>GoDaddy</a></strike>
-                       no one.
-        </p>
-        <p> I have:
-          <a href='https://github.com/peterldowns'>Github</a> /
-          <a href='https://twitter.com/peterldowns'>Twitter</a> /
-          <a href='http://instagram.com/peterldowns'>Instagram</a> /
-          <a href='http://tumblr.peterdowns.com'>Tumblr</a>.
-        </p>
-        <p> I can be reached <a href='mailto:peterldowns@gmail.com'>via email</a>.</p>
-        
-        <br/>
-        <br/>
+        <img id='headshot' class='inline-block' src="/static/img/me.jpg" />
+        <div id='personal-info' class='inline-block'>
+          <p> I'm 20 years old. </p>
+          <p> I want to do great things with smart people. </p>
+          <p> I live in <strike>Philadelphia</strike>
+                        San Francisco. </p>
+          <p> I'm part of the MIT class of 2018. </p>
+          <p> I work for <strike><a href='https://hyperink.com'>Hyperink</a></strike>
+                         <strike><a href='https://locu.com'>Locu</a></strike>
+                         <strike><a href='https://godaddy.com'>GoDaddy</a></strike>
+                         no one.
+          </p>
+          <p> I have:
+            <a href='https://github.com/peterldowns'>Github</a> /
+            <a href='https://twitter.com/peterldowns'>Twitter</a> /
+            <a href='http://instagram.com/peterldowns'>Instagram</a> /
+            <a href='http://tumblr.peterdowns.com'>Tumblr</a>.
+          </p>
+          <p> I can be reached <a href='mailto:peterldowns@gmail.com'>via email</a>.</p>
+        </div>
       </div>
     </div>
   </div>
