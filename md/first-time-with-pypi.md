@@ -53,24 +53,25 @@ both accounts, just to make your life easier when it comes time to push.
 
 ### Create a `.pypirc` configuration file
 
-This config file holds your information for authenticating with PyPI.
+This file holds your information for authenticating with PyPI.
 
 		[distutils] # this tells distutils what package indexes you can push to
 		index-servers =
-			PyPI # the live PyPI
-			PyPI-test # test PyPI
+			pypi # the live PyPI
+			pypitest # test PyPI
 		
-		[PyPI] # authentication details for live PyPI
-		repository: https://PyPI.python.org/PyPI
+		[pypi] # authentication details for live PyPI
+		repository: https://pypi.python.org/pypi
 		username: {{your_username}}
 		password: {{your_password}}
 	
-		[PyPI-test] # authentication details for test PyPI
-		repository: https://testPyPI.python.org/PyPI
+		[pypitest] # authentication details for test PyPI
+		repository: https://testpypi.python.org/pypi
 		username: {{your_username}}
 
-this is just to make your life easier, so that when it comes time to upload you
-don't have to type/remember your username and password
+This is just to make your life easier, so that when it comes time to upload you
+don't have to type/remember your username and password. Make sure to put this file
+in your home folder.
 
 ### Prepare your package
 
@@ -93,60 +94,75 @@ library called `mypackage`,  my directory structure would look like this:
 
 Here's a breakdown of what goes in which file:
 
-* **setup.py** This is metadata about your library.
+#### `setup.py`
+
+This is metadata about your library.
 	
-			from distutils.core import setup
-			setup(
-				name = 'mypackage',
-				packages = ['mypackage'], # this must be the same as the name above
-				version = '0.1',
-				description = 'A random test lib',
-				author = 'Peter Downs',
-				author_email = 'peterldowns@gmail.com',
-				url = 'https://github.com/peterldowns/mypackage',	# use the URL to the github repo
-				download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
-				keywords = ['testing', 'logging', 'example'], # arbitrary keywords
-				classifiers = [],
-			)
+    from distutils.core import setup
+    setup(
+      name = 'mypackage',
+      packages = ['mypackage'], # this must be the same as the name above
+      version = '0.1',
+      description = 'A random test lib',
+      author = 'Peter Downs',
+      author_email = 'peterldowns@gmail.com',
+      url = 'https://github.com/peterldowns/mypackage',	# use the URL to the github repo
+      download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
+      keywords = ['testing', 'logging', 'example'], # arbitrary keywords
+      classifiers = [],
+    )
 
-	The `download_url` is a link to a hosted file with your repository's code.
-  Github will host this for you, but only if you
-  create a [`git tag`](http://git-scm.com/book/en/Git-Basics-Tagging). In your
-  repository, type: `git tag 0.1 -m "Adds a
-  tag so that we can put this on PyPI"`. Then, type `git tag` to show a
-  list of tags — you should see `0.1` in the list. Type `git push --tags origin
-  master` to update your code on Github with the latest tag information. Github
-  creates tarballs for download at `https://github.com/{username}/{module_name}/tarball/{tag}`.
+The `download_url` is a link to a hosted file with your repository's code.
+Github will host this for you, but only if you
+create a [`git tag`](http://git-scm.com/book/en/Git-Basics-Tagging). In your
+repository, type: `git tag 0.1 -m "Adds a
+tag so that we can put this on PyPI."`. Then, type `git tag` to show a
+list of tags — you should see `0.1` in the list. Type `git push --tags origin
+master` to update your code on Github with the latest tag information. Github
+creates tarballs for download at `https://github.com/{username}/{module_name}/tarball/{tag}`.
 
-* **setup.cfg** tells PyPI where your README file is.
+#### `setup.cfg`
+
+This tells PyPI where your README file is.
 		
 		[metadata]
 		description-file = README.md
 
-  This is necessary if you're using a markdown readme file. At upload time, you
-  may still get some errors about the lack of a readme — don't worry about it.
+This is necessary if you're using a markdown readme file. At upload time, you
+may still get some errors about the lack of a readme — don't worry about it.
+If you don't **have** to use a markdown README file, I would recommend using
+[reStructuredText (REST)](http://sphinx-doc.org/rest.html) instead.
 	
-* **LICENSE.txt** whatever license you want your code to have. I tend to use the
-  MIT license.
+#### `LICENSE.txt`
+
+This file will contain whichver license you want your code to have. I tend to
+use the [MIT license](http://opensource.org/licenses/MIT).
 	
-### Register your package
+### Upload your package to PyPI Test
 
-In your directory, run the command `python setup.py register -r PyPI-test`
+Run:
 
-### Upload your package
+    python setup.py register -r pypitest
 
-##### Upload to PyPI Test
+This will attempt to register your package against PyPI's test server, just to make sure you've
+set up everything correctly.
 
-In your directory, run the command `python setup.py sdist upload -r PyPI-test`.
+Then, run:
+
+    python setup.py sdist upload -r pypitest
+
 You should get no errors, and should also now be able to see your library in the
-[test PyPI repository](http://testpypi.python.org/pypi).
+[test PyPI repository](https://testpypi.python.org/pypi).
 
-##### Upload to PyPI Live
+### Upload to PyPI Live
 
-Run
+Once you've successfully uploaded to PyPI Test, perform the same steps but point to
+the live PyPI server instead. To register, run:
 
-    python setup.py register -r PyPI
-    python setup.py sdist upload -r PyPI
+    python setup.py register -r pypi
 
-and you're done.
+Then, run:
 
+    python setup.py sdist upload -r pypi
+
+and you're done! Congratulations on successfully publishing your first package!
