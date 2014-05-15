@@ -63,7 +63,7 @@ drag and drop an item onto a script that takes up space in your sidebar or
 dock.</p>
 <p>I didn't want to clutter up my dock or Finder sidebar with a droppable script,
 so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder
-service.  Here's the script:</p>
+service that you can access by right-clicking on a folder.  Here's the script:</p>
 <pre><code>on run {input, parameters}
     tell application "Finder"
         set dir_path to "\"" &amp; (POSIX path of (input as string)) &amp; "\""
@@ -83,23 +83,58 @@ on CD_to(theDir)
         tell t
             launch session "Default Session"
             tell the last session
-                write text "cd " &amp; theDir &amp; ";clear;ls"
+                write text "cd " &amp; theDir &amp; ";clear;"
             end tell
         end tell
     end tell
 end CD_to
 </code></pre>
 <p>Using Automator, create a new "Service" that accepts folders in Finder.</p>
-<p><img alt="setting up the service" src="/static/img/applescript_service.jpeg" title="Setting up the service" /></p>
+<p><img alt="setting up the service" src="/static/img/applescript_service.jpg" title="Setting up the service" /></p>
 <p>Add a "Run Applescript" action and paste in the above code.  Save it as
-whatever you'd like - I saved mine as "open_iterm". Now, you can just
+whatever you'd like - I saved mine as <code>open_iterm</code>. Now, you can just
 right-click any folder from within Finder to open an iTerm tab there. Cool.</p>
-<p><img alt="the service in action" src="/static/img/applescript_service_in_action.jpeg" title="Using the new service" /></p>
-<h3>Update &mdash; June 24, 2013</h3>
+<p><img alt="the service in action" src="/static/img/applescript_service_in_action.jpg" title="Using the new service" /></p>
+<h3>Update &#8211; June 24, 2013</h3>
 <p>I just got a great email from <a href="https://github.com/eric-hu">Eric Hu</a> describing
 a modified version of this script that can be run on files, not just folders.
 <a href="https://gist.github.com/eric-hu/5846890">Check it out here</a> &mdash; thanks,
 Eric!</p>
+<h3>Update &#8211; May 15, 2014</h3>
+<p><a href="http://sudoplz.eu/">John Kokkinidis</a> was kind enough to write in with a
+solution I like even more than the Finder service presented above. His version
+is designed to be run with a single click from the Finder, once you've
+navigated to the folder that you'd like to open.  If you take his script:</p>
+<pre><code>on run {input, parameters}
+  tell application "Finder"
+    set dir_path to POSIX path of (folder of the front window as alias)
+  end tell
+  CD_to(dir_path)
+end run
+
+on CD_to(theDir)
+  tell application "iTerm"
+    activate
+    try
+      set t to the last terminal
+    on error
+      set t to (make new terminal)
+    end try
+    tell t
+      launch session "Default Session"
+      tell the last session
+        write text "cd " &amp; theDir &amp; ";clear;"
+      end tell
+    end tell
+  end tell
+end CD_to
+</code></pre>
+<p>create an "Application" in Automator:</p>
+<p><img alt="setting up the application" src="/static/img/applescript_kokkinidis_application.jpg" title="Setting up the application" /></p>
+<p>and drag it onto the Finder window while holding the command key:</p>
+<p><img alt="installing the application" src="/static/img/applescript_kokkinidis_install.gif" title="Installing the application" /></p>
+<p>You can then click that icon any time you're in the Finder to get a new iTerm
+shell at that location. Thanks, John!</p>
       </div>
     </div>
   </div>
