@@ -1,24 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic);
 
-/*
-blue: 006EFF;
-dark grey: 252525;
-light grey: 656565;
-white: EEEEEE;
-orange: FF0100;
-*/
-
 html {
     font-size: 16px;
     line-height: 1.5;
 }
 
 body {
-    font-family: 'PT Serif', serif;
     font-family: 'PT Sans', serif;
     background: #FEFEFE;
     color: #252525;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     margin: 0;
 }
