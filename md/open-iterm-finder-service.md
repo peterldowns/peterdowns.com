@@ -72,11 +72,11 @@ Eric!
 [John Kokkinidis](http://sudoplz.eu/) was kind enough to write in with a
 solution I like even more than the Finder service presented above. His version
 is designed to be run with a single click from the Finder, once you've
-navigated to the folder that you'd like to open.  If you take his script:
+navigated to the folder that you'd like to open. If you take his script:
 
     on run {input, parameters}
       tell application "Finder"
-        set dir_path to POSIX path of (folder of the front window as alias)
+        set dir_path to quoted form of (POSIX path of (folder of the front window as alias))
       end tell
       CD_to(dir_path)
     end run
@@ -107,7 +107,11 @@ and drag it onto the Finder window while holding the command key:
 ![installing the application][13]
 
 You can then click that icon any time you're in the Finder to get a new iTerm
-shell at that location. Thanks, John!
+shell at that location. Thanks, John! Also, thanks to [Eryan
+Cobham](http://eryancobham.com/) and [Adam
+Mclain](https://twitter.com/adammclain) for both writing in with the same
+suggestion: to use `quoted form of (POSIX path of ...)` instead of `POSIX path
+of ...`, allowing the script to work with directories including spaces.
 
 [1]: http://www.iterm2.com/#/section/home
 [2]: http://ethanschoonover.com/solarized
