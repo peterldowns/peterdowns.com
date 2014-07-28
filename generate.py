@@ -72,7 +72,8 @@ def load_posts(folder):
   for path in rel_paths:
     yield load_post(path)
 
-if __name__=='__main__':
+def main():
+  """ Generate the website. """
   all_posts = load_posts(_md_in)
   sorted_posts = sorted(all_posts, key=itemgetter('timestamp'), reverse=True)
 
@@ -103,3 +104,6 @@ if __name__=='__main__':
       fout.write(unicode(html).encode(errors=_enc_errors))
 
   print 'Done.'
+
+if __name__=='__main__':
+  main()
