@@ -84,16 +84,19 @@ navigated to the folder that you'd like to open. If you take his script:
     on CD_to(theDir)
       tell application "iTerm"
         activate
+
         try
-          set t to the last terminal
+          set _session to current session of current terminal
         on error
-          set t to (make new terminal)
-        end try
-        tell t
-          launch session "Default Session"
-          tell the last session
-            write text "cd " & theDir & ";clear;"
+          set _term to (make new terminal)
+          tell _term
+            launch session "Default"
+            set _session to current session
           end tell
+        end try
+
+        tell _session
+          write text "cd " & theDir & ";clear;"
         end tell
       end tell
     end CD_to
@@ -111,7 +114,11 @@ shell at that location. Thanks, John! Also, thanks to [Eryan
 Cobham](http://eryancobham.com/) and [Adam
 Mclain](https://twitter.com/adammclain) for both writing in with the same
 suggestion: to use `quoted form of (POSIX path of ...)` instead of `POSIX path
-of ...`, allowing the script to work with directories including spaces.
+of ...`, allowing the script to work with directories including spaces. And a
+big thanks to Peter Scott for writing in to suggest a fix for a problem where
+two windows were being created. He points to [CtWise's efforts
+here](http://www.alfredforum.com/topic/721-executing-iterm2-terminal-commands-in-current-shell/?hl=iterm)
+as his inspiration.
 
 [1]: http://www.iterm2.com/#/section/home
 [2]: http://ethanschoonover.com/solarized

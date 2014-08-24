@@ -115,16 +115,19 @@ end run
 on CD_to(theDir)
   tell application "iTerm"
     activate
+
     try
-      set t to the last terminal
+      set _session to current session of current terminal
     on error
-      set t to (make new terminal)
-    end try
-    tell t
-      launch session "Default Session"
-      tell the last session
-        write text "cd " &amp; theDir &amp; ";clear;"
+      set _term to (make new terminal)
+      tell _term
+        launch session "Default"
+        set _session to current session
       end tell
+    end try
+
+    tell _session
+      write text "cd " &amp; theDir &amp; ";clear;"
     end tell
   end tell
 end CD_to
@@ -138,7 +141,11 @@ shell at that location. Thanks, John! Also, thanks to <a href="http://eryancobha
 Cobham</a> and <a href="https://twitter.com/adammclain">Adam
 Mclain</a> for both writing in with the same
 suggestion: to use <code>quoted form of (POSIX path of ...)</code> instead of <code>POSIX path
-of ...</code>, allowing the script to work with directories including spaces.</p>
+of ...</code>, allowing the script to work with directories including spaces. And a
+big thanks to Peter Scott for writing in to suggest a fix for a problem where
+two windows were being created. He points to <a href="http://www.alfredforum.com/topic/721-executing-iterm2-terminal-commands-in-current-shell/?hl=iterm">CtWise's efforts
+here</a>
+as his inspiration.</p>
       </div>
     </div>
   </div>
