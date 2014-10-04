@@ -11,12 +11,11 @@ blockquote {
 }
 a {
 	color: #006EFF;
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover,
 a:active {
-  color: #FF0100;
-  text-decoration: none;
+    color: #AAA;
 }
 a img {
     border: none;

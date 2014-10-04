@@ -24,11 +24,11 @@ _about = './about.html'
 
 @template('templates/index.html')
 def render_homepage(posts):
-  return {'posts' : posts}, {}
+  return {'posts' : posts, 'home': True}, {}
 
 @template('templates/about.html')
 def render_about():
-  return {}, {}
+  return {'about': True}, {}
 
 @template('templates/post.html')
 def render_post(post):

@@ -27,7 +27,7 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #252525;
+    border-bottom: 1px solid #AAAAAA;
 }
 #header #logo {
     width: 120px;
@@ -60,17 +60,22 @@ body {
     vertical-align: top;
     width: 32%;
 }
+#nav li.current-page::before {
+    content: ">";
+    color: #AAA;
+}
+#nav li.current-page::after {
+    content: "<";
+    color: #AAA;
+}
 #nav a {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 #content {
     padding: 0 20px;
+    margin-bottom: 80px;
 }
-#nav a:hover {
-    glow: 1px red;
-}
-
 .post, .about, .archives {
     text-align: left;
 }
