@@ -1,6 +1,6 @@
 <!doctype HTML>
 <html>
-  
+
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width'>
@@ -22,15 +22,7 @@
         rel="stylesheet"
         type='text/css'/>
 
-  <script type='text/javascript'>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-40701023-1', 'peterdowns.com');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-  </script>
+  <script type='text/javascript' src='/static/js/tracking.js'></script>
   <meta name="Description"
         content="Hi, I'm Peter. I want to do great things with smart people.">
 </head>
@@ -72,12 +64,22 @@
             <a href='http://instagram.com/peterldowns'>Instagram</a> /
             <a href='http://tumblr.peterdowns.com'>Tumblr</a>.
           </p>
-          <p> I have <a href='/static/Downs-Peter-Resume.pdf'>a r&#233;sum&#233;</a>. </p>
+          <p> I have <a id='resume-link' href='/static/Downs-Peter-Resume.pdf'>a r&#233;sum&#233;</a>. </p>
           <p> I can be reached <a href='mailto:peterldowns@gmail.com'>via email</a>.</p>
         </div>
       </div>
     </div>
   </div>
+  <script type='text/javascript'>
+    var addListener = function(element, type, callback) {
+      if (element.addEventListener) element.addEventListener(type, callback);
+      else if (element.attachEvent) element.attachEvent('on' + type, callback);
+    };
+    var resumeLink = document.getElementById('resume-link');
+    addListener(resumeLink, 'click', function() {
+      ga('send', 'event', 'r&#233;sum&#233;', 'view');
+    });
+  </script>
 </body>
 
 </html>

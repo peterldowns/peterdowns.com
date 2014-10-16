@@ -1,6 +1,6 @@
 <!doctype HTML>
 <html>
-  
+
 <head>
   {{>head_content}}
   <meta name="Description"
@@ -33,12 +33,22 @@
             <a href='http://instagram.com/peterldowns'>Instagram</a> /
             <a href='http://tumblr.peterdowns.com'>Tumblr</a>.
           </p>
-          <p> I have <a href='/static/Downs-Peter-Resume.pdf'>a résumé</a>. </p>
+          <p> I have <a id='resume-link' href='/static/Downs-Peter-Resume.pdf'>a résumé</a>. </p>
           <p> I can be reached <a href='mailto:peterldowns@gmail.com'>via email</a>.</p>
         </div>
       </div>
     </div>
   </div>
+  <script type='text/javascript'>
+    var addListener = function(element, type, callback) {
+      if (element.addEventListener) element.addEventListener(type, callback);
+      else if (element.attachEvent) element.attachEvent('on' + type, callback);
+    };
+    var resumeLink = document.getElementById('resume-link');
+    addListener(resumeLink, 'click', function() {
+      ga('send', 'event', 'résumé', 'view');
+    });
+  </script>
 </body>
 
 </html>

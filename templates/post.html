@@ -3,7 +3,7 @@
 
 <head>
   {{>head_content}}
-  <script src="/static/js/highlight.js"></script>
+  <script type='text/javascript' src='/static/js/highlight.js'></script>
 </head>
 
 <body>
@@ -17,8 +17,8 @@
   </div>
 </body>
 
-<script type="text/javascript">
-  var codeBlocks = document.getElementsByTagName("pre");
+<script type='text/javascript'>
+  var codeBlocks = document.getElementsByTagName('pre');
   for (var i = 0; i < codeBlocks.length; i++) {
     var block = codeBlocks[i];
     hljs.highlightBlock(block);
