@@ -24,15 +24,20 @@ _about = './about.html'
 
 @template('templates/index.html')
 def render_homepage(posts):
-  return {'posts' : posts, 'home': True}, {}
+  return {'posts' : posts, 'home': True}
 
 @template('templates/about.html')
 def render_about():
-  return {'about': True}, {}
+  return {'about': True}
 
 @template('templates/post.html')
 def render_post(post):
-  return {'post' : post}, {}
+  return {'post': post}
+
+@template('templates/project.html')
+def render_project(project):
+  return {'post': project}, {'html': project['html']}
+
 
 def load_post(path):
   """ Given a path to a Markdown file, load its contents, parse them, add
@@ -49,7 +54,17 @@ def load_post(path):
 
   # Process metadata
   post = _parser.Meta # metadata from the last parse
+
+  # If this is a project post, there will be a metadata key 'HTMLSource' that
+  # contains the filepath to a file of html content.
+  project_src_path = post.get('htmlsource')
+  is_project = bool(project_src_path)
+  if is_project:
+    with codecs.open(project_src_path[0], 'rb', 'utf-8') as fin:
+      html = unicode(fin.read())
+
   post['html'] = html
+  post['is_project'] = is_project
   post['date'] = post['date'][0]
   post['title'] = post['title'][0]
   post['md_path'] = path
@@ -59,6 +74,7 @@ def load_post(path):
   post['html_path'] = os.path.relpath(os.sep.join((_md_out, slug)) +
                                       os.path.extsep +
                                       'html')
+  print json.dumps(dict(post), indent=2)
 
   return post
 
@@ -74,8 +90,8 @@ def load_posts(folder):
 
 def main():
   """ Generate the website. """
-  all_posts = load_posts(_md_in)
-  sorted_posts = sorted(all_posts, key=itemgetter('timestamp'), reverse=True)
+  md_posts = load_posts(_md_in)
+  sorted_posts = sorted(md_posts, key=itemgetter('timestamp'), reverse=True)
 
   try: os.mkdir(_md_out) # make the output folder
   except OSError: pass # already exists
@@ -100,7 +116,10 @@ def main():
     print '\t[{} / {}] {} -> {}'.format(i+1, num_posts, md_path, html_path)
 
     with open(html_path, 'w') as fout:
-      html = render_post(post)
+      if post['is_project']:
+        html = render_project(post)
+      else:
+        html = render_post(post)
       fout.write(unicode(html).encode(errors=_enc_errors))
 
   print 'Done.'

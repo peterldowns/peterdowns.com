@@ -15,7 +15,7 @@ body {
     min-width: 300px;
 }
 
-#page-wrap {
+.page-wrap {
     width: auto;
     max-width: 800px;
     margin: 0;
@@ -23,6 +23,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 #header {
     text-align: center;
