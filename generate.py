@@ -2,6 +2,7 @@
 # coding: utf-8
 import codecs
 import json
+from lxml import html as lxhtml
 import markdown
 import os
 import yaml
@@ -34,6 +35,22 @@ def render_about():
 def render_post(post):
   return {'post' : post}, {}
 
+def post_fixup(htmlstr):
+  html = lxhtml.fromstring(htmlstr)
+  p_tags = html.findall('p')
+  for p_tag in p_tags:
+    img = p_tag.findall('img')
+    if img:
+      print 'found img in p:', lxhtml.tostring(p_tag)
+      class_str = p_tag.get('class')
+      classes = class_str.split(' ') if class_str else []
+      classes.append('imgwrapper')
+      p_tag.set('class', ' '.join(classes))
+
+  outer_div = html
+  outer_div.set('class', 'post')
+  return lxhtml.tostring(outer_div)
+
 def load_post(path):
   """ Given a path to a Markdown file, load its contents, parse them, add
   additional metadata, and then return a dict containing all of the necessary
@@ -45,7 +62,7 @@ def load_post(path):
     md = unicode(fin.read())
 
   # Convert the Markdown to HTML
-  html = _parser.convert(md)
+  html = post_fixup(_parser.convert(md))
 
   # Process metadata
   post = _parser.Meta # metadata from the last parse

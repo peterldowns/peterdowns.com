@@ -41,8 +41,7 @@
         </ul>
     </div>
     <div id='content'>
-      <div class='post'>
-        <h1>How to Strip Trailing Whitespace</h1>
+      <div class="post"><h1>How to Strip Trailing Whitespace</h1>
 <p>I've been thinking about coding style recently, and while reviewing
 a lot of old code I noticed that I'd left trailing whitespace across
 plenty of files. Because this whitespace is meaningless, I went about
@@ -57,13 +56,12 @@ here's how to automatically remove trailing whitespace when saving files:</p>
 <h3>SublimeText (add to Preferences / Settings - User)</h3>
 <pre><code>{ "trim_trailing_white_space_on_save": true }
 </code></pre>
-<p>Once nice addition to this is to limit this to certain file types &mdash; in Markdown,
+<p>Once nice addition to this is to limit this to certain file types &#8212; in Markdown,
 for example, trailing whitespace can be meaningful. In VIM, use</p>
 <pre><code>autocmd FileType javascript,python autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
 </code></pre>
 <p>I'm not sure how to get similar functionality in Emacs or SublimeText. If you do, 
-let me know and I'll be sure to update this post!</p>
-      </div>
+let me know and I'll be sure to update this post!</p></div>
     </div>
   </div>
 </body>

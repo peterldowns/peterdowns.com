@@ -41,8 +41,7 @@
         </ul>
     </div>
     <div id='content'>
-      <div class='post'>
-        <h1>Opening iTerm From a Finder Directory</h1>
+      <div class="post"><h1>Opening iTerm From a Finder Directory</h1>
 <p>If, like me, you work mostly from OS X, you've probably already discovered
 <a href="http://www.iterm2.com/#/section/home">iTerm2</a>. If you haven't: it's an incredibly good replacement for the
 default Terminal application. Combined with the <a href="http://ethanschoonover.com/solarized">solarized</a> color scheme, it
@@ -86,15 +85,15 @@ on CD_to(theDir)
 end CD_to
 </code></pre>
 <p>Using Automator, create a new "Service" that accepts folders in Finder.</p>
-<p><img alt="setting up the service" src="/static/img/applescript_service.jpg" title="Setting up the service" /></p>
+<p class="imgwrapper"><img alt="setting up the service" src="/static/img/applescript_service.jpg" title="Setting up the service"></p>
 <p>Add a "Run Applescript" action and paste in the above code.  Save it as
 whatever you'd like - I saved mine as <code>open_iterm</code>. Now, you can just
 right-click any folder from within Finder to open an iTerm tab there. Cool.</p>
-<p><img alt="the service in action" src="/static/img/applescript_service_in_action.jpg" title="Using the new service" /></p>
+<p class="imgwrapper"><img alt="the service in action" src="/static/img/applescript_service_in_action.jpg" title="Using the new service"></p>
 <h3>Update &#8211; June 24, 2013</h3>
 <p>I just got a great email from <a href="https://github.com/eric-hu">Eric Hu</a> describing
 a modified version of this script that can be run on files, not just folders.
-<a href="https://gist.github.com/eric-hu/5846890">Check it out here</a> &mdash; thanks,
+<a href="https://gist.github.com/eric-hu/5846890">Check it out here</a> &#8212; thanks,
 Eric!</p>
 <h3>Update &#8211; May 15, 2014</h3>
 <p><a href="http://sudoplz.eu/">John Kokkinidis</a> was kind enough to write in with a
@@ -129,9 +128,9 @@ on CD_to(theDir)
 end CD_to
 </code></pre>
 <p>create an "Application" in Automator:</p>
-<p><img alt="setting up the application" src="/static/img/applescript_kokkinidis_application.jpg" title="Setting up the application" /></p>
+<p class="imgwrapper"><img alt="setting up the application" src="/static/img/applescript_kokkinidis_application.jpg" title="Setting up the application"></p>
 <p>and drag it onto the Finder window while holding the command key:</p>
-<p><img alt="installing the application" src="/static/img/applescript_kokkinidis_install.gif" title="Installing the application" /></p>
+<p class="imgwrapper"><img alt="installing the application" src="/static/img/applescript_kokkinidis_install.gif" title="Installing the application"></p>
 <p>You can then click that icon any time you're in the Finder to get a new iTerm
 shell at that location. Thanks, John! Also, thanks to <a href="http://eryancobham.com/">Eryan
 Cobham</a> and <a href="https://twitter.com/adammclain">Adam
@@ -141,8 +140,7 @@ of ...</code>, allowing the script to work with directories including spaces. An
 big thanks to Peter Scott for writing in to suggest a fix for a problem where
 two windows were being created. He points to <a href="http://www.alfredforum.com/topic/721-executing-iterm2-terminal-commands-in-current-shell/?hl=iterm">CtWise's efforts
 here</a>
-as his inspiration.</p>
-      </div>
+as his inspiration.</p></div>
     </div>
   </div>
 </body>
