@@ -86,25 +86,15 @@ blockquote p {
     font-weight: 300;
     font-style: italic;
 }
-code, pre {
-    background: #f0f0f0;
+code {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background: #FAFAFA;
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
     color: black;
     font-family: 'Inconsolata', Monaco, Andale Mono, monospace !important;
+    overflow: scroll;
+    padding: 0.5rem;
     text-align: left;
-}
-code {
-    padding: 2px 1px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-}
-pre {
-    display: block;
-    padding: 1rem;
-    margin: 0 0 1rem;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-pre code {
-    padding: 0;
 }

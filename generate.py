@@ -41,11 +41,17 @@ def post_fixup(htmlstr):
   for p_tag in p_tags:
     img = p_tag.findall('img')
     if img:
-      print 'found img in p:', lxhtml.tostring(p_tag)
       class_str = p_tag.get('class')
       classes = class_str.split(' ') if class_str else []
-      classes.append('imgwrapper')
+      classes.append('wide-content')
       p_tag.set('class', ' '.join(classes))
+
+  pre_tags = html.findall('pre')
+  for pre_tag in pre_tags:
+    class_str = pre_tag.get('class')
+    classes = pre_tag.split(' ') if class_str else []
+    classes.append('wide-content')
+    pre_tag.set('class', ' '.join(classes))
 
   outer_div = html
   outer_div.set('class', 'post')

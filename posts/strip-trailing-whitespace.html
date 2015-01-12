@@ -48,17 +48,17 @@ plenty of files. Because this whitespace is meaningless, I went about
 removing it, which took some time. If you don't like trailing whitespace,
 here's how to automatically remove trailing whitespace when saving files:</p>
 <h3>Emacs (add to ~/.emacsrc)</h3>
-<pre><code>(add-hook 'before-save-hook 'delete-trailing-whitespace)
+<pre class="wide-content"><code>(add-hook 'before-save-hook 'delete-trailing-whitespace)
 </code></pre>
 <h3>VIM (add to ~/.vimrc)</h3>
-<pre><code>autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
+<pre class="wide-content"><code>autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
 </code></pre>
 <h3>SublimeText (add to Preferences / Settings - User)</h3>
-<pre><code>{ "trim_trailing_white_space_on_save": true }
+<pre class="wide-content"><code>{ "trim_trailing_white_space_on_save": true }
 </code></pre>
 <p>Once nice addition to this is to limit this to certain file types &#8212; in Markdown,
 for example, trailing whitespace can be meaningful. In VIM, use</p>
-<pre><code>autocmd FileType javascript,python autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
+<pre class="wide-content"><code>autocmd FileType javascript,python autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
 </code></pre>
 <p>I'm not sure how to get similar functionality in Emacs or SublimeText. If you do, 
 let me know and I'll be sure to update this post!</p></div>
