@@ -81,24 +81,26 @@ on <a href="http://testpypi.python.org/pypi?%3Aaction=register_form">PyPI Test</
 account in order to be able to upload your code. I recommend using the same email/password for
 both accounts, just to make your life easier when it comes time to push.</p>
 <h3>Create a <code>.pypirc</code> configuration file</h3>
-<p>This file holds your information for authenticating with PyPI.</p>
+<p>This file holds your information for authenticating with PyPI, both the live and the test versions.</p>
 <pre class="wide-content"><code>    [distutils] # this tells distutils what package indexes you can push to
     index-servers =
-        pypi # the live PyPI
-        pypitest # test PyPI
+        pypi
+        pypitest
 
-    [pypi] # authentication details for live PyPI
+    [pypi]
     repository: https://pypi.python.org/pypi
     username: {{your_username}}
     password: {{your_password}}
 
-    [pypitest] # authentication details for test PyPI
+    [pypitest]
     repository: https://testpypi.python.org/pypi
     username: {{your_username}}
 </code></pre>
 <p>This is just to make your life easier, so that when it comes time to upload you
-don't have to type/remember your username and password. Make sure to put this file
-in your home folder.</p>
+don't have to type/remember your username and password. Make sure to put this
+file in your home folder &#8211;&#160;its path should be <code>~/.pypirc</code>.</p>
+<p><em>Thanks to <a href="https://twitter.com/c_hack">Charlie Hack</a> for his feedback on this
+section.</em></p>
 <h3>Prepare your package</h3>
 <p>Every package on PyPI needs to have a file called <code>setup.py</code> at
 the root of the directory. If your'e using a markdown-formatted read me file

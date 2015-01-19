@@ -53,25 +53,28 @@ both accounts, just to make your life easier when it comes time to push.
 
 ### Create a `.pypirc` configuration file
 
-This file holds your information for authenticating with PyPI.
+This file holds your information for authenticating with PyPI, both the live and the test versions.
 
 		[distutils] # this tells distutils what package indexes you can push to
 		index-servers =
-			pypi # the live PyPI
-			pypitest # test PyPI
+			pypi
+			pypitest
 		
-		[pypi] # authentication details for live PyPI
+		[pypi]
 		repository: https://pypi.python.org/pypi
 		username: {{your_username}}
 		password: {{your_password}}
 	
-		[pypitest] # authentication details for test PyPI
+		[pypitest]
 		repository: https://testpypi.python.org/pypi
 		username: {{your_username}}
 
 This is just to make your life easier, so that when it comes time to upload you
-don't have to type/remember your username and password. Make sure to put this file
-in your home folder.
+don't have to type/remember your username and password. Make sure to put this
+file in your home folder – its path should be `~/.pypirc`.
+
+*Thanks to [Charlie Hack](https://twitter.com/c_hack) for his feedback on this
+section.*
 
 ### Prepare your package
 
