@@ -1,0 +1,4 @@
+lxml==3.4.2
+Markdown==2.5.2
+mustache==0.1.4
+PyYAML==3.11
