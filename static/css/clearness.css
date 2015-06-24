@@ -95,7 +95,7 @@ code {
     padding: 0.1rem 0.4rem;
 }
 pre code {
-    overflow: scroll;
+    overflow: auto;
     padding: 0.5rem;
     text-align: left;
     border-radius: 4px;
