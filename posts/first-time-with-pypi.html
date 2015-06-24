@@ -82,20 +82,19 @@ account in order to be able to upload your code. I recommend using the same emai
 both accounts, just to make your life easier when it comes time to push.</p>
 <h3>Create a <code>.pypirc</code> configuration file</h3>
 <p>This file holds your information for authenticating with PyPI, both the live and the test versions.</p>
-<pre class="wide-content"><code>    [distutils] # this tells distutils what package indexes you can push to
-    index-servers =
-        pypi
-        pypitest
-
-    [pypi]
-    repository: https://pypi.python.org/pypi
-    username: {{your_username}}
-    password: {{your_password}}
-
-    [pypitest]
-    repository: https://testpypi.python.org/pypi
-    username: {{your_username}}
-</code></pre>
+<p>```
+[distutils] # this tells distutils what package indexes you can push to
+index-servers =
+  pypi
+  pypitest</p>
+<p>[pypi]
+repository: https://pypi.python.org/pypi
+username: {{your_username}}
+password: {{your_password}}</p>
+<p>[pypitest]
+repository: https://testpypi.python.org/pypi
+username: {{your_username}}
+```</p>
 <p>This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
 file in your home folder &#8211;&#160;its path should be <code>~/.pypirc</code>.</p>
@@ -107,21 +106,20 @@ the root of the directory. If your'e using a markdown-formatted read me file
 you'll also need a <code>setup.cfg</code> file. Also, you'll want a <code>LICENSE.txt</code> file
 describing what can be done with your code. So if I've been working on a
 library called <code>mypackage</code>,  my directory structure would look like this:</p>
-<pre class="wide-content"><code>    root-dir/   # arbitrary working directory name
-        setup.py
-        setup.cfg
-        LICENSE.txt
-        README.md
-        mypackage/
-            __init__.py
-            foo.py
-            bar.py
-            baz.py
-</code></pre>
+<p><code>root-dir/   # arbitrary working directory name
+  setup.py
+  setup.cfg
+  LICENSE.txt
+  README.md
+  mypackage/
+    __init__.py
+    foo.py
+    bar.py
+    baz.py</code></p>
 <p>Here's a breakdown of what goes in which file:</p>
 <h4><code>setup.py</code></h4>
 <p>This is metadata about your library.</p>
-<pre class="wide-content"><code>from distutils.core import setup
+<p><code>from distutils.core import setup
 setup(
   name = 'mypackage',
   packages = ['mypackage'], # this must be the same as the name above
@@ -133,8 +131,7 @@ setup(
   download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
   keywords = ['testing', 'logging', 'example'], # arbitrary keywords
   classifiers = [],
-)
-</code></pre>
+)</code></p>
 <p>The <code>download_url</code> is a link to a hosted file with your repository's code.
 Github will host this for you, but only if you
 create a <a href="http://git-scm.com/book/en/Git-Basics-Tagging"><code>git tag</code></a>. In your
@@ -145,9 +142,8 @@ master</code> to update your code on Github with the latest tag information. Git
 creates tarballs for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.</p>
 <h4><code>setup.cfg</code></h4>
 <p>This tells PyPI where your README file is.</p>
-<pre class="wide-content"><code>    [metadata]
-    description-file = README.md
-</code></pre>
+<p><code>[metadata]
+description-file = README.md</code></p>
 <p>This is necessary if you're using a markdown readme file. At upload time, you
 may still get some errors about the lack of a readme &#8212; don't worry about it.
 If you don't <strong>have</strong> to use a markdown README file, I would recommend using
@@ -157,23 +153,23 @@ If you don't <strong>have</strong> to use a markdown README file, I would recomm
 use the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
 <h3>Upload your package to PyPI Test</h3>
 <p>Run:</p>
-<pre class="wide-content"><code>python setup.py register -r pypitest
-</code></pre>
+<p><code>bash
+python setup.py register -r pypitest</code></p>
 <p>This will attempt to register your package against PyPI's test server, just to make sure you've
 set up everything correctly.</p>
 <p>Then, run:</p>
-<pre class="wide-content"><code>python setup.py sdist upload -r pypitest
-</code></pre>
+<p><code>bash
+python setup.py sdist upload -r pypitest</code></p>
 <p>You should get no errors, and should also now be able to see your library in the
 <a href="https://testpypi.python.org/pypi">test PyPI repository</a>.</p>
 <h3>Upload to PyPI Live</h3>
 <p>Once you've successfully uploaded to PyPI Test, perform the same steps but point to
 the live PyPI server instead. To register, run:</p>
-<pre class="wide-content"><code>python setup.py register -r pypi
-</code></pre>
+<p><code>bash
+python setup.py register -r pypi</code></p>
 <p>Then, run:</p>
-<pre class="wide-content"><code>python setup.py sdist upload -r pypi
-</code></pre>
+<p><code>bash
+python setup.py sdist upload -r pypi</code></p>
 <p>and you're done! Congratulations on successfully publishing your first package!</p></div>
     </div>
   </div>

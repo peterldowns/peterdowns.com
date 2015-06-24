@@ -55,19 +55,21 @@ both accounts, just to make your life easier when it comes time to push.
 
 This file holds your information for authenticating with PyPI, both the live and the test versions.
 
-		[distutils] # this tells distutils what package indexes you can push to
-		index-servers =
-			pypi
-			pypitest
-		
-		[pypi]
-		repository: https://pypi.python.org/pypi
-		username: {{your_username}}
-		password: {{your_password}}
-	
-		[pypitest]
-		repository: https://testpypi.python.org/pypi
-		username: {{your_username}}
+```
+[distutils] # this tells distutils what package indexes you can push to
+index-servers =
+  pypi
+  pypitest
+
+[pypi]
+repository: https://pypi.python.org/pypi
+username: {{your_username}}
+password: {{your_password}}
+
+[pypitest]
+repository: https://testpypi.python.org/pypi
+username: {{your_username}}
+```
 
 This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
@@ -84,36 +86,40 @@ you'll also need a `setup.cfg` file. Also, you'll want a `LICENSE.txt` file
 describing what can be done with your code. So if I've been working on a
 library called `mypackage`,  my directory structure would look like this:
 
-		root-dir/ 	# arbitrary working directory name
-			setup.py
-			setup.cfg
-			LICENSE.txt
-			README.md
-			mypackage/
-				__init__.py
-				foo.py
-				bar.py
-				baz.py
+```
+root-dir/ 	# arbitrary working directory name
+  setup.py
+  setup.cfg
+  LICENSE.txt
+  README.md
+  mypackage/
+    __init__.py
+    foo.py
+    bar.py
+    baz.py
+```
 
 Here's a breakdown of what goes in which file:
 
 #### `setup.py`
 
 This is metadata about your library.
-	
-    from distutils.core import setup
-    setup(
-      name = 'mypackage',
-      packages = ['mypackage'], # this must be the same as the name above
-      version = '0.1',
-      description = 'A random test lib',
-      author = 'Peter Downs',
-      author_email = 'peterldowns@gmail.com',
-      url = 'https://github.com/peterldowns/mypackage',	# use the URL to the github repo
-      download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
-      keywords = ['testing', 'logging', 'example'], # arbitrary keywords
-      classifiers = [],
-    )
+
+```
+from distutils.core import setup
+setup(
+  name = 'mypackage',
+  packages = ['mypackage'], # this must be the same as the name above
+  version = '0.1',
+  description = 'A random test lib',
+  author = 'Peter Downs',
+  author_email = 'peterldowns@gmail.com',
+  url = 'https://github.com/peterldowns/mypackage',	# use the URL to the github repo
+  download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
+  keywords = ['testing', 'logging', 'example'], # arbitrary keywords
+  classifiers = [],
+)
+```
 
 The `download_url` is a link to a hosted file with your repository's code.
 Github will host this for you, but only if you
@@ -128,8 +134,10 @@ creates tarballs for download at `https://github.com/{username}/{module_name}/ta
 
 This tells PyPI where your README file is.
 		
-		[metadata]
-		description-file = README.md
+```
+[metadata]
+description-file = README.md
+```
 
 This is necessary if you're using a markdown readme file. At upload time, you
 may still get some errors about the lack of a readme — don't worry about it.
@@ -145,14 +153,18 @@ use the [MIT license](http://opensource.org/licenses/MIT).
 
 Run:
 
-    python setup.py register -r pypitest
+```bash
+python setup.py register -r pypitest
+```
 
 This will attempt to register your package against PyPI's test server, just to make sure you've
 set up everything correctly.
 
 Then, run:
 
-    python setup.py sdist upload -r pypitest
+```bash
+python setup.py sdist upload -r pypitest
+```
 
 You should get no errors, and should also now be able to see your library in the
 [test PyPI repository](https://testpypi.python.org/pypi).
@@ -162,10 +174,14 @@ You should get no errors, and should also now be able to see your library in the
 Once you've successfully uploaded to PyPI Test, perform the same steps but point to
 the live PyPI server instead. To register, run:
 
-    python setup.py register -r pypi
+```bash
+python setup.py register -r pypi
+```
 
 Then, run:
 
-    python setup.py sdist upload -r pypi
+```bash
+python setup.py sdist upload -r pypi
+```
 
 and you're done! Congratulations on successfully publishing your first package!
