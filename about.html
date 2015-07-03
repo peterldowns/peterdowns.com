@@ -69,16 +69,6 @@
       </div>
     </div>
   </div>
-  <script type='text/javascript'>
-    var addListener = function(element, type, callback) {
-      if (element.addEventListener) element.addEventListener(type, callback);
-      else if (element.attachEvent) element.attachEvent('on' + type, callback);
-    };
-    var resumeLink = document.getElementById('resume-link');
-    addListener(resumeLink, 'click', function() {
-      ga('send', 'event', 'r&#233;sum&#233;', 'view');
-    });
-  </script>
 </body>
 
 </html>
