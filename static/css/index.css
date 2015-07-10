@@ -127,3 +127,7 @@ hr {
   padding-bottom: 20px;
   width: 320px;
 }
+
+#personal-info {
+  max-width: 455px;
+}
