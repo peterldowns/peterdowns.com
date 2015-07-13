@@ -66,6 +66,7 @@ This file holds your information for authenticating with PyPI, both the live and
     [pypitest]
     repository: https://testpypi.python.org/pypi
     username: {{your_username}}
+    password: {{your_password}}
 
 This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
