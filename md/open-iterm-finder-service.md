@@ -105,7 +105,8 @@ create an "Application" in Automator:
 
 ![setting up the application][12]
 
-and drag it onto the Finder window while holding the command key:
+and drag it onto the Finder window while holding the command key (in Yosemite,
+the command and option keys. Thanks [Peter](https://github.com/pjvandehaar)!)
 
 ![installing the application][13]
 
