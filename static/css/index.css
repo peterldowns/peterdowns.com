@@ -131,3 +131,8 @@ hr {
 #personal-info {
   max-width: 455px;
 }
+@media (max-width: 839px) {
+  .about {
+    text-align: center;
+  }
+}
