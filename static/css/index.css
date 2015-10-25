@@ -9,7 +9,7 @@ body {
     font-family: 'PT Sans', serif;
     background: #FEFEFE;
     color: #252525;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     text-align: center;
     margin: 0;
     min-width: 300px;
@@ -89,10 +89,16 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+.codehilite,
 .wide-content {
   display: block;
   text-align: center;
-  max-width: 1200px;
+  max-width: 1000px;
+}
+.codehilite pre {
+  text-align: left;
+  padding: 12px;
+  overflow: auto;
 }
 p.wide-content, img.wide-content {
   max-width: none;

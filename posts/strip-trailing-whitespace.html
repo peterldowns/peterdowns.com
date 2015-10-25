@@ -2,10 +2,15 @@
 <html>
 
 <head>
+  <!-- Metadata -->
+  <title> How to Strip Trailing Whitespace &#8212; Peter Downs </title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width'>
-  <title> How to Strip Trailing Whitespace &#8212; Peter Downs </title>
+  <link rel="me" href="https://github.com/peterldowns" />
+  <link rel="me" href="https://peterldowns.tumblr.com" />
+  <link rel="me" href="https://twitter.com/peterldowns" />
 
+  <!-- Assets -->
   <link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700'
         rel='stylesheet'
         type='text/css' />
@@ -18,12 +23,10 @@
   <link href='/static/css/index.css'
         rel='stylesheet'
         type='text/css' />
-  <link href="/static/css/highlightjs.css"
-        rel="stylesheet"
-        type='text/css'/>
-
+  <!-- Analytics -->
   <script type='text/javascript' src='/static/js/tracking.js'></script>
   <script type='text/javascript' src='/static/js/highlight.js'></script>
+  <link href='/static/css/pygments.css' rel='stylesheet' type='text/css'/>
 </head>
 
 <body>
@@ -48,30 +51,29 @@ plenty of files. Because this whitespace is meaningless, I went about
 removing it, which took some time. If you don't like trailing whitespace,
 here's how to automatically remove trailing whitespace when saving files:</p>
 <h3>Emacs (add to ~/.emacsrc)</h3>
-<pre class="wide-content"><code>(add-hook 'before-save-hook 'delete-trailing-whitespace)
-</code></pre>
+<div class="codehilite"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">before</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">delete</span><span class="o">-</span><span class="n">trailing</span><span class="o">-</span><span class="n">whitespace</span><span class="p">)</span>
+</pre></div>
+
+
 <h3>VIM (add to ~/.vimrc)</h3>
-<pre class="wide-content"><code>autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
-</code></pre>
+<div class="codehilite"><pre><span class="nx">autocmd</span> <span class="nx">BufWritePre</span> <span class="o">&lt;</span><span class="nx">buffer</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">%</span><span class="nx">s</span><span class="o">/\</span><span class="nx">s</span><span class="o">\+</span><span class="err">$</span><span class="c1">//e</span>
+</pre></div>
+
+
 <h3>SublimeText (add to Preferences / Settings - User)</h3>
-<pre class="wide-content"><code>{ "trim_trailing_white_space_on_save": true }
-</code></pre>
+<div class="codehilite"><pre><span class="p">{</span> <span class="s">"trim_trailing_white_space_on_save"</span><span class="o">:</span> <span class="nb">true</span> <span class="p">}</span>
+</pre></div>
+
+
 <p>Once nice addition to this is to limit this to certain file types &#8212; in Markdown,
 for example, trailing whitespace can be meaningful. In VIM, use</p>
-<pre class="wide-content"><code>autocmd FileType javascript,python autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
-</code></pre>
+<div class="codehilite"><pre><span class="nx">autocmd</span> <span class="nx">FileType</span> <span class="nx">javascript</span><span class="p">,</span><span class="nx">python</span> <span class="nx">autocmd</span> <span class="nx">BufWritePre</span> <span class="o">&lt;</span><span class="nx">buffer</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">%</span><span class="nx">s</span><span class="o">/\</span><span class="nx">s</span><span class="o">\+</span><span class="err">$</span><span class="c1">//e</span>
+</pre></div>
+
+
 <p>I'm not sure how to get similar functionality in Emacs or SublimeText. If you do, 
 let me know and I'll be sure to update this post!</p></div>
     </div>
   </div>
 </body>
-
-<script type='text/javascript'>
-  var codeBlocks = document.getElementsByTagName('pre');
-  for (var i = 0; i < codeBlocks.length; i++) {
-    var block = codeBlocks[i];
-    hljs.highlightBlock(block);
-  };
-</script>
-
 </html>

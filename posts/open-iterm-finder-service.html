@@ -2,10 +2,15 @@
 <html>
 
 <head>
+  <!-- Metadata -->
+  <title> Opening iTerm From a Finder Directory &#8212; Peter Downs </title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width'>
-  <title> Opening iTerm From a Finder Directory &#8212; Peter Downs </title>
+  <link rel="me" href="https://github.com/peterldowns" />
+  <link rel="me" href="https://peterldowns.tumblr.com" />
+  <link rel="me" href="https://twitter.com/peterldowns" />
 
+  <!-- Assets -->
   <link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700'
         rel='stylesheet'
         type='text/css' />
@@ -18,12 +23,10 @@
   <link href='/static/css/index.css'
         rel='stylesheet'
         type='text/css' />
-  <link href="/static/css/highlightjs.css"
-        rel="stylesheet"
-        type='text/css'/>
-
+  <!-- Analytics -->
   <script type='text/javascript' src='/static/js/tracking.js'></script>
   <script type='text/javascript' src='/static/js/highlight.js'></script>
+  <link href='/static/css/pygments.css' rel='stylesheet' type='text/css'/>
 </head>
 
 <body>
@@ -59,31 +62,33 @@ dock.</p>
 <p>I didn't want to clutter up my dock or Finder sidebar with a droppable script,
 so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder
 service that you can access by right-clicking on a folder.  Here's the script:</p>
-<pre class="wide-content"><code>on run {input, parameters}
-    tell application "Finder"
-        set dir_path to "\"" &amp; (POSIX path of (input as string)) &amp; "\""
-            -- display dialog dir_path
-    end tell
-    CD_to(dir_path)
-end run
+<div class="codehilite"><pre><span class="n">on</span> <span class="n">run</span> <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">parameters</span><span class="p">}</span>
+    <span class="n">tell</span> <span class="n">application</span> <span class="s">"Finder"</span>
+        <span class="n">set</span> <span class="n">dir_path</span> <span class="n">to</span> <span class="s">"</span><span class="se">\"</span><span class="s">"</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">POSIX</span> <span class="n">path</span> <span class="n">of</span> <span class="p">(</span><span class="n">input</span> <span class="n">as</span> <span class="n">string</span><span class="p">))</span> <span class="o">&amp;</span> <span class="s">"</span><span class="se">\"</span><span class="s">"</span>
+            <span class="o">--</span> <span class="n">display</span> <span class="n">dialog</span> <span class="n">dir_path</span>
+    <span class="n">end</span> <span class="n">tell</span>
+    <span class="n">CD_to</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
+<span class="n">end</span> <span class="n">run</span>
 
-on CD_to(theDir)
-    tell application "iTerm"
-        activate
-        try
-            set t to the last terminal
-        on error
-            set t to (make new terminal)
-        end try
-        tell t
-            launch session "Default Session"
-            tell the last session
-                write text "cd " &amp; theDir &amp; ";clear;"
-            end tell
-        end tell
-    end tell
-end CD_to
-</code></pre>
+<span class="n">on</span> <span class="n">CD_to</span><span class="p">(</span><span class="n">theDir</span><span class="p">)</span>
+    <span class="n">tell</span> <span class="n">application</span> <span class="s">"iTerm"</span>
+        <span class="n">activate</span>
+        <span class="n">try</span>
+            <span class="n">set</span> <span class="n">t</span> <span class="n">to</span> <span class="n">the</span> <span class="n">last</span> <span class="n">terminal</span>
+        <span class="n">on</span> <span class="n">error</span>
+            <span class="n">set</span> <span class="n">t</span> <span class="n">to</span> <span class="p">(</span><span class="n">make</span> <span class="n">new</span> <span class="n">terminal</span><span class="p">)</span>
+        <span class="n">end</span> <span class="n">try</span>
+        <span class="n">tell</span> <span class="n">t</span>
+            <span class="n">launch</span> <span class="n">session</span> <span class="s">"Default Session"</span>
+            <span class="n">tell</span> <span class="n">the</span> <span class="n">last</span> <span class="n">session</span>
+                <span class="n">write</span> <span class="n">text</span> <span class="s">"cd "</span> <span class="o">&amp;</span> <span class="n">theDir</span> <span class="o">&amp;</span> <span class="s">";clear;"</span>
+            <span class="n">end</span> <span class="n">tell</span>
+        <span class="n">end</span> <span class="n">tell</span>
+    <span class="n">end</span> <span class="n">tell</span>
+<span class="n">end</span> <span class="n">CD_to</span>
+</pre></div>
+
+
 <p>Using Automator, create a new "Service" that accepts folders in Finder.</p>
 <p class="wide-content"><img alt="setting up the service" src="/static/img/applescript_service.jpg" title="Setting up the service"></p>
 <p>Add a "Run Applescript" action and paste in the above code.  Save it as
@@ -100,33 +105,35 @@ Eric!</p>
 solution I like even more than the Finder service presented above. His version
 is designed to be run with a single click from the Finder, once you've
 navigated to the folder that you'd like to open. If you take his script:</p>
-<pre class="wide-content"><code>on run {input, parameters}
-  tell application "Finder"
-    set dir_path to quoted form of (POSIX path of (folder of the front window as alias))
-  end tell
-  CD_to(dir_path)
-end run
+<div class="codehilite"><pre><span class="n">on</span> <span class="n">run</span> <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">parameters</span><span class="p">}</span>
+  <span class="n">tell</span> <span class="n">application</span> <span class="s">"Finder"</span>
+    <span class="n">set</span> <span class="n">dir_path</span> <span class="n">to</span> <span class="n">quoted</span> <span class="n">form</span> <span class="n">of</span> <span class="p">(</span><span class="n">POSIX</span> <span class="n">path</span> <span class="n">of</span> <span class="p">(</span><span class="n">folder</span> <span class="n">of</span> <span class="n">the</span> <span class="n">front</span> <span class="n">window</span> <span class="n">as</span> <span class="n">alias</span><span class="p">))</span>
+  <span class="n">end</span> <span class="n">tell</span>
+  <span class="n">CD_to</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
+<span class="n">end</span> <span class="n">run</span>
 
-on CD_to(theDir)
-  tell application "iTerm"
-    activate
+<span class="n">on</span> <span class="n">CD_to</span><span class="p">(</span><span class="n">theDir</span><span class="p">)</span>
+  <span class="n">tell</span> <span class="n">application</span> <span class="s">"iTerm"</span>
+    <span class="n">activate</span>
 
-    try
-      set _session to current session of current terminal
-    on error
-      set _term to (make new terminal)
-      tell _term
-        launch session "Default"
-        set _session to current session
-      end tell
-    end try
+    <span class="n">try</span>
+      <span class="n">set</span> <span class="n">_session</span> <span class="n">to</span> <span class="n">current</span> <span class="n">session</span> <span class="n">of</span> <span class="n">current</span> <span class="n">terminal</span>
+    <span class="n">on</span> <span class="n">error</span>
+      <span class="n">set</span> <span class="n">_term</span> <span class="n">to</span> <span class="p">(</span><span class="n">make</span> <span class="n">new</span> <span class="n">terminal</span><span class="p">)</span>
+      <span class="n">tell</span> <span class="n">_term</span>
+        <span class="n">launch</span> <span class="n">session</span> <span class="s">"Default"</span>
+        <span class="n">set</span> <span class="n">_session</span> <span class="n">to</span> <span class="n">current</span> <span class="n">session</span>
+      <span class="n">end</span> <span class="n">tell</span>
+    <span class="n">end</span> <span class="n">try</span>
 
-    tell _session
-      write text "cd " &amp; theDir &amp; ";clear;"
-    end tell
-  end tell
-end CD_to
-</code></pre>
+    <span class="n">tell</span> <span class="n">_session</span>
+      <span class="n">write</span> <span class="n">text</span> <span class="s">"cd "</span> <span class="o">&amp;</span> <span class="n">theDir</span> <span class="o">&amp;</span> <span class="s">";clear;"</span>
+    <span class="n">end</span> <span class="n">tell</span>
+  <span class="n">end</span> <span class="n">tell</span>
+<span class="n">end</span> <span class="n">CD_to</span>
+</pre></div>
+
+
 <p>create an "Application" in Automator:</p>
 <p class="wide-content"><img alt="setting up the application" src="/static/img/applescript_kokkinidis_application.jpg" title="Setting up the application"></p>
 <p>and drag it onto the Finder window while holding the command key (in Yosemite,
@@ -145,13 +152,4 @@ as his inspiration.</p></div>
     </div>
   </div>
 </body>
-
-<script type='text/javascript'>
-  var codeBlocks = document.getElementsByTagName('pre');
-  for (var i = 0; i < codeBlocks.length; i++) {
-    var block = codeBlocks[i];
-    hljs.highlightBlock(block);
-  };
-</script>
-
 </html>

@@ -11,7 +11,11 @@ from mustache import template
 from operator import itemgetter
 from time import mktime, strptime
 
-_parser = markdown.Markdown(extensions=['meta'])
+_parser = markdown.Markdown(extensions=[
+  'meta',
+  'markdown.extensions.fenced_code',
+  'markdown.extensions.codehilite',
+])
 
 _ext = '.md' # The extension of posts to be treated as markdown content.
 _md_in = './md' # The source directory for markdown posts (*.md).

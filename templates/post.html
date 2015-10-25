@@ -4,6 +4,7 @@
 <head>
   {{>head_content}}
   <script type='text/javascript' src='/static/js/highlight.js'></script>
+  <link href='/static/css/pygments.css' rel='stylesheet' type='text/css'/>
 </head>
 
 <body>
@@ -14,13 +15,4 @@
     </div>
   </div>
 </body>
-
-<script type='text/javascript'>
-  var codeBlocks = document.getElementsByTagName('pre');
-  for (var i = 0; i < codeBlocks.length; i++) {
-    var block = codeBlocks[i];
-    hljs.highlightBlock(block);
-  };
-</script>
-
 </html>
