@@ -22,7 +22,15 @@ var joesFace = new THREE.MeshBasicMaterial({
   map: THREE.ImageUtils.loadTexture('./joesface.jpg'),
   overdraw: true
 })
-var materials = [coloredMesh, coloredMesh, coloredMesh, coloredMesh, coloredMesh, joesFace];
+var britspears = new THREE.MeshBasicMaterial({
+  map: THREE.ImageUtils.loadTexture('./brit.jpg'),
+  overdraw: true
+})
+var treb = new THREE.MeshBasicMaterial({
+  map: THREE.ImageUtils.loadTexture('./treb.jpg'),
+  overdraw: true
+})
+var materials = [joesFace, treb, treb, coloredMesh, coloredMesh, joesFace];
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var faceMaterial = new THREE.MeshFaceMaterial(materials);
 var cube = new THREE.Mesh(geometry, faceMaterial);
@@ -35,6 +43,7 @@ var translationUnit = 0.1;
 var zoomUnit = 0.05;
 var keysDown = {}
 var rotateCube = function() {
+  cube.rotateY(-rotationUnit);
   for (var keyCode in keysDown) {
     if (!keysDown.hasOwnProperty(keyCode)) continue;
     if (!keysDown[keyCode]) continue;
