@@ -11,21 +11,17 @@
   <link rel="me" href="https://twitter.com/peterldowns" />
 
   <!-- Assets -->
-  <link href='//fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700'
-        rel='stylesheet'
-        type='text/css' />
   <link href='//fonts.googleapis.com/css?family=Inconsolata'
         rel='stylesheet'
         type='text/css' />
-  <link href='/static/css/clearness.css'
+  <link href='//fonts.googleapis.com/css?family=PT+Sans'
         rel='stylesheet'
         type='text/css' />
-  <link href='/static/css/index.css'
+  <link href='/static/css/blog.css'
         rel='stylesheet'
         type='text/css' />
   <!-- Analytics -->
   <script type='text/javascript' src='/static/js/tracking.js'></script>
-  <script type='text/javascript' src='/static/js/highlight.js'></script>
   <link href='/static/css/pygments.css' rel='stylesheet' type='text/css'/>
 </head>
 
@@ -84,28 +80,49 @@ account in order to be able to upload your code. I recommend using the same emai
 both accounts, just to make your life easier when it comes time to push.</p>
 <h3>Create a <code>.pypirc</code> configuration file</h3>
 <p>This file holds your information for authenticating with PyPI, both the live and the test versions.</p>
-<div class="codehilite"><pre><span class="cp">[</span><span class="nx">distutils</span><span class="cp">]</span><span class="x"> # this tells distutils what package indexes you can push to</span>
-<span class="x">index-servers =</span>
-<span class="x">  pypi</span>
-<span class="x">  pypitest</span>
+<div class="codehilite"><pre><span class="k">[distutils]</span>
+<span class="na">index-servers</span> <span class="o">=</span><span class="s"></span>
+<span class="s">  pypi</span>
+<span class="s">  pypitest</span>
 
-<span class="cp">[</span><span class="nx">pypi</span><span class="cp">]</span><span class="x"></span>
-<span class="x">repository: https://pypi.python.org/pypi</span>
-<span class="x">username: {{your_username}}</span>
-<span class="x">password: {{your_password}}</span>
+<span class="k">[pypi]</span>
+<span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>
+<span class="na">username</span><span class="o">=</span><span class="s">your_username</span>
+<span class="na">password</span><span class="o">=</span><span class="s">your_password</span>
 
-<span class="cp">[</span><span class="nx">pypitest</span><span class="cp">]</span><span class="x"></span>
-<span class="x">repository: https://testpypi.python.org/pypi</span>
-<span class="x">username: {{your_username}}</span>
-<span class="x">password: {{your_password}}</span>
+<span class="k">[pypitest]</span>
+<span class="na">repository</span><span class="o">=</span><span class="s">https://testpypi.python.org/pypi</span>
+<span class="na">username</span><span class="o">=</span><span class="s">your_username</span>
+<span class="na">password</span><span class="o">=</span><span class="s">your_password</span>
 </pre></div>
 
 
 <p>This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
 file in your home folder &#8211;&#160;its path should be <code>~/.pypirc</code>.</p>
-<p><em>Thanks to <a href="https://twitter.com/c_hack">Charlie Hack</a> for his feedback on this
-section.</em></p>
+<h5>Notes on passwords / usernames</h5>
+<p><a href="https://twitter.com/michielsikma/status/632410926621200388">Michiel Sikma</a> has
+reported that in Python 3 if your password includes a raw <code>%</code>, it needs to be
+escaped by doubling &#8211; the .pypirc config parser <a href="http://www.gossamer-threads.com/lists/python/bugs/1109196">interpolates
+strings</a>. For
+example, if your password is <code>hello%world</code>:</p>
+<div class="codehilite"><pre><span class="k">[pypi]</span>
+<span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>
+<span class="na">username</span><span class="o">=</span><span class="s">myusername</span>
+<span class="na">password</span><span class="o">=</span><span class="s">hello%%world</span>
+</pre></div>
+
+
+<p>I've never run into this issue, but if you're having trouble this might help.</p>
+<p><a href="http://amfarrell.com/">Andrew Farrell</a> points out that if your password includes spaces, make sure not to quote it. For example, if your password is <code>correct horse battery staple</code>:</p>
+<div class="codehilite"><pre><span class="k">[pypi]</span>
+<span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>
+<span class="na">username</span><span class="o">=</span><span class="s">myusername</span>
+<span class="na">password</span><span class="o">=</span><span class="s">correct horse battery staple</span>
+</pre></div>
+
+
+<p><em>Thanks to Michiel, Andrew, and <a href="https://twitter.com/c_hack">Charlie Hack</a> for their help with this section.</em></p>
 <h3>Prepare your package</h3>
 <p>Every package on PyPI needs to have a file called <code>setup.py</code> at
 the root of the directory. If your'e using a markdown-formatted read me file

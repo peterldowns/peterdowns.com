@@ -53,27 +53,55 @@ both accounts, just to make your life easier when it comes time to push.
 
 This file holds your information for authenticating with PyPI, both the live and the test versions.
 
-    [distutils] # this tells distutils what package indexes you can push to
-    index-servers =
-      pypi
-      pypitest
+```ini
+[distutils]
+index-servers =
+  pypi
+  pypitest
 
-    [pypi]
-    repository: https://pypi.python.org/pypi
-    username: {{your_username}}
-    password: {{your_password}}
+[pypi]
+repository=https://pypi.python.org/pypi
+username=your_username
+password=your_password
 
-    [pypitest]
-    repository: https://testpypi.python.org/pypi
-    username: {{your_username}}
-    password: {{your_password}}
+[pypitest]
+repository=https://testpypi.python.org/pypi
+username=your_username
+password=your_password
+```
 
 This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
 file in your home folder – its path should be `~/.pypirc`.
 
-*Thanks to [Charlie Hack](https://twitter.com/c_hack) for his feedback on this
-section.*
+##### Notes on passwords / usernames
+
+[Michiel Sikma](https://twitter.com/michielsikma/status/632410926621200388) has
+reported that in Python 3 if your password includes a raw `%`, it needs to be
+escaped by doubling – the .pypirc config parser [interpolates
+strings](http://www.gossamer-threads.com/lists/python/bugs/1109196). For
+example, if your password is `hello%world`:
+
+```ini
+[pypi]
+repository=https://pypi.python.org/pypi
+username=myusername
+password=hello%%world
+```
+
+I've never run into this issue, but if you're having trouble this might help.
+
+
+[Andrew Farrell](http://amfarrell.com/) points out that if your password includes spaces, make sure not to quote it. For example, if your password is `correct horse battery staple`:
+
+```ini
+[pypi]
+repository=https://pypi.python.org/pypi
+username=myusername
+password=correct horse battery staple
+```
+
+*Thanks to Michiel, Andrew, and [Charlie Hack](https://twitter.com/c_hack) for their help with this section.*
 
 ### Prepare your package
 
