@@ -1,0 +1,238 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+
+body {
+  background-color: #080808;
+  min-height: 100%;
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.3rem;
+}
+
+.photo {
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.section.visible .photo {
+  opacity: 1;
+}
+
+.text {
+  padding: 80px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  z-index: 2;
+  color: #EEEEEE;
+  min-height: 100%;
+}
+.spacer {
+  min-height: 100%;
+}
+.spacer.double {
+  min-height: 200%;
+}
+p {
+  margin-top: 5rem;
+}
+
+/*
+ * ---------------
+ */
+
+.cover .photo {
+  left: 20px;
+  right: 20px;
+  background-image: url('./img/cover3.jpg');
+}
+.bigtext {
+  top: 30px;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 9rem;
+  min-height: 100%;
+  font-family: 'Playfair Display', serif;
+}
+.foo {
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+
+.section-1 .photo {
+  left: 20px;
+  width: 1000px;
+  background-image: url('./img/1.jpg');
+}
+.section-1 .text {
+  margin-left: 1000px;
+}
+
+.section-2 .photo {
+  right: 0;
+  width: 800px;
+  background-image: url('./img/2.jpg');
+}
+.section-2 .text {
+  margin-right: 800px;
+}
+
+.section-3 .photo {
+  background-image: url('./img/3.jpg');
+  right: 20px;
+  width: 500px;
+}
+.section-4 .photo {
+  background-image: url('./img/4.jpg');
+  width: 100%;
+}
+.section-4 .photo {
+  background-image: url('./img/4.jpg');
+  width: 100%;
+}
+.section-5 .photo {
+  background-image: url('./img/5.jpg');
+  width: 100%;
+}
+.section-6 .photo {
+  background-image: url('./img/6.jpg');
+  width: 100%;
+}
+.section-7 .photo {
+  background-image: url('./img/7.jpg');
+  width: 100%;
+}
+.section-8 .photo {
+  background-image: url('./img/8.jpg');
+  width: 100%;
+}
+.section-9 .photo {
+  background-image: url('./img/9.jpg');
+  width: 100%;
+}
+.section-10 .photo {
+  background-image: url('./img/10.jpg');
+  width: 100%;
+}
+.section-11 .photo {
+  background-image: url('./img/11.jpg');
+  width: 100%;
+}
+.section-12 .photo {
+  background-image: url('./img/12.jpg');
+  width: 100%;
+}
+.section-13 .photo {
+  background-image: url('./img/13.jpg');
+  width: 100%;
+}
+.section-14 .photo {
+  background-image: url('./img/14.jpg');
+  width: 100%;
+}
+.section-15 .photo {
+  background-image: url('./img/15.jpg');
+  width: 100%;
+}
+.section-16 .photo {
+  background-image: url('./img/16.jpg');
+  width: 100%;
+}
+.section-17 .photo {
+  background-image: url('./img/17.jpg');
+  width: 100%;
+}
+.section-18 .photo {
+  background-image: url('./img/18.jpg');
+  width: 100%;
+}
+.section-19 .photo.divorce {
+  background-image: url('./img/19.jpg');
+  left: 20px;
+  width: 500px;
+}
+.section-19 .photo.kiss {
+  background-image: url('./img/20.jpg');
+  transition-delay: 0.5s;
+  right: 20px;
+  width: 500px;
+}
+
+.section-3 .text {
+  max-width: 600px;
+}
+.section-4 .text {
+  width: 400px;
+}
+.section-4 .photo {
+  left: 580px;
+  width: 820px;
+}
+
+.section-5 .photo {
+  left: 40px;
+  width: 500px;
+}
+.section-5 .text {
+  margin-left: 580px;
+  width: 620px;
+  outline: blue;
+}
+
+.section-6 .text {
+  width: 240px;
+}
+.section-6 .photo {
+  left: 400px;
+  width: 1000px;
+}
+
+.section-8 .photo {
+  left: 40px;
+  width: 700px;
+}
+.section-8 .text {
+  margin-left: 800px;
+  max-width: 400px;
+  outline: blue;
+}
+
+.section-13 .text {
+  margin-left:1000px;
+}
+.section-13 .photo {
+  left: 20px;
+  width: 1000px;
+}
+
+.section-15 .text {
+  width: 300px;
+}
+.section-15 .photo {
+  left: 400px;
+  width: 1000px;
+}
+
+.thingy {
+  margin: auto;
+  width: 500px;
+}
+.last {
+  min-height: 50%;
+  height: 50%;
+}
+
+
+.bigquote {
+  padding-left: 40px;
+  border-left: 6px solid #AAA;
+  font-size: 4rem;
+  line-height: 6rem;
+}
