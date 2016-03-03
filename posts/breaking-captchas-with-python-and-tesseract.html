@@ -1,0 +1,76 @@
+<!doctype HTML>
+<html>
+
+<head>
+  <!-- Metadata -->
+  <title> Breaking the NY State Tax Return Captcha with Python and Tesseract &#8212; Peter Downs </title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width'>
+  <link rel="me" href="https://github.com/peterldowns" />
+  <link rel="me" href="http://tumblr.peterdowns.com" />
+  <link rel="me" href="https://twitter.com/peterldowns" />
+
+  <!-- Assets -->
+  <link href='//fonts.googleapis.com/css?family=Inconsolata'
+        rel='stylesheet'
+        type='text/css' />
+  <link href='//fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet'
+        type='text/css' />
+  <link href='/static/css/blog.css'
+        rel='stylesheet'
+        type='text/css' />
+  <!-- Analytics -->
+  <script type='text/javascript' src='/static/js/tracking.js'></script>
+  <link href='/static/css/pygments.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+  <div id='page-wrap'>
+    <div id="header">
+        <h1 id='title'> Peter Downs </h1>
+        <ul id='nav'>
+          <li >
+            <a href='/'>Home</a>
+          </li>
+          <li >
+            <a href='/about.html'>About</a>
+          </li>
+          <li><a href='https://github.com/peterldowns' target='_blank'>Github &#8594;</a></li>
+        </ul>
+    </div>
+    <div id='content'>
+      <div class="post"><p>Earlier today I went online to check the status of my tax return refund. (Yes, I take the appropriate withholding allowances. It's unbelievable to me how online commenters are quick to roast people for "giving the government a free loan" without understanding anything of their tax situation.) It turns out that unlike the California or Federal systems, <a href="https://www8.tax.ny.gov/PRIS/prisStart">the New York State tax refund procedure</a> requires you to fill out a captcha before going anywhere. Not just any captcha &#8211;&#160;check out this beauty:</p>
+<p class="wide-content"><img alt="ny state captcha" src="/static/img/ny-captcha-enlarged.jpg" title="OK, I 'enhanced' it a little bit"></p>
+<p>It never occurred to me to try to break a captcha before but this looked like the easiest possible target. Five minutes later I was done. Three of those minutes involved setting up dependencies: <a href="https://github.com/tesseract-ocr/tesseract">Tesseract</a>, <a href="https://github.com/madmaze/pytesseract">Pytesseract</a>, and <a href="http://python-pillow.org">Pillow</a>. Thanks to modern packaging tools (thanks, <a href="http://brew.sh">brew</a> and <a href="http://pythonwheels.com">wheel</a>) this was painless and fast.</p>
+<div class="codehilite"><pre><span class="nv">$ </span>brew install tesseract
+<span class="nv">$ </span>pip install pytesseract pillow
+</pre></div>
+
+
+<p>(OK, I actually created a new directory and
+<a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> for this, just like I do
+with all of my projects, but you get the idea.)</p>
+<p>Breaking the captcha was then as easy as saving it (as <code>captcha.jpg</code>) and
+running the following python code:</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">pytesseract</span> <span class="kn">as</span> <span class="nn">tes</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">'captcha.jpg'</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'captcha ='</span><span class="p">,</span> <span class="n">tes</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="nv">$ </span>python ocr.py
+<span class="nv">captcha</span> <span class="o">=</span> 740120
+</pre></div>
+
+
+<p>Two logical steps &#8211; kind of incredible. Further proof that there's no point in
+using a captcha if <a href="https://googleonlinesecurity.blogspot.com/2014/12/are-you-robot-introducing-no-captcha.html">it isn't made by Google</a>. Sure, <a href="http://www.troyhunt.com/2012/01/breaking-captcha-with-automated-humans.html">older versions of captcha were
+susceptible to automated
+humans</a>, but how can you defeat <em>ARTIFICIAL INTELLIGENCE</em>?</p></div>
+    </div>
+  </div>
+</body>
+</html>
