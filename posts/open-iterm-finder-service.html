@@ -58,30 +58,31 @@ dock.</p>
 <p>I didn't want to clutter up my dock or Finder sidebar with a droppable script,
 so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder
 service that you can access by right-clicking on a folder.  Here's the script:</p>
-<div class="codehilite"><pre><span class="n">on</span> <span class="n">run</span> <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">parameters</span><span class="p">}</span>
-    <span class="n">tell</span> <span class="n">application</span> <span class="s">"Finder"</span>
-        <span class="n">set</span> <span class="n">dir_path</span> <span class="n">to</span> <span class="s">"</span><span class="se">\"</span><span class="s">"</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">POSIX</span> <span class="n">path</span> <span class="n">of</span> <span class="p">(</span><span class="n">input</span> <span class="n">as</span> <span class="n">string</span><span class="p">))</span> <span class="o">&amp;</span> <span class="s">"</span><span class="se">\"</span><span class="s">"</span>
-            <span class="o">--</span> <span class="n">display</span> <span class="n">dialog</span> <span class="n">dir_path</span>
-    <span class="n">end</span> <span class="n">tell</span>
-    <span class="n">CD_to</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
-<span class="n">end</span> <span class="n">run</span>
+<div class="codehilite"><pre><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+  <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"Finder"</span>
+    <span class="k">set</span> <span class="nv">dir_path</span> <span class="k">to</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="p">(</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nv">input</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">))</span>
+  <span class="k">end</span> <span class="k">tell</span>
+  <span class="nv">CD_to</span><span class="p">(</span><span class="nv">dir_path</span><span class="p">)</span>
+<span class="k">end</span> <span class="nb">run</span>
 
-<span class="n">on</span> <span class="n">CD_to</span><span class="p">(</span><span class="n">theDir</span><span class="p">)</span>
-    <span class="n">tell</span> <span class="n">application</span> <span class="s">"iTerm"</span>
-        <span class="n">activate</span>
-        <span class="n">try</span>
-            <span class="n">set</span> <span class="n">t</span> <span class="n">to</span> <span class="n">the</span> <span class="n">last</span> <span class="n">terminal</span>
-        <span class="n">on</span> <span class="n">error</span>
-            <span class="n">set</span> <span class="n">t</span> <span class="n">to</span> <span class="p">(</span><span class="n">make</span> <span class="n">new</span> <span class="n">terminal</span><span class="p">)</span>
-        <span class="n">end</span> <span class="n">try</span>
-        <span class="n">tell</span> <span class="n">t</span>
-            <span class="n">launch</span> <span class="n">session</span> <span class="s">"Default Session"</span>
-            <span class="n">tell</span> <span class="n">the</span> <span class="n">last</span> <span class="n">session</span>
-                <span class="n">write</span> <span class="n">text</span> <span class="s">"cd "</span> <span class="o">&amp;</span> <span class="n">theDir</span> <span class="o">&amp;</span> <span class="s">";clear;"</span>
-            <span class="n">end</span> <span class="n">tell</span>
-        <span class="n">end</span> <span class="n">tell</span>
-    <span class="n">end</span> <span class="n">tell</span>
-<span class="n">end</span> <span class="n">CD_to</span>
+<span class="k">on</span> <span class="nv">CD_to</span><span class="p">(</span><span class="nv">theDir</span><span class="p">)</span>
+  <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"iTerm"</span>
+    <span class="nb">activate</span>
+
+    <span class="k">try</span>
+      <span class="k">set</span> <span class="nv">t</span> <span class="k">to</span> <span class="nb">the</span> <span class="nb">last</span> <span class="nv">terminal</span>
+    <span class="nb">on</span> <span class="k">error</span>
+      <span class="k">set</span> <span class="nv">t</span> <span class="k">to</span> <span class="p">(</span><span class="nb">make</span> <span class="nb">new</span> <span class="nv">terminal</span><span class="p">)</span>
+    <span class="k">end</span> <span class="k">try</span>
+
+    <span class="k">tell</span> <span class="nv">t</span>
+      <span class="nb">launch</span> <span class="nv">session</span> <span class="s2">"Default Session"</span>
+      <span class="k">tell</span> <span class="nb">the</span> <span class="nb">last</span> <span class="nv">session</span>
+        <span class="nb">write</span> <span class="nb">text</span> <span class="s2">"cd "</span> <span class="o">&amp;</span> <span class="nv">theDir</span> <span class="o">&amp;</span> <span class="s2">";clear;"</span>
+      <span class="k">end</span> <span class="k">tell</span>
+    <span class="k">end</span> <span class="k">tell</span>
+  <span class="k">end</span> <span class="k">tell</span>
+<span class="k">end</span> <span class="nv">CD_to</span>
 </pre></div>
 
 
@@ -101,32 +102,32 @@ Eric!</p>
 solution I like even more than the Finder service presented above. His version
 is designed to be run with a single click from the Finder, once you've
 navigated to the folder that you'd like to open. If you take his script:</p>
-<div class="codehilite"><pre><span class="n">on</span> <span class="n">run</span> <span class="p">{</span><span class="n">input</span><span class="p">,</span> <span class="n">parameters</span><span class="p">}</span>
-  <span class="n">tell</span> <span class="n">application</span> <span class="s">"Finder"</span>
-    <span class="n">set</span> <span class="n">dir_path</span> <span class="n">to</span> <span class="n">quoted</span> <span class="n">form</span> <span class="n">of</span> <span class="p">(</span><span class="n">POSIX</span> <span class="n">path</span> <span class="n">of</span> <span class="p">(</span><span class="n">folder</span> <span class="n">of</span> <span class="n">the</span> <span class="n">front</span> <span class="n">window</span> <span class="n">as</span> <span class="n">alias</span><span class="p">))</span>
-  <span class="n">end</span> <span class="n">tell</span>
-  <span class="n">CD_to</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
-<span class="n">end</span> <span class="n">run</span>
+<div class="codehilite"><pre><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+  <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"Finder"</span>
+    <span class="k">set</span> <span class="nv">dir_path</span> <span class="k">to</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="p">(</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nv">folder</span> <span class="k">of</span> <span class="nb">the</span> <span class="nb">front</span> <span class="na">window</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">))</span>
+  <span class="k">end</span> <span class="k">tell</span>
+  <span class="nv">CD_to</span><span class="p">(</span><span class="nv">dir_path</span><span class="p">)</span>
+<span class="k">end</span> <span class="nb">run</span>
 
-<span class="n">on</span> <span class="n">CD_to</span><span class="p">(</span><span class="n">theDir</span><span class="p">)</span>
-  <span class="n">tell</span> <span class="n">application</span> <span class="s">"iTerm"</span>
-    <span class="n">activate</span>
+<span class="k">on</span> <span class="nv">CD_to</span><span class="p">(</span><span class="nv">theDir</span><span class="p">)</span>
+  <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"iTerm"</span>
+    <span class="nb">activate</span>
 
-    <span class="n">try</span>
-      <span class="n">set</span> <span class="n">_session</span> <span class="n">to</span> <span class="n">current</span> <span class="n">session</span> <span class="n">of</span> <span class="n">current</span> <span class="n">terminal</span>
-    <span class="n">on</span> <span class="n">error</span>
-      <span class="n">set</span> <span class="n">_term</span> <span class="n">to</span> <span class="p">(</span><span class="n">make</span> <span class="n">new</span> <span class="n">terminal</span><span class="p">)</span>
-      <span class="n">tell</span> <span class="n">_term</span>
-        <span class="n">launch</span> <span class="n">session</span> <span class="s">"Default"</span>
-        <span class="n">set</span> <span class="n">_session</span> <span class="n">to</span> <span class="n">current</span> <span class="n">session</span>
-      <span class="n">end</span> <span class="n">tell</span>
-    <span class="n">end</span> <span class="n">try</span>
+    <span class="k">try</span>
+      <span class="k">set</span> <span class="nv">sesh</span> <span class="k">to</span> <span class="nv">current</span> <span class="nv">session</span> <span class="k">of</span> <span class="nv">current</span> <span class="nv">terminal</span>
+    <span class="nb">on</span> <span class="k">error</span>
+      <span class="k">set</span> <span class="nv">term</span> <span class="k">to</span> <span class="p">(</span><span class="nb">make</span> <span class="nb">new</span> <span class="nv">terminal</span><span class="p">)</span>
+      <span class="k">tell</span> <span class="nv">term</span>
+        <span class="nb">launch</span> <span class="nv">session</span> <span class="s2">"Default"</span>
+        <span class="k">set</span> <span class="nv">sesh</span> <span class="k">to</span> <span class="nv">current</span> <span class="nv">session</span>
+      <span class="k">end</span> <span class="k">tell</span>
+    <span class="k">end</span> <span class="k">try</span>
 
-    <span class="n">tell</span> <span class="n">_session</span>
-      <span class="n">write</span> <span class="n">text</span> <span class="s">"cd "</span> <span class="o">&amp;</span> <span class="n">theDir</span> <span class="o">&amp;</span> <span class="s">";clear;"</span>
-    <span class="n">end</span> <span class="n">tell</span>
-  <span class="n">end</span> <span class="n">tell</span>
-<span class="n">end</span> <span class="n">CD_to</span>
+    <span class="k">tell</span> <span class="nv">sesh</span>
+      <span class="nb">write</span> <span class="nb">text</span> <span class="s2">"cd "</span> <span class="o">&amp;</span> <span class="nv">theDir</span> <span class="o">&amp;</span> <span class="s2">";clear;"</span>
+    <span class="k">end</span> <span class="k">tell</span>
+  <span class="k">end</span> <span class="k">tell</span>
+<span class="k">end</span> <span class="nv">CD_to</span>
 </pre></div>
 
 

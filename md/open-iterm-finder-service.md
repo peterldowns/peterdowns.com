@@ -25,30 +25,33 @@ I didn't want to clutter up my dock or Finder sidebar with a droppable script,
 so I adapted [Lance E Sloan][7]'s [script][8] and turned it into a Finder
 service that you can access by right-clicking on a folder.  Here's the script:
 
-	on run {input, parameters}
-		tell application "Finder"
-			set dir_path to "\"" & (POSIX path of (input as string)) & "\""
-				-- display dialog dir_path
-		end tell
-		CD_to(dir_path)
-	end run
-	
-	on CD_to(theDir)
-		tell application "iTerm"
-			activate
-			try
-				set t to the last terminal
-			on error
-				set t to (make new terminal)
-			end try
-			tell t
-				launch session "Default Session"
-				tell the last session
-					write text "cd " & theDir & ";clear;"
-				end tell
-			end tell
-		end tell
-	end CD_to
+```applescript
+on run {input, parameters}
+  tell application "Finder"
+    set dir_path to quoted form of (POSIX path of (input as alias))
+  end tell
+  CD_to(dir_path)
+end run
+
+on CD_to(theDir)
+  tell application "iTerm"
+    activate
+
+    try
+      set t to the last terminal
+    on error
+      set t to (make new terminal)
+    end try
+
+    tell t
+      launch session "Default Session"
+      tell the last session
+        write text "cd " & theDir & ";clear;"
+      end tell
+    end tell
+  end tell
+end CD_to
+```
 
 Using Automator, create a new "Service" that accepts folders in Finder.
 
@@ -74,32 +77,34 @@ solution I like even more than the Finder service presented above. His version
 is designed to be run with a single click from the Finder, once you've
 navigated to the folder that you'd like to open. If you take his script:
 
-    on run {input, parameters}
-      tell application "Finder"
-        set dir_path to quoted form of (POSIX path of (folder of the front window as alias))
+```applescript
+on run {input, parameters}
+  tell application "Finder"
+    set dir_path to quoted form of (POSIX path of (folder of the front window as alias))
+  end tell
+  CD_to(dir_path)
+end run
+
+on CD_to(theDir)
+  tell application "iTerm"
+    activate
+
+    try
+      set sesh to current session of current terminal
+    on error
+      set term to (make new terminal)
+      tell term
+        launch session "Default"
+        set sesh to current session
       end tell
-      CD_to(dir_path)
-    end run
+    end try
 
-    on CD_to(theDir)
-      tell application "iTerm"
-        activate
-
-        try
-          set _session to current session of current terminal
-        on error
-          set _term to (make new terminal)
-          tell _term
-            launch session "Default"
-            set _session to current session
-          end tell
-        end try
-
-        tell _session
-          write text "cd " & theDir & ";clear;"
-        end tell
-      end tell
-    end CD_to
+    tell sesh
+      write text "cd " & theDir & ";clear;"
+    end tell
+  end tell
+end CD_to
+```
 
 create an "Application" in Automator:
 
