@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/peterldowns
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://peterdowns.com
+  * I am peterldowns (https://keybase.io/peterldowns) on keybase.
+  * I have a public key ASBOgThh7YFg9eOomzJsmLVpKdjVkBQR6rWKiCxqcC9eAAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01204e813861ed8160f5e3a89b326c98b56929d8d5901411eab58a882c6a702f5e000a",
+            "host": "keybase.io",
+            "kid": "01204e813861ed8160f5e3a89b326c98b56929d8d5901411eab58a882c6a702f5e000a",
+            "uid": "cca02496ab336569414be159df6de519",
+            "username": "peterldowns"
+        },
+        "service": {
+            "hostname": "peterdowns.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.16"
+    },
+    "ctime": 1466524474,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1466524356,
+        "hash": "83ff66dbb14db4c05e97b524c617f9cca34fec223b5df5451d8b39ec7e78f21948ec0fcd726271b6a58bb440ce76b616911a26d2fcd28fb08390f4d5f9467dc6",
+        "seqno": 494790
+    },
+    "prev": "ded82c71d1478135925c36447a325eb2ce755f44d3c40cbf265172eb8e0756e5",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgToE4Ye2BYPXjqJsybJi1aSnY1ZAUEeq1iogsanAvXgAKp3BheWxvYWTFAvl7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNGU4MTM4NjFlZDgxNjBmNWUzYTg5YjMyNmM5OGI1NjkyOWQ4ZDU5MDE0MTFlYWI1OGE4ODJjNmE3MDJmNWUwMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNGU4MTM4NjFlZDgxNjBmNWUzYTg5YjMyNmM5OGI1NjkyOWQ4ZDU5MDE0MTFlYWI1OGE4ODJjNmE3MDJmNWUwMDBhIiwidWlkIjoiY2NhMDI0OTZhYjMzNjU2OTQxNGJlMTU5ZGY2ZGU1MTkiLCJ1c2VybmFtZSI6InBldGVybGRvd25zIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJwZXRlcmRvd25zLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTYifSwiY3RpbWUiOjE0NjY1MjQ0NzQsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ2NjUyNDM1NiwiaGFzaCI6IjgzZmY2NmRiYjE0ZGI0YzA1ZTk3YjUyNGM2MTdmOWNjYTM0ZmVjMjIzYjVkZjU0NTFkOGIzOWVjN2U3OGYyMTk0OGVjMGZjZDcyNjI3MWI2YTU4YmI0NDBjZTc2YjYxNjkxMWEyNmQyZmNkMjhmYjA4MzkwZjRkNWY5NDY3ZGM2Iiwic2Vxbm8iOjQ5NDc5MH0sInByZXYiOiJkZWQ4MmM3MWQxNDc4MTM1OTI1YzM2NDQ3YTMyNWViMmNlNzU1ZjQ0ZDNjNDBjYmYyNjUxNzJlYjhlMDc1NmU1Iiwic2Vxbm8iOjEyLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQBr2CQFuXuG9Rl1KQF5Te6zRNKqCqEP/toG2FkxQepBrYrTnwsd9fnUI21JhQWoj+5vlzeMxAUK0MxauNdOVOQqoc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/peterldowns
+
+==================================================================
