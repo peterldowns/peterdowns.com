@@ -8,7 +8,7 @@ My [post on opening iTerm2 from the Finder](/posts/open-iterm-finder-service.htm
 
 Recently (ok, not that recently, I'm playing catchup here) iTerm2 changed their Applescript API and my old scripts stopped working. I immediately started receiving mail telling me so; many of these emails even included code changes to fix it! But when I thought about updating that same blog post yet again, I decided that it was time to finally get around to making this code properly open source. It's what I do [for my other projects](https://github.com/peterldowns), so why not this one?
 
-I'm happy to announce the first release (1.0.0) of [iTerm2 Finder Tools](https://github.com/peterldowns/iterm2-finder-tools).
+**I'm happy to announce the first release (1.0.0) of [iTerm2 Finder Tools](https://github.com/peterldowns/iterm2-finder-tools).**
 
 There are three main improvements compared to the old system:
 
@@ -17,3 +17,5 @@ There are three main improvements compared to the old system:
 * The code is now on Github, so I can accept changes and contributions much more easily.
 
 So go check it out, and if you find it useful, give it a star and/or send me an email! I'm also starting to use Twitter again, you can [follow me as @peterldowns](https://twitter.com/peterldowns).
+
+P.S. thanks to everyone who wrote in with fixes for the 2.9+ version switch: [J. Daniel Ashton](https://plus.google.com/+JDanielAshton/posts), [Willard Lin / 林韋儒](https://github.com/willard1218), [Cedric Laczny](https://github.com/claczny), and [Peter Danford](http://www.pdanford.com).
