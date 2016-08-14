@@ -40,7 +40,9 @@
         </ul>
     </div>
     <div id='content'>
-      <div class="post"><h1>Opening iTerm From a Finder Directory</h1>
+      <div class="post"><p><em>Quick &#8212; check out <a href="https://github.com/peterldowns/iterm2-finder-tools">the new and improved version of this project on Github</a>,
+and <a href="/posts/iterm2-finder-tools">read about it in my new blog post</a>!</em></p>
+<h1>Opening iTerm From a Finder Directory</h1>
 <p>If, like me, you work mostly from OS X, you've probably already discovered
 <a href="http://www.iterm2.com/#/section/home">iTerm2</a>. If you haven't: it's an incredibly good replacement for the
 default Terminal application. Combined with the <a href="http://ethanschoonover.com/solarized">solarized</a> color scheme, it
@@ -58,7 +60,7 @@ dock.</p>
 <p>I didn't want to clutter up my dock or Finder sidebar with a droppable script,
 so I adapted <a href="https://github.com/lsloan">Lance E Sloan</a>'s <a href="https://gist.github.com/1265327">script</a> and turned it into a Finder
 service that you can access by right-clicking on a folder.  Here's the script:</p>
-<div class="codehilite"><pre><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
   <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"Finder"</span>
     <span class="k">set</span> <span class="nv">dir_path</span> <span class="k">to</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="p">(</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nv">input</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">))</span>
   <span class="k">end</span> <span class="k">tell</span>
@@ -102,7 +104,7 @@ Eric!</p>
 solution I like even more than the Finder service presented above. His version
 is designed to be run with a single click from the Finder, once you've
 navigated to the folder that you'd like to open. If you take his script:</p>
-<div class="codehilite"><pre><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
   <span class="k">tell</span> <span class="nb">application</span> <span class="s2">"Finder"</span>
     <span class="k">set</span> <span class="nv">dir_path</span> <span class="k">to</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="p">(</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nv">folder</span> <span class="k">of</span> <span class="nb">the</span> <span class="nb">front</span> <span class="na">window</span> <span class="k">as</span> <span class="nv">alias</span><span class="p">))</span>
   <span class="k">end</span> <span class="k">tell</span>

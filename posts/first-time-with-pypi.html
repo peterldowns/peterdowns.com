@@ -80,7 +80,7 @@ account in order to be able to upload your code. I recommend using the same emai
 both accounts, just to make your life easier when it comes time to push.</p>
 <h3>Create a <code>.pypirc</code> configuration file</h3>
 <p>This file holds your information for authenticating with PyPI, both the live and the test versions.</p>
-<div class="codehilite"><pre><span class="k">[distutils]</span>
+<div class="codehilite"><pre><span></span><span class="k">[distutils]</span>
 <span class="na">index-servers</span> <span class="o">=</span><span class="s"></span>
 <span class="s">  pypi</span>
 <span class="s">  pypitest</span>
@@ -106,7 +106,7 @@ reported that in Python 3 if your password includes a raw <code>%</code>, it nee
 escaped by doubling &#8211; the .pypirc config parser <a href="http://www.gossamer-threads.com/lists/python/bugs/1109196">interpolates
 strings</a>. For
 example, if your password is <code>hello%world</code>:</p>
-<div class="codehilite"><pre><span class="k">[pypi]</span>
+<div class="codehilite"><pre><span></span><span class="k">[pypi]</span>
 <span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>
 <span class="na">username</span><span class="o">=</span><span class="s">myusername</span>
 <span class="na">password</span><span class="o">=</span><span class="s">hello%%world</span>
@@ -115,7 +115,7 @@ example, if your password is <code>hello%world</code>:</p>
 
 <p>I've never run into this issue, but if you're having trouble this might help.</p>
 <p><a href="http://amfarrell.com/">Andrew Farrell</a> points out that if your password includes spaces, make sure not to quote it. For example, if your password is <code>correct horse battery staple</code>:</p>
-<div class="codehilite"><pre><span class="k">[pypi]</span>
+<div class="codehilite"><pre><span></span><span class="k">[pypi]</span>
 <span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>
 <span class="na">username</span><span class="o">=</span><span class="s">myusername</span>
 <span class="na">password</span><span class="o">=</span><span class="s">correct horse battery staple</span>
@@ -129,33 +129,33 @@ the root of the directory. If your'e using a markdown-formatted read me file
 you'll also need a <code>setup.cfg</code> file. Also, you'll want a <code>LICENSE.txt</code> file
 describing what can be done with your code. So if I've been working on a
 library called <code>mypackage</code>,  my directory structure would look like this:</p>
-<div class="codehilite"><pre><span class="n">root</span><span class="o">-</span><span class="n">dir</span><span class="o">/</span>   <span class="err">#</span> <span class="n">arbitrary</span> <span class="n">working</span> <span class="n">directory</span> <span class="n">name</span>
-  <span class="n">setup</span><span class="p">.</span><span class="n">py</span>
-  <span class="n">setup</span><span class="p">.</span><span class="n">cfg</span>
-  <span class="n">LICENSE</span><span class="p">.</span><span class="n">txt</span>
-  <span class="n">README</span><span class="p">.</span><span class="n">md</span>
-  <span class="n">mypackage</span><span class="o">/</span>
-    <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-    <span class="n">foo</span><span class="p">.</span><span class="n">py</span>
-    <span class="n">bar</span><span class="p">.</span><span class="n">py</span>
-    <span class="n">baz</span><span class="p">.</span><span class="n">py</span>
+<div class="codehilite"><pre><span></span>root-dir/   # arbitrary working directory name
+  setup.py
+  setup.cfg
+  LICENSE.txt
+  README.md
+  mypackage/
+    __init__.py
+    foo.py
+    bar.py
+    baz.py
 </pre></div>
 
 
 <p>Here's a breakdown of what goes in which file:</p>
 <h4>setup.py</h4>
 <p>This is metadata about your library.</p>
-<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
 <span class="n">setup</span><span class="p">(</span>
-  <span class="n">name</span> <span class="o">=</span> <span class="s">'mypackage'</span><span class="p">,</span>
-  <span class="n">packages</span> <span class="o">=</span> <span class="p">[</span><span class="s">'mypackage'</span><span class="p">],</span> <span class="c"># this must be the same as the name above</span>
-  <span class="n">version</span> <span class="o">=</span> <span class="s">'0.1'</span><span class="p">,</span>
-  <span class="n">description</span> <span class="o">=</span> <span class="s">'A random test lib'</span><span class="p">,</span>
-  <span class="n">author</span> <span class="o">=</span> <span class="s">'Peter Downs'</span><span class="p">,</span>
-  <span class="n">author_email</span> <span class="o">=</span> <span class="s">'peterldowns@gmail.com'</span><span class="p">,</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="s">'https://github.com/peterldowns/mypackage'</span><span class="p">,</span> <span class="c"># use the URL to the github repo</span>
-  <span class="n">download_url</span> <span class="o">=</span> <span class="s">'https://github.com/peterldowns/mypackage/tarball/0.1'</span><span class="p">,</span> <span class="c"># I'll explain this in a second</span>
-  <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s">'testing'</span><span class="p">,</span> <span class="s">'logging'</span><span class="p">,</span> <span class="s">'example'</span><span class="p">],</span> <span class="c"># arbitrary keywords</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="s1">'mypackage'</span><span class="p">,</span>
+  <span class="n">packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mypackage'</span><span class="p">],</span> <span class="c1"># this must be the same as the name above</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="s1">'0.1'</span><span class="p">,</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s1">'A random test lib'</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="s1">'Peter Downs'</span><span class="p">,</span>
+  <span class="n">author_email</span> <span class="o">=</span> <span class="s1">'peterldowns@gmail.com'</span><span class="p">,</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://github.com/peterldowns/mypackage'</span><span class="p">,</span> <span class="c1"># use the URL to the github repo</span>
+  <span class="n">download_url</span> <span class="o">=</span> <span class="s1">'https://github.com/peterldowns/mypackage/tarball/0.1'</span><span class="p">,</span> <span class="c1"># I'll explain this in a second</span>
+  <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'testing'</span><span class="p">,</span> <span class="s1">'logging'</span><span class="p">,</span> <span class="s1">'example'</span><span class="p">],</span> <span class="c1"># arbitrary keywords</span>
   <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[],</span>
 <span class="p">)</span>
 </pre></div>
@@ -171,7 +171,7 @@ master</code> to update your code on Github with the latest tag information. Git
 creates tarballs for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.</p>
 <h4>setup.cfg</h4>
 <p>This tells PyPI where your README file is.</p>
-<div class="codehilite"><pre><span class="k">[metadata]</span>
+<div class="codehilite"><pre><span></span><span class="k">[metadata]</span>
 <span class="na">description-file</span> <span class="o">=</span> <span class="s">README.md</span>
 </pre></div>
 
@@ -185,14 +185,14 @@ If you don't <strong>have</strong> to use a markdown README file, I would recomm
 use the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
 <h3>Upload your package to PyPI Test</h3>
 <p>Run:</p>
-<div class="codehilite"><pre><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="k">register</span> <span class="o">-</span><span class="n">r</span> <span class="n">pypitest</span>
+<div class="codehilite"><pre><span></span>python setup.py register -r pypitest
 </pre></div>
 
 
 <p>This will attempt to register your package against PyPI's test server, just to make sure you've
 set up everything correctly.</p>
 <p>Then, run:</p>
-<div class="codehilite"><pre><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span> <span class="o">-</span><span class="n">r</span> <span class="n">pypitest</span>
+<div class="codehilite"><pre><span></span>python setup.py sdist upload -r pypitest
 </pre></div>
 
 
@@ -201,12 +201,12 @@ set up everything correctly.</p>
 <h3>Upload to PyPI Live</h3>
 <p>Once you've successfully uploaded to PyPI Test, perform the same steps but point to
 the live PyPI server instead. To register, run:</p>
-<div class="codehilite"><pre><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="k">register</span> <span class="o">-</span><span class="n">r</span> <span class="n">pypi</span>
+<div class="codehilite"><pre><span></span>python setup.py register -r pypi
 </pre></div>
 
 
 <p>Then, run:</p>
-<div class="codehilite"><pre><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span> <span class="o">-</span><span class="n">r</span> <span class="n">pypi</span>
+<div class="codehilite"><pre><span></span>python setup.py sdist upload -r pypi
 </pre></div>
 
 

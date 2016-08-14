@@ -47,23 +47,23 @@ plenty of files. Because this whitespace is meaningless, I went about
 removing it, which took some time. If you don't like trailing whitespace,
 here's how to automatically remove trailing whitespace when saving files:</p>
 <h3>Emacs (add to ~/.emacsrc)</h3>
-<div class="codehilite"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">before</span><span class="o">-</span><span class="n">save</span><span class="o">-</span><span class="n">hook</span> <span class="err">'</span><span class="n">delete</span><span class="o">-</span><span class="n">trailing</span><span class="o">-</span><span class="n">whitespace</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span>(add-hook 'before-save-hook 'delete-trailing-whitespace)
 </pre></div>
 
 
 <h3>VIM (add to ~/.vimrc)</h3>
-<div class="codehilite"><pre><span class="nx">autocmd</span> <span class="nx">BufWritePre</span> <span class="o">&lt;</span><span class="nx">buffer</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">%</span><span class="nx">s</span><span class="o">/\</span><span class="nx">s</span><span class="o">\+</span><span class="err">$</span><span class="c1">//e</span>
+<div class="codehilite"><pre><span></span>autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
 </pre></div>
 
 
 <h3>SublimeText (add to Preferences / Settings - User)</h3>
-<div class="codehilite"><pre><span class="p">{</span> <span class="s">"trim_trailing_white_space_on_save"</span><span class="o">:</span> <span class="nb">true</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span>{ "trim_trailing_white_space_on_save": true }
 </pre></div>
 
 
 <p>Once nice addition to this is to limit this to certain file types &#8212; in Markdown,
 for example, trailing whitespace can be meaningful. In VIM, use</p>
-<div class="codehilite"><pre><span class="nx">autocmd</span> <span class="nx">FileType</span> <span class="nx">javascript</span><span class="p">,</span><span class="nx">python</span> <span class="nx">autocmd</span> <span class="nx">BufWritePre</span> <span class="o">&lt;</span><span class="nx">buffer</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">%</span><span class="nx">s</span><span class="o">/\</span><span class="nx">s</span><span class="o">\+</span><span class="err">$</span><span class="c1">//e</span>
+<div class="codehilite"><pre><span></span>autocmd FileType javascript,python autocmd BufWritePre &lt;buffer&gt; :%s/\s\+$//e
 </pre></div>
 
 
