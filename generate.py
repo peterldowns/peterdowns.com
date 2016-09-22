@@ -25,15 +25,15 @@ _enc_errors = 'xmlcharrefreplace' # How to treat unicode characters when writing
                                   # HTML content.
 
 _index = './index.html'   # file at which to store the homepage / archive
-_about = './about.html'
+_posts_index = './posts/index.html'
+
+@template('templates/posts.html')
+def render_posts_index(posts):
+  return {'posts': posts}, {}
 
 @template('templates/index.html')
-def render_homepage(posts):
-  return {'posts' : posts, 'home': True}, {}
-
-@template('templates/about.html')
-def render_about():
-  return {'about': True}, {}
+def render_index():
+  return {'index': True}, {}
 
 @template('templates/post.html')
 def render_post(post):
@@ -109,12 +109,12 @@ def main():
 
   print 'Writing homepage -> {}'.format(_index)
   with open(_index, 'w') as fout:
-    html = render_homepage(sorted_posts)
+    html = render_index()
     fout.write(unicode(html).encode(errors=_enc_errors))
 
-  print 'Writing about -> {}'.format(_about)
-  with open(_about, 'w') as fout:
-    html = render_about()
+  print 'Writing posts index -> {}'.format(_posts_index)
+  with open(_posts_index, 'w') as fout:
+    html = render_posts_index(sorted_posts)
     fout.write(unicode(html).encode(errors=_enc_errors))
 
   num_posts = len(sorted_posts)

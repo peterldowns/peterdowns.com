@@ -4,17 +4,38 @@
 <head>
   {{>head_content}}
   <meta name="Description"
-        content="Hi, I'm Peter. This is my blog.">
+        content="Hi, I'm Peter. I want to do great things with smart people.">
 </head>
 
 <body>
   <div id='page-wrap'>
     {{>header}}
     <div id='content'>
-      <div class='archives'>
-        {{#posts}}
-          <p><a href='{{html_path}}'>{{title}}</a></p>
-        {{/posts}}
+      <div class='about'>
+        <img id='headshot' class='inline-block' src="/static/img/me.jpg" />
+        <div id='personal-info' class='inline-block'>
+          <p> Hi, I'm Peter. </p>
+          <p> I want to do great things with smart people. </p>
+          <p> I'm some number of years old, but why would that matter? </p>
+          <p> I used to say where I live but the concept of a single physical location is hopelessly outdated at this point. It certainly doesn't apply to my life anymore. </p>
+          <p> I study computer science at MIT. </p>
+          <p> I've worked with: <a href='https://hyperink.com'>Hyperink</a> / 
+                                <a href='https://locu.com'>Locu</a> / 
+                                <a href='https://godaddy.com'>GoDaddy</a> / 
+                                <a href='https://www.coinbase.com/'>Coinbase</a> / 
+                                <a href='http://beme.com'>Beme</a> / 
+                                <a href='https://instavest.com'>Instavest</a> / 
+                                <a href='https://roughdraft.vc'>Rough Draft</a> /
+                                <a href='https://b12.io/'>B12</a>.
+          <p> I'm online in other places:
+            <a rel='me' href='https://github.com/peterldowns'>Github</a> /
+            <a rel='me' href='http://peterldowns.tumblr.com'>Tumblr</a> /
+            <a rel='me' href='https://twitter.com/peterldowns'>Twitter</a>.
+          </p>
+          <p> I can be reached <a href='mailto:peterldowns@gmail.com'>via email</a>.</p>
+          <p> My public key <a href='/static/public-key.txt'>is right here</a> and <a href="https://keybase.io/peterldowns">on Keybase</a>. </p>
+          <p> If you really must look at it, I have a <a href='/static/Downs-Peter-Resume.pdf'>résume</a>. </p>
+        </div>
       </div>
     </div>
   </div>

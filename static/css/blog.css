@@ -216,7 +216,8 @@ img {
 hr {
 	background-color: #999;
 }
-*:not(ul, ol) > ul, *:not(ul, ol) > ol {
+.post *:not(ul, ol) > ul,
+.post *:not(ul, ol) > ol {
 	list-style-position: outside;
 	border: 1px solid rgba(0,0,0,.2);
 	padding-bottom: 2px;
