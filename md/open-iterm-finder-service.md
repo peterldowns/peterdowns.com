@@ -2,8 +2,8 @@ Title: Opening iTerm From a Finder Directory
 Author: Peter Downs
 Date: Wednesday, March 14, 2012
 
-*Quick — check out [the new and improved version of this project on Github](https://github.com/peterldowns/iterm2-finder-tools.html),
-and [read about it in my new blog post](/posts/iterm2-finder-tools)!*
+*Quick — check out [the new and improved version of this project on Github](https://github.com/peterldowns/iterm2-finder-tools),
+and [read about it in my new blog post](/posts/iterm2-finder-tools.html)!*
 
 # Opening iTerm From a Finder Directory
 
