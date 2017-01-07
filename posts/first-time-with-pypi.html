@@ -114,6 +114,10 @@ example, if your password is <code>hello%world</code>:</p>
 
 
 <p>I've never run into this issue, but if you're having trouble this might help.</p>
+<p><a href="https://github.com/jamesstidard">James Stidard</a> has reported that this escaping
+behavior has been patched and is no longer necessary. If you're seeing an error
+with a response code of <code>403: Invalid or non-existent authentication
+information</code>, try un-escaping the percent signs in your password.</p>
 <p><a href="http://amfarrell.com/">Andrew Farrell</a> points out that if your password includes spaces, make sure not to quote it. For example, if your password is <code>correct horse battery staple</code>:</p>
 <div class="codehilite"><pre><span></span><span class="k">[pypi]</span>
 <span class="na">repository</span><span class="o">=</span><span class="s">https://pypi.python.org/pypi</span>

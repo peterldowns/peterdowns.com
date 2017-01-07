@@ -91,6 +91,11 @@ password=hello%%world
 
 I've never run into this issue, but if you're having trouble this might help.
 
+[James Stidard](https://github.com/jamesstidard) has reported that this escaping
+behavior has been patched and is no longer necessary. If you're seeing an error
+with a response code of `403: Invalid or non-existent authentication
+information`, try un-escaping the percent signs in your password.
+
 
 [Andrew Farrell](http://amfarrell.com/) points out that if your password includes spaces, make sure not to quote it. For example, if your password is `correct horse battery staple`:
 
