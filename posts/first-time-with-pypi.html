@@ -100,6 +100,12 @@ both accounts, just to make your life easier when it comes time to push.</p>
 <p>This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
 file in your home folder &#8211;&#160;its path should be <code>~/.pypirc</code>.</p>
+<p>Because this file holds your username and password, you may want to change its permissions so that only you can read and write it. From the terminal, run:</p>
+<div class="codehilite"><pre><span></span>chmod <span class="m">600</span> ~/.pypirc
+</pre></div>
+
+
+<p>Thanks to <a href="http://schobert.cc/">Martin Schobert</a> for the recommendation.</p>
 <h5>Notes on passwords / usernames</h5>
 <p><a href="https://twitter.com/michielsikma/status/632410926621200388">Michiel Sikma</a> has
 reported that in Python 3 if your password includes a raw <code>%</code>, it needs to be

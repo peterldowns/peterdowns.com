@@ -74,6 +74,14 @@ This is just to make your life easier, so that when it comes time to upload you
 don't have to type/remember your username and password. Make sure to put this
 file in your home folder – its path should be `~/.pypirc`.
 
+Because this file holds your username and password, you may want to change its permissions so that only you can read and write it. From the terminal, run:
+
+```bash
+chmod 600 ~/.pypirc
+```
+
+Thanks to [Martin Schobert](http://schobert.cc/) for the recommendation.
+
 ##### Notes on passwords / usernames
 
 [Michiel Sikma](https://twitter.com/michielsikma/status/632410926621200388) has
