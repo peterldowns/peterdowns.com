@@ -1,0 +1,66 @@
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+#display {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color:
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center, center;
+    opacity: 0;
+    transition: opacity 4s ease-in;
+    pointer-events: none;
+}
+
+#load-status {
+    z-index: 2;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    color: #999;
+    font-size: 80px;
+    font-family: Arial;
+    pointer-events: none;
+}
+
+#graph-container {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    transition: opacity 4s ease-in;
+    opacity: 0;
+}
+#wrapper.loaded #load-status {
+    display: none;
+}
+#wrapper.loaded #graph-container,
+#wrapper.loaded #graph-container.on {
+    opacity: 1;
+}
+#wrapper.loaded #graph-container.off {
+    opacity: 0;
+}
+#wrapper.loaded #display.on {
+    opacity: 1;
+}
+#wrapper.loaded #display,
+#wrapper.loaded #display.off {
+    opacity: 0;
+}
