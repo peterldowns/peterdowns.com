@@ -5,10 +5,12 @@ var pause = 4 * 1000;
 var hl_len = 4000;
 
 var DISPLAY = document.getElementById('display');
+var IMG = display.children[0].children[0];
 DISPLAY.show = function(node, callback) {
     CONTAINER.className = 'off';
     setTimeout(function() {
-        DISPLAY.style = 'background-image: url(' + largeURL(node.id) + ')';
+        //DISPLAY.style = 'background-image: url(' + largeURL(node.id) + ')';
+        IMG.src = largeURL(node.id);
         DISPLAY.className = 'on';
         setTimeout(callback || function() {}, anim_length);
     }, anim_length);

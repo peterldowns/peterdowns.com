@@ -18,6 +18,14 @@ body {
     opacity: 0;
     transition: opacity 4s ease-in;
     pointer-events: none;
+    background: black;
+
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 #load-status {
@@ -63,4 +71,19 @@ body {
 #wrapper.loaded #display,
 #wrapper.loaded #display.off {
     opacity: 0;
+}
+
+#wrap {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#display-img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    box-sizing: border-box;
+    pointer-events: none;
 }

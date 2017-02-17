@@ -1,7 +1,15 @@
 var DEBUG = false;
+
 var SCALE = 1;
-var WIDTH = SCALE * 240;
-var HEIGHT = SCALE * 135;
+var WIDTH = 240;
+var HEIGHT = 135;
+var calculateScale = function() {
+    SCALE = (window.innerWidth * window.innerHeight) / (1920 * 1080);
+    WIDTH = SCALE * 240;
+    HEIGHT = SCALE * 135;
+};
+window.onresize = calculateScale;
+calculateScale();
 
 sigma.utils.pkg('sigma.canvas.nodes');
 sigma.canvas.nodes.image = (function() {
