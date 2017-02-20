@@ -4,7 +4,8 @@ var SCALE = 1;
 var WIDTH = 240;
 var HEIGHT = 135;
 var calculateScale = function() {
-    SCALE = (window.innerWidth * window.innerHeight) / (1920 * 1080);
+    SCALE = Math.min(
+        (window.innerWidth * window.innerHeight) / (1920 * 1080), 1);
     WIDTH = SCALE * 240;
     HEIGHT = SCALE * 135;
 };
@@ -43,7 +44,7 @@ sigma.canvas.nodes.image = (function() {
         if (should_hl_node(node)) {
           context.globalAlpha = 1.0;
         } else {
-          context.globalAlpha = 0.2;
+          context.globalAlpha = 0.3;
         }
       }
       context.drawImage(
@@ -68,9 +69,9 @@ sigma.canvas.nodes.image = (function() {
       );
       if (should_hl_node(node)) {
         context.lineWidth = 1.4;
-        context.strokeStyle = 'rgba(255, 255, 255, 1)';
+        context.strokeStyle = 'rgba(255, 255, 255, 2)';
       } else {
-          context.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+          context.strokeStyle = 'rgba(255, 255, 255, 0.3)';
           context.linewidth = 0.8;
       }
       context.stroke();
@@ -113,7 +114,7 @@ sigma.canvas.edges.t = function(edge, source, target, context, settings) {
         context.lineWidth = 2;
     } else {
         context.lineWidth = 1;
-        context.strokeStyle = 'rgba(88, 88, 88, 0.2)';
+        context.strokeStyle = 'rgba(88, 88, 88, 0.3)';
     }
     context.beginPath();
     context.moveTo(source[prefix + 'x'], source[prefix + 'y']);
@@ -147,7 +148,7 @@ edges.forEach(function(edge, i) {
         source: edge[0],
         target: edge[1],
         type: 't',
-        color: 'rgba(88, 88, 88, 0.5)',
+        color: 'rgba(88, 88, 88, 0.3)',
     });
 });
 
@@ -155,6 +156,7 @@ var NODES;
 var NODES_BY_ID;
 var EDGES;
 var EDGES_BY_NODE;
+var EDGES_BY_SOURCE;
 // Then, wait for all images to be loaded before instanciating sigma:
 
 var WRAPPER = document.getElementById('wrapper');
@@ -217,6 +219,7 @@ urls.forEach(function(url) {
                         });
                         EDGES = s.graph.edges();
                         EDGES_BY_NODE = {};
+                        EDGES_BY_SOURCE = {};
                         EDGES.forEach(function(edge) {
                             [edge.source, edge.target].forEach(function(node) {
                                 if (!EDGES_BY_NODE[node]) {
@@ -224,6 +227,10 @@ urls.forEach(function(url) {
                                 }
                                 EDGES_BY_NODE[node].push(edge);
                             });
+                            EDGES_BY_SOURCE[edge.source] = (EDGES_BY_SOURCE[edge.source] || {});
+                            EDGES_BY_SOURCE[edge.target] = (EDGES_BY_SOURCE[edge.target] || {});
+                            EDGES_BY_SOURCE[edge.target][edge.source] = edge;
+                            EDGES_BY_SOURCE[edge.source][edge.target] = edge;
                         });
                         setTimeout(function() {
                             WALK(s);

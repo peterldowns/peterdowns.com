@@ -1,8 +1,8 @@
-var anim_length = 4 * 1000;
-var disp_length = 20 * 1000;
-var pause = 4 * 1000;
+var anim_length = 2 * 1000;
+var disp_length = 16 * 1000;
+var pause = 2 * 1000;
 
-var hl_len = 4000;
+var hl_len = 4 * 1000;
 
 var DISPLAY = document.getElementById('display');
 var IMG = display.children[0].children[0];
@@ -67,8 +67,20 @@ var delay = function(wrap, t, f) {
     }
 }
 
+var SCHEDULE = [];
+var nextEdge = function(currentNode) {
+    if (SCHEDULE.length === 0) {
+        // TODO: pull this in from the current node;
+        SCHEDULE = randomElement(hamiltonians[currentNode.id]).slice(1);
+    }
+    var target = SCHEDULE[0];
+    SCHEDULE = SCHEDULE.slice(1);
+    return EDGES_BY_SOURCE[currentNode.id][target];
+}
+
+var current;
 var WALK = function(s) {
-    var current = randomElement(subtract(NODES, current));
+    current = randomElement(subtract(NODES, current));
     HL_NEXT = current;
     s.refresh();
     var edge = null;
@@ -77,8 +89,7 @@ var WALK = function(s) {
         highlight(s, current, function() {
             showNode(s, current, function() {
                 setTimeout(function() {
-                    edge = randomElement(
-                            subtract(EDGES_BY_NODE[current.id], edge));
+                    edge = nextEdge(current);
                     HL_EDGE = edge;
                     HL_PREV = current;
                     if (current === NODES_BY_ID[edge.target]) {

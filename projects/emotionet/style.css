@@ -16,7 +16,7 @@ body {
     background-repeat: no-repeat;
     background-position: center, center;
     opacity: 0;
-    transition: opacity 4s ease-in;
+    transition: opacity 2s ease-in;
     pointer-events: none;
     background: black;
 
@@ -52,7 +52,7 @@ body {
     left: 0;
     right: 0;
     background: black;
-    transition: opacity 4s ease-in;
+    transition: opacity 2s ease-in;
     opacity: 0;
 }
 #wrapper.loaded #load-status {

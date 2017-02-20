@@ -47,10 +47,10 @@ var tagsByFile = {
 
 
 var smallURL = function(filename) {
-    return './small/' + encodeURIComponent(filename);
+    return './photos/small/' + encodeURIComponent(filename);
 };
 var largeURL = function(filename) {
-    return './large/' + encodeURIComponent(filename);
+    return './photos/large/' + encodeURIComponent(filename);
 };
 var urls = [];
 Object.keys(tagsByFile).forEach(function(filename) {
@@ -92,3 +92,14 @@ Object.keys(filesByTag).forEach(function(tag) {
 Object.keys(_edgeDedup).forEach(function(edgeKey) {
     edges.push(edgeFiles(edgeKey));
 });
+
+EDGES_BY_NODE = {};
+edges.forEach(function(edge) {
+    [edge[0], edge[1]].forEach(function(node, i) {
+        if (!EDGES_BY_NODE[node]) {
+            EDGES_BY_NODE[node] = [];
+        }
+        EDGES_BY_NODE[node].push(edge[1-i]);
+    });
+});
+console.log(EDGES_BY_NODE)
