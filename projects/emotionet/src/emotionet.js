@@ -93,6 +93,8 @@ Object.keys(_edgeDedup).forEach(function(edgeKey) {
     edges.push(edgeFiles(edgeKey));
 });
 
+
+/*
 EDGES_BY_NODE = {};
 edges.forEach(function(edge) {
     [edge[0], edge[1]].forEach(function(node, i) {
@@ -103,3 +105,4 @@ edges.forEach(function(edge) {
     });
 });
 console.log(EDGES_BY_NODE)
+*/

@@ -1,4 +1,4 @@
-var anim_length = 2 * 1000;
+var anim_length = 0;
 var disp_length = 16 * 1000;
 var pause = 2 * 1000;
 
@@ -19,6 +19,7 @@ DISPLAY.hide = function(callback) {
     DISPLAY.className = 'off';
     setTimeout(function() {
         CONTAINER.className = 'on';
+        IMG.src = null;
         setTimeout((callback || function() {}), anim_length);
     }, anim_length);
 };
