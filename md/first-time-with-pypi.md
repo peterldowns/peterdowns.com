@@ -151,7 +151,7 @@ This is metadata about your library.
       author = 'Peter Downs',
       author_email = 'peterldowns@gmail.com',
       url = 'https://github.com/peterldowns/mypackage',	# use the URL to the github repo
-      download_url = 'https://github.com/peterldowns/mypackage/tarball/0.1', # I'll explain this in a second
+      download_url = 'https://github.com/peterldowns/mypackage/archive/0.1.tar.gz', # I'll explain this in a second
       keywords = ['testing', 'logging', 'example'], # arbitrary keywords
       classifiers = [],
     )
@@ -163,7 +163,9 @@ repository, type: `git tag 0.1 -m "Adds a
 tag so that we can put this on PyPI."`. Then, type `git tag` to show a
 list of tags — you should see `0.1` in the list. Type `git push --tags origin
 master` to update your code on Github with the latest tag information. Github
-creates tarballs for download at `https://github.com/{username}/{module_name}/tarball/{tag}`.
+creates tarballs for download at `https://github.com/{username}/{module_name}/archive/{tag}.tar.gz`.
+
+*Thanks to [Lars Blumberg](https://github.com/larsblumberg) for writing in about Github's current archive URL scheme.*
 
 #### setup.cfg
 

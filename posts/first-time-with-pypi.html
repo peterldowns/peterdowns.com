@@ -164,7 +164,7 @@ library called <code>mypackage</code>,  my directory structure would look like t
   <span class="n">author</span> <span class="o">=</span> <span class="s1">'Peter Downs'</span><span class="p">,</span>
   <span class="n">author_email</span> <span class="o">=</span> <span class="s1">'peterldowns@gmail.com'</span><span class="p">,</span>
   <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://github.com/peterldowns/mypackage'</span><span class="p">,</span> <span class="c1"># use the URL to the github repo</span>
-  <span class="n">download_url</span> <span class="o">=</span> <span class="s1">'https://github.com/peterldowns/mypackage/tarball/0.1'</span><span class="p">,</span> <span class="c1"># I'll explain this in a second</span>
+  <span class="n">download_url</span> <span class="o">=</span> <span class="s1">'https://github.com/peterldowns/mypackage/archive/0.1.tar.gz'</span><span class="p">,</span> <span class="c1"># I'll explain this in a second</span>
   <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'testing'</span><span class="p">,</span> <span class="s1">'logging'</span><span class="p">,</span> <span class="s1">'example'</span><span class="p">],</span> <span class="c1"># arbitrary keywords</span>
   <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[],</span>
 <span class="p">)</span>
@@ -178,7 +178,8 @@ repository, type: <code>git tag 0.1 -m "Adds a
 tag so that we can put this on PyPI."</code>. Then, type <code>git tag</code> to show a
 list of tags &#8212; you should see <code>0.1</code> in the list. Type <code>git push --tags origin
 master</code> to update your code on Github with the latest tag information. Github
-creates tarballs for download at <code>https://github.com/{username}/{module_name}/tarball/{tag}</code>.</p>
+creates tarballs for download at <code>https://github.com/{username}/{module_name}/archive/{tag}.tar.gz</code>.</p>
+<p><em>Thanks to <a href="https://github.com/larsblumberg">Lars Blumberg</a> for writing in about Github's current archive URL scheme.</em></p>
 <h4>setup.cfg</h4>
 <p>This tells PyPI where your README file is.</p>
 <div class="codehilite"><pre><span></span><span class="k">[metadata]</span>
