@@ -54,8 +54,8 @@ def write_feeds(posts):
     g = FeedGenerator()
     g.id('http://peterdowns.com/blog')
     g.link(href='http://peterdowns.com/blog')
-    g.description('From my asshole to your brain')
-    g.title(u'Peter Downs — Blog')
+    g.description('incredibly on-brand')
+    g.title(u'Peter Downs — Posts')
     for post in posts:
         e = g.add_entry()
         post_url = os.path.join(_blog_root, post['html_path'])

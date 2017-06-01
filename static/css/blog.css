@@ -121,6 +121,17 @@ body {
     border: none;
 }
 
+#footer {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #AAAAAA;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    padding-top:20px;
+}
 #header {
     text-align: center;
     margin-bottom: 2rem;
@@ -179,11 +190,28 @@ body {
 .post, .about, .archives {
     text-align: left;
 }
+.archives {
+    margin-bottom: -40px;
+}
 .archives, .about {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
+.archives {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: left;
+  font-size: 18px;
+}
+.archives a{
+  display: block;
+}
+.archives a::before {
+    padding-left: 0;
+    padding-right: 10px;
+    content: "/";
+  }
 .post > * {
     max-width: 800px;
     margin-left: auto;
@@ -242,4 +270,12 @@ hr {
   .about {
     text-align: center;
   }
+  .archives a {
+      margin-bottom: 20px;
+    }
+  .archives a::before {
+      content: "";
+      padding: 0;
+    }
+
 }

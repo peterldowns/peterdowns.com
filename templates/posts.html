@@ -13,10 +13,13 @@
     <div id='content'>
       <div class='archives'>
         {{#posts}}
-          <p><a href='/{{html_path}}'>{{title}}</a></p>
+            <a href='/{{html_path}}'>{{title}}</a>
         {{/posts}}
       </div>
     </div>
+    <footer id='footer'>
+        <a href='/feeds/rss.xml'> RSS </a> / <a href='/feeds/atom.xml'> ATOM </a>
+    </footer>
   </div>
 </body>
 
