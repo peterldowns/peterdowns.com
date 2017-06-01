@@ -56,6 +56,10 @@ def write_feeds(posts):
     g.link(href='http://peterdowns.com/blog')
     g.description('incredibly on-brand')
     g.title(u'Peter Downs — Posts')
+    first_post = posts[0]
+    updated = first_post['updated'] or first_post['date']
+    g.updated(_utcstrp(updated, _time_fmt))
+
     for post in posts:
         e = g.add_entry()
         post_url = os.path.join(_blog_root, post['html_path'])

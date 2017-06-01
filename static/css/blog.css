@@ -204,9 +204,6 @@ body {
     text-align: left;
   font-size: 18px;
 }
-.archives a{
-  display: block;
-}
 .archives a::before {
     padding-left: 0;
     padding-right: 10px;
@@ -270,7 +267,7 @@ hr {
   .about {
     text-align: center;
   }
-  .archives a {
+  .archives p {
       margin-bottom: 20px;
     }
   .archives a::before {
