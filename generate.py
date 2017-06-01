@@ -2,11 +2,14 @@
 # coding: utf-8
 import codecs
 import json
-from lxml import html as lxhtml
 import markdown
 import os
 import yaml
+import pytz
+from datetime import datetime
+from lxml import html as lxhtml
 
+from feedgen.feed import FeedGenerator
 from mustache import template
 from operator import itemgetter
 from time import mktime, strptime
@@ -26,6 +29,10 @@ _enc_errors = 'xmlcharrefreplace' # How to treat unicode characters when writing
 
 _index = './index.html'   # file at which to store the homepage / archive
 _posts_index = './posts/index.html'
+_feeds_dir = './feeds'
+_protocol = 'http://'
+_domain = 'peterdowns.com'
+_blog_root = '{}{}/posts'.format(_protocol, _domain)
 
 @template('templates/posts.html')
 def render_posts_index(posts):
@@ -38,6 +45,32 @@ def render_index():
 @template('templates/post.html')
 def render_post(post):
   return {'post' : post}, {}
+
+def _utcstrp(*args, **kwargs):
+    dt = datetime.strptime(*args, **kwargs)
+    return dt.replace(tzinfo=pytz.utc)
+
+def write_feeds(posts):
+    g = FeedGenerator()
+    g.id('http://peterdowns.com/blog')
+    g.link(href='http://peterdowns.com/blog')
+    g.description('From my asshole to your brain')
+    g.title(u'Peter Downs — Blog')
+    for post in posts:
+        e = g.add_entry()
+        post_url = os.path.join(_blog_root, post['html_path'])
+        e.id(post_url)
+        e.link(href=post_url, rel='alternate')
+        e.title(post['title'])
+        e.author(name=post['author'][0])
+        e.published(_utcstrp(post['date'], _time_fmt))
+        if post['updated'] is None:
+            e.updated(e.published())
+        else:
+            e.updated(_utcstrp(post['updated'], _time_fmt))
+
+    g.atom_file('{}/atom.xml'.format(_feeds_dir))
+    g.rss_file('{}/rss.xml'.format(_feeds_dir))
 
 def post_fixup(htmlstr):
   html = lxhtml.fromstring(htmlstr)
@@ -79,6 +112,7 @@ def load_post(path):
   post['html'] = html
   post['date'] = post['date'][0]
   post['title'] = post['title'][0]
+  post['updated'] = post.get('updated', [None])[0]
   post['md_path'] = path
   post['md_filename'] = filename = os.path.split(path)[1]
   post['slug'] = slug = os.path.splitext(filename)[0]
@@ -103,6 +137,7 @@ def main():
   """ Generate the website. """
   all_posts = load_posts(_md_in)
   sorted_posts = sorted(all_posts, key=itemgetter('timestamp'), reverse=True)
+  sorted_posts = list(sorted_posts)
 
   try: os.mkdir(_md_out) # make the output folder
   except OSError: pass # already exists
@@ -116,6 +151,9 @@ def main():
   with open(_posts_index, 'w') as fout:
     html = render_posts_index(sorted_posts)
     fout.write(unicode(html).encode(errors=_enc_errors))
+
+  print 'Writing feeds => {}'.format(_feeds_dir)
+  write_feeds(sorted_posts)
 
   num_posts = len(sorted_posts)
   print 'Writing {} posts:'.format(num_posts)
