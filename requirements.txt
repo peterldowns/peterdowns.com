@@ -3,3 +3,5 @@ Markdown==2.5.2
 mustache==0.1.4
 PyYAML==3.11
 Pigments==1.6
+feedgen==0.5.1
+pytz==2017.2
