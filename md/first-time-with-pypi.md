@@ -188,14 +188,10 @@ use the [MIT license](http://opensource.org/licenses/MIT).
 
 Run:
 
-    python setup.py register -r pypitest
-
-This will attempt to register your package against PyPI's test server, just to make sure you've
-set up everything correctly.
-
-Then, run:
-
     python setup.py sdist upload -r pypitest
+
+This will attempt to register your package against PyPI's test server and make sure you've
+set up everything correctly.
 
 You should get no errors, and should also now be able to see your library in the
 [test PyPI repository](https://testpypi.python.org/pypi).
@@ -203,12 +199,9 @@ You should get no errors, and should also now be able to see your library in the
 ### Upload to PyPI Live
 
 Once you've successfully uploaded to PyPI Test, perform the same steps but point to
-the live PyPI server instead. To register, run:
-
-    python setup.py register -r pypi
-
-Then, run:
+the live PyPI server instead. 
 
     python setup.py sdist upload -r pypi
 
 and you're done! Congratulations on successfully publishing your first package!
+
