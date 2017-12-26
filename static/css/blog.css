@@ -106,7 +106,7 @@ html {
 }
 
 body {
-    font-family: 'PT Sans', serif;
+    font-family: 'Georgia', serif;
     background: #FEFEFE;
     color: #252525;
     font-size: 1.0rem;
@@ -200,15 +200,9 @@ body {
 }
 .archives {
     font-size: 24px;
-    text-transform: uppercase;
     text-align: left;
   font-size: 18px;
 }
-.archives a::before {
-    padding-left: 0;
-    padding-right: 10px;
-    content: "/";
-  }
 .post > * {
     max-width: 800px;
     margin-left: auto;
