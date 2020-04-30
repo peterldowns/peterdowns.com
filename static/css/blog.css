@@ -30,7 +30,7 @@ h4,
 h5,
 h6 {
     line-height: 1.4;
-    font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 h1 {
     font-size: 2.6rem;
@@ -85,14 +85,6 @@ blockquote {
 blockquote p {
     font-weight: 300;
     font-style: italic;
-}
-code {
-    border-radius: 2px;
-    background: #FAFAFA;
-    border: 1px solid #E0E0E0;
-    color: #FF00F3;
-    font-family: 'Inconsolata', Monaco, Andale Mono, monospace !important;
-    padding: 0.1rem 0.4rem;
 }
 pre code {
     overflow: auto;
