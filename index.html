@@ -47,67 +47,57 @@ body {
     min-width: 300px;
 }
 
-#page-wrap {
-    width: auto;
-    margin: 0;
-    border: none;
-}
-
 #header {
     text-align: left;
     margin-bottom: 0;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 #header h1 {
   margin-bottom: 0;
+  margin-left: 0;
 }
 #content {
-    padding: 0 20px;
-    margin-bottom: 80px;
+  width: auto;
+  margin: 0;
+  border: none;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding: 0 20px;
+  margin-bottom: 80px;
 }
 .about {
   text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 img {
 	max-width: 100%;
+  min-width: 384px;
 }
 #headshot {
   margin-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  width: 320px;
+  width: 384px;
 }
 
 #personal-info {
-  max-width: 455px;
+  max-width: 519px;
   display: inline-block;
   vertical-align: top;
-}
-@media (max-width: 839px) {
-  #header {
-    text-align: center;
-  }
-  .about {
-    text-align: center;
-  }
 }
   </style>
 </head>
 
 <body>
-  <div id="header">
-    <h1> Peter Downs </h1>
-  </div>
-  <div id="page-wrap">
     <div id="content">
+      <div id="header">
+        <h1> Peter Downs </h1>
+      </div>
       <div class="about">
-        <img id="headshot" width="320" height="318" alt="a picture of me" class="inline-block" src="/static/img/me.jpg" />
+        <img id="headshot" width="384" height="384" alt="a picture of me" class="inline-block" src="/static/img/me.jpg" />
         <div id="personal-info" class="inline-block">
           <p> Hi, I'm Peter.</p>
           <p> I want to do great things with smart people.</p>
@@ -140,7 +130,6 @@ img {
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Analytics -->
   <script type='text/javascript'> 
