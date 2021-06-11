@@ -49,7 +49,7 @@ body {
 
 #header {
     text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 #header h1 {
   margin-bottom: 0;
@@ -72,15 +72,16 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-img {
+img, source {
 	max-width: 100%;
   min-width: 384px;
+  width: 384px;
+  height: 384px;
 }
 #headshot {
   margin-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  width: 384px;
 }
 
 #personal-info {
@@ -97,7 +98,11 @@ img {
         <h1> Peter Downs </h1>
       </div>
       <div class="about">
-        <img id="headshot" width="384" height="384" alt="a picture of me" class="inline-block" src="/static/img/me.jpg" />
+        <picture id="headshot">
+          <source type="image/webp" srcset="/static/img/me.webp">
+          <source type="image/jpeg" srcset="/static/img/me.jpg">
+          <img src="/static/img/me.jpg" alt="a picture of me">
+        </picture>
         <div id="personal-info" class="inline-block">
           <p> Hi, I'm Peter.</p>
           <p> I want to do great things with smart people.</p>
